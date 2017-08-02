@@ -7,5 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'CSV'
 
-character_genders_csv_text = File.read('./simpsons_data/character_genders.csv')
-character_genders_csv = CSV.parse(character_genders_csv_text, headers: true)
+Character.destroy_all
+
+character_csv_text = File.read("db/simpsons_data/simpsons_characters.csv")
+character_csv = CSV.parse(character_csv_text, headers: true)
+character_csv.each do |character|
+  Character.create!(character.to_hash)
+end
