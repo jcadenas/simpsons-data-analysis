@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'CSV'
+
+character_genders_csv_text = File.read('./simpsons_data/character_genders.csv')
+character_genders_csv = CSV.parse(character_genders_csv_text, headers: true)
