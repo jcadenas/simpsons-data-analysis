@@ -18,10 +18,11 @@ Character.destroy_all
 # t_file.close
 # FileUtils.mv(t_file.path, "/path/to/csv")
 
-
+CSV.open("db/simpsons_data/simpsons_characters.csv").each do |row|
+  puts row.take(3)
+end
 character_csv_text = File.read("db/simpsons_data/simpsons_characters.csv")
 character_csv = CSV.parse(character_csv_text.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
 character_csv.each do |character|
-  character.chomp(',')
   Character.create!(character.to_hash)
 end
