@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802234504) do
+ActiveRecord::Schema.define(version: 20170803003411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,24 @@ ActiveRecord::Schema.define(version: 20170802234504) do
     t.integer  "character_id"
     t.string   "normalized_name"
     t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.integer  "ep_id"
+    t.string   "title"
+    t.string   "original_air_date"
+    t.string   "production_code"
+    t.integer  "season"
+    t.integer  "number_in_season"
+    t.integer  "number_in_series"
+    t.float    "us_viewers_in_millions"
+    t.integer  "views"
+    t.float    "imdb_rating"
+    t.integer  "imdb_votes"
+    t.string   "image_url"
+    t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

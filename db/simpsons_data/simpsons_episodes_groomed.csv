@@ -7,13 +7,13 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 21,Bart the Daredevil,1990-12-06,7F06,2,8,21,26.2,57605,8.4,1522,http://static-media.fxx.com/img/FX_Networks_-_FXX/662/811/Simpsons_02_06.jpg,http://www.simpsonsworld.com/video/260539459702
 23,Bart Gets Hit by a Car,1991-01-10,7F10,2,10,23,24.8,56486,7.8,1340,http://static-media.fxx.com/img/FX_Networks_-_FXX/673/547/bart_gets_hit_by_car.jpg,http://www.simpsonsworld.com/video/260550723760
 26,Homer vs. Lisa and the 8th Commandment,1991-02-07,7F13,2,13,26,26.2,58277,8,1329,http://static-media.fxx.com/img/FX_Networks_-_FXX/930/879/Simpsons_02_13.jpg,http://www.simpsonsworld.com/video/260820547692
-28,Oh Brother, Where Art Thou?,1991-02-21,7F16,2,15,28,26.8,47426,8.2,1413,http://static-media.fxx.com/img/FX_Networks_-_FXX/372/934/Simpsons_02_16.jpg,http://www.simpsonsworld.com/video/272046659561
+28,Oh Brother, Where Art Thou?,1991-02-21,7F16,2,15,28,26.8,47426,8.2,1413,http://static-media.fxx.com/img/FX_Networks_-_FXX/372/934/Simpsons_02_16.jpg
 30,Old Money,1991-03-28,7F17,2,17,30,21.2,44331,7.6,1243,http://static-media.fxx.com/img/FX_Networks_-_FXX/418/939/old_money.jpg,http://www.simpsonsworld.com/video/263504963955
 32,Lisas Substitute,1991-04-25,7F19,2,19,32,17.7,52770,8.5,1684,http://static-media.fxx.com/img/FX_Networks_-_FXX/238/11/Simpsons_02_19.jpg,http://www.simpsonsworld.com/video/288011331912
 35,Blood Feud,1991-07-11,7F22,2,22,35,17.3,52829,8,1223,http://static-media.fxx.com/img/FX_Networks_-_FXX/368/31/Simpsons_02_22.jpg,http://www.simpsonsworld.com/video/272041539932
 37,Mr. Lisa Goes to Washington,1991-09-26,8F01,3,2,37,20.2,52098,7.7,1274,http://static-media.fxx.com/img/FX_Networks_-_FXX/305/315/MrLisaGoestoWashington.jpg,http://www.simpsonsworld.com/video/275196995796
 39,Bart the Murderer,1991-10-10,8F03,3,4,39,20.8,64342,8.7,1446,http://static-media.fxx.com/img/FX_Networks_-_FXX/241/939/BarttheMurderer.jpg,http://www.simpsonsworld.com/video/288015427922
-41,Like Father, Like Clown,1991-10-24,8F05,3,6,41,20.2,45586,7.7,1262,http://static-media.fxx.com/img/FX_Networks_-_FXX/239/191/Simpsons_03_07.jpg,http://www.simpsonsworld.com/video/256874051703
+41,Like Father, Like Clown,1991-10-24,8F05,3,6,41,20.2,45586,7.7,1262,http://static-media.fxx.com/img/FX_Networks_-_FXX/239/191/Simpsons_03_07.jpg
 44,Saturdays of Thunder,1991-11-14,8F07,3,9,44,24.7,55808,7.9,1194,http://static-media.fxx.com/img/FX_Networks_-_FXX/262/139/SaturdaysofThunder.jpg,http://www.simpsonsworld.com/video/256898115598
 46,Burns Verkaufen der Kraftwerk,1991-12-05,8F09,3,11,46,21.1,55987,8.2,1291,http://static-media.fxx.com/img/FX_Networks_-_FXX/66/542/BURNS_DE_KRAFTWERK.jpg,http://www.simpsonsworld.com/video/310380099512
 48,Radio Bart,1992-01-09,8F11,3,13,48,24.2,58919,8.5,1365,http://static-media.fxx.com/img/FX_Networks_-_FXX/378/791/RadioBart.jpg,http://www.simpsonsworld.com/video/272052803895
@@ -26,7 +26,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 69,Lisas First Word,1992-12-03,9F08,4,10,69,28.6,62070,8.5,1350,http://static-media.fxx.com/img/FX_Networks_-_FXX/252/675/Simpsons_04_10.jpg,http://www.simpsonsworld.com/video/288026691837
 72,Selmas Choice,1993-01-21,9F11,4,13,72,24.5,56396,8,1153,http://static-media.fxx.com/img/FX_Networks_-_FXX/72/899/Simpsons_04_13.jpg,http://www.simpsonsworld.com/video/310386755912
 7,The Call of the Simpsons,1990-02-18,7G09,1,7,7,27.6,57793,7.9,1638,http://static-media.fxx.com/img/FX_Networks_-_FXX/636/523/Simpsons_01_09__827207.jpg,http://www.simpsonsworld.com/video/273396803837
-24,One Fish, Two Fish, Blowfish, Blue Fish,1991-01-24,7F12,2,11,24,24.2,50206,8.8,1687,http://static-media.fxx.com/img/FX_Networks_-_FXX/671/595/Simpsons_02_11.jpg,http://www.simpsonsworld.com/video/260548675839
+24,One Fish, Two Fish, Blowfish, Blue Fish,1991-01-24,7F12,2,11,24,24.2,50206,8.8
 80,Marge in Chains,1993-05-06,9F20,4,21,80,17.3,68692,7.7,1080,http://static-media.fxx.com/img/FX_Networks_-_FXX/32/119/Simpsons_04_22.jpg,http://www.simpsonsworld.com/video/299606595657
 82,Homers Barbershop Quartet,1993-09-30,9F21,5,1,82,19.9,58390,8.4,1416,http://static-media.fxx.com/img/FX_Networks_-_FXX/698/755/Simpsons_05_01__100677.jpg,http://www.simpsonsworld.com/video/305674307809
 84,Homer Goes to College,1993-10-14,1F02,5,3,84,18.1,64802,8.6,1476,http://static-media.fxx.com/img/FX_Networks_-_FXX/146/751/Simpsons_05_04.jpg,http://www.simpsonsworld.com/video/280399427649
@@ -57,7 +57,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 149,22 Short Films About Springfield,1996-04-14,3F18,7,21,149,10.5,66536,8.8,1393,http://static-media.fxx.com/img/FX_Networks_-_FXX/14/551/Simpsons_07_20.jpg,http://www.simpsonsworld.com/video/299588163608
 151,Much Apu About Nothing,1996-05-05,3F20,7,23,151,11.3,75618,8,995,http://static-media.fxx.com/img/FX_Networks_-_FXX/89/991/Simpsons_07_22.jpg,http://www.simpsonsworld.com/video/310404675978
 153,Summer of 4 Ft. 2,1996-05-19,3F22,7,25,153,14.7,65847,8.3,1119,http://static-media.fxx.com/img/FX_Networks_-_FXX/1013/746/Simpsons_07_24.jpg,http://www.simpsonsworld.com/video/277013571573
-157,Burns, Baby Burns,1996-11-17,4F05,8,4,157,12.6,55497,7.7,1079,http://static-media.fxx.com/img/FX_Networks_-_FXX/47/258/Simpsons_08_09.jpg,http://www.simpsonsworld.com/video/299622467514
+157,Burns, Baby Burns,1996-11-17,4F05,8,4,157,12.6,55497,7.7,1079,http://static-media.fxx.com/img/FX_Networks_-_FXX/47/258/Simpsons_08_09.jpg
 160,Lisas Date with Density,1996-12-15,4F01,8,7,160,,60912,7.8,1005,http://static-media.fxx.com/img/FX_Networks_-_FXX/361/767/Simpsons_08_05__410383.jpg,http://www.simpsonsworld.com/video/306394691862
 163,The Springfield Files,1997-01-12,3G01,8,10,163,20.9,69555,9,1793,http://static-media.fxx.com/img/FX_Networks_-_FXX/306/391/Simpsons_08_03__677111.jpg,http://www.simpsonsworld.com/video/436259395954
 164,The Twisted World of Marge Simpson,1997-01-19,4F08,8,11,164,14,71813,7.8,998,http://static-media.fxx.com/img/FX_Networks_-_FXX/311/271/Simpsons_08_12.jpg,http://www.simpsonsworld.com/video/436264515927
@@ -70,7 +70,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 180,The Principal and the Pauper,1997-09-28,4F23,9,2,180,14.9,48414,7.4,1158,http://static-media.fxx.com/img/FX_Networks_-_FXX/540/775/Simpsons_09_04.jpg,http://www.simpsonsworld.com/video/436505155662
 184,Bart Star,1997-11-09,5F03,9,6,184,10.6,31033,7.7,925,http://static-media.fxx.com/img/FX_Networks_-_FXX/518/967/Simpsons_09_08.jpg,http://www.simpsonsworld.com/video/448293443714
 186,Lisa the Skeptic,1997-11-23,5F05,9,8,186,9.3,22318,8,978,http://static-media.fxx.com/img/FX_Networks_-_FXX/8/138/Simpsons_09_10.jpg,http://www.simpsonsworld.com/video/279180355540
-189,All Singing, All Dancing,1998-01-04,5F24,9,11,189,8.9,15780,5.1,1119,http://static-media.fxx.com/img/FX_Networks_-_FXX/575/966/Simpsons_09_25.jpg,http://www.simpsonsworld.com/video/294808131518
+189,All Singing, All Dancing,1998-01-04,5F24,9,11,189,8.9,15780,5.1,1119,http://static-media.fxx.com/img/FX_Networks_-_FXX/575/966/Simpsons_09_25.jpg
 191,The Joy of Sect,1998-02-08,5F23,9,13,191,9.4,27710,8.2,1042,http://static-media.fxx.com/img/FX_Networks_-_FXX/51/663/Simpsons_09_24.jpg,http://www.simpsonsworld.com/video/299627075941
 196,This Little Wiggy,1998-03-22,5F13,9,18,196,8.9,20739,7.8,906,http://static-media.fxx.com/img/FX_Networks_-_FXX/63/875/Simpsons_09_18.jpg,http://www.simpsonsworld.com/video/299639875678
 198,The Trouble with Trillions,1998-04-05,5F14,9,20,198,7.4,23426,7.9,949,http://static-media.fxx.com/img/FX_Networks_-_FXX/68/255/Simpsons_09_19.jpg,http://www.simpsonsworld.com/video/299644483816
@@ -88,16 +88,16 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 231,E-I-E-I-(Annoyed Grunt),1999-11-07,AABF19,11,5,231,8.4,51431,7.6,817,http://static-media.fxx.com/img/FX_Networks_-_FXX/50/959/Simpsons_11_01.jpg,http://www.simpsonsworld.com/video/302847555697
 233,Eight Misbehavin,1999-11-21,BABF03,11,7,233,9.2,40465,7.1,747,http://static-media.fxx.com/img/FX_Networks_-_FXX/862/743/Simpsons_11_07.jpg,http://www.simpsonsworld.com/video/306920003903
 238,The Mansion Family,2000-01-23,BABF08,11,12,238,11.3,43949,7.3,747,http://static-media.fxx.com/img/FX_Networks_-_FXX/549/155/Simpsons_11_12.jpg,http://www.simpsonsworld.com/video/279747651734
-240,Alone Again, Natura-diddily,2000-02-13,BABF11,11,14,240,10.8,47392,7.9,887,http://static-media.fxx.com/img/FX_Networks_-_FXX/301/499/Simpsons_11_14.jpg,http://www.simpsonsworld.com/video/288077891629
+240,Alone Again, Natura-diddily,2000-02-13,BABF11,11,14,240,10.8,47392,7.9,887,http://static-media.fxx.com/img/FX_Networks_-_FXX/301/499/Simpsons_11_14.jpg
 242,Pygmoelian,2000-02-27,BABF12,11,16,242,9.4,52891,7.3,755,http://static-media.fxx.com/img/FX_Networks_-_FXX/528/595/Simpsons_11_16.jpg,http://www.simpsonsworld.com/video/294758467783
 245,Kill the Alligator and Run,2000-04-30,BABF16,11,19,245,7.46,52176,6.6,805,http://static-media.fxx.com/img/FX_Networks_-_FXX/838/307/Simpsons_11_20.jpg,http://www.simpsonsworld.com/video/292935747924
-247,Its a Mad, Mad, Mad, Mad Marge,2000-05-14,BABF18,11,21,247,7.5,54146,7.3,737,http://static-media.fxx.com/img/FX_Networks_-_FXX/989/75/Simpsons_11_21.jpg,http://www.simpsonsworld.com/video/301683779737
+247,Its a Mad, Mad, Mad, Mad Marge,2000-05-14,BABF18,11,21,247,7.5,54146,7.3
 249,Treehouse of Horror XI,2000-11-01,BABF21,12,1,249,13.2,77719,7.6,829,http://static-media.fxx.com/img/FX_Networks_-_FXX/534/951/Simpsons_12_03__536295.jpg,http://www.simpsonsworld.com/video/294765123660
 251,Insane Clown Poppy,2000-11-12,BABF17,12,3,251,16.4,40443,7.1,733,http://static-media.fxx.com/img/FX_Networks_-_FXX/876/906/Simpsons_12_01.jpg,http://www.simpsonsworld.com/video/306934851515
 254,The Computer Wore Menace Shoes,2000-12-03,CABF02,12,6,254,15.6,51100,7.7,782,http://static-media.fxx.com/img/FX_Networks_-_FXX/47/531/Simpsons_12_06.jpg,http://www.simpsonsworld.com/video/302843971598
 258,Pokey Mom,2001-01-14,CABF05,12,10,258,15,51024,7.3,760,http://static-media.fxx.com/img/FX_Networks_-_FXX/48/507/Simpsons_12_09.jpg,http://www.simpsonsworld.com/video/302844995961
 261,Day of the Jackanapes,2001-02-18,CABF10,12,13,261,15.4,49986,7.2,668,http://static-media.fxx.com/img/FX_Networks_-_FXX/16/971/Simpsons_12_14__355949.jpg,http://www.simpsonsworld.com/video/307106883649
-263,Hungry, Hungry Homer,2001-03-04,CABF09,12,15,263,17.6,49811,7.4,731,http://static-media.fxx.com/img/FX_Networks_-_FXX/726/431/Simpsons_12_13.jpg,http://www.simpsonsworld.com/video/307850819931
+263,Hungry, Hungry Homer,2001-03-04,CABF09,12,15,263,17.6,49811,7.4,731,http://static-media.fxx.com/img/FX_Networks_-_FXX/726/431/Simpsons_12_13.jpg
 265,Simpson Safari,2001-04-01,CABF13,12,17,265,13.3,49065,6.9,719,http://static-media.fxx.com/img/FX_Networks_-_FXX/48/1007/Simpsons_12_17.jpg,http://www.simpsonsworld.com/video/302845507908
 268,Children of a Lesser Clod,2001-05-13,CABF16,12,20,268,13.8,50070,7.3,666,http://static-media.fxx.com/img/FX_Networks_-_FXX/959/294/Simpsons_12_20.jpg,http://www.simpsonsworld.com/video/301652547508
 270,Treehouse of Horror XII,2001-11-06,CABF19,13,1,270,13,77136,7.5,824,http://static-media.fxx.com/img/FX_Networks_-_FXX/24/779/treehouse.jpg,http://www.simpsonsworld.com/video/307115075729
@@ -114,12 +114,12 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 301,Pray Anything,2003-02-09,EABF06,14,10,301,13.4,46336,6.8,598,http://static-media.fxx.com/img/FX_Networks_-_FXX/321/231/Simpsons_Pray_Anything.jpg,http://www.simpsonsworld.com/video/221526595805
 306,C.E.Doh,2003-03-16,EABF10,14,15,306,13,47386,7.3,557,http://static-media.fxx.com/img/FX_Networks_-_FXX/482/867/Simpsons_14_15.jpg,http://www.simpsonsworld.com/video/221696067982
 308,Three Gays of the Condo,2003-04-13,EABF12,14,17,308,12.02,49263,7.2,649,http://static-media.fxx.com/img/FX_Networks_-_FXX/485/795/Simpsons_Three_Gays_of_the_Condo.jpg,http://www.simpsonsworld.com/video/221699139984
-311,Brake My Wife, Please,2003-05-11,EABF15,14,20,311,10.56,47288,6.9,570,http://static-media.fxx.com/img/FX_Networks_-_FXX/971/99/Simpsons_Brake_My_Wife.jpg,http://www.simpsonsworld.com/video/229724227970
+311,Brake My Wife, Please,2003-05-11,EABF15,14,20,311,10.56,47288,6.9,570,http://static-media.fxx.com/img/FX_Networks_-_FXX/971/99/Simpsons_Brake_My_Wife.jpg
 313,Moe Baby Blues,2003-05-18,EABF17,14,22,313,13.44,45931,7.7,697,http://static-media.fxx.com/img/FX_Networks_-_FXX/744/123/Simpsons_Moe_Baby_Blues.jpg,http://www.simpsonsworld.com/video/228412483812
 315,My Mother the Carjacker,2003-11-09,EABF18,15,2,315,12.4,34590,7.3,595,http://static-media.fxx.com/img/FX_Networks_-_FXX/745/175/My_Mother_the_Carjacker.jpg,http://www.simpsonsworld.com/video/227339843917
 318,The Fat and the Furriest,2003-11-30,EABF19,15,5,318,11.7,39180,7.2,586,http://static-media.fxx.com/img/FX_Networks_-_FXX/760/314/The_Fat_and_the_Furriest.jpg,http://www.simpsonsworld.com/video/227355715580
 320,Tis the Fifteenth Season,2003-12-14,FABF02,15,7,320,11.3,40667,7.2,588,http://static-media.fxx.com/img/FX_Networks_-_FXX/769/99/Simpsons_15_07.jpg,http://www.simpsonsworld.com/video/227364931670
-322,I, (Annoyed Grunt)-bot,2004-01-11,FABF04,15,9,322,16.3,42776,7.3,607,http://static-media.fxx.com/img/FX_Networks_-_FXX/780/334/I_Annoyed_Grunt_Bot.jpg,http://www.simpsonsworld.com/video/227376707538
+322,I, (Annoyed Grunt)-bot,2004-01-11,FABF04,15,9,322,16.3,42776,7.3,607,http://static-media.fxx.com/img/FX_Networks_-_FXX/780/334/I_Annoyed_Grunt_Bot.jpg
 326,Smart & Smarter,2004-02-22,FABF09,15,13,326,12.6,43969,7.1,589,http://static-media.fxx.com/img/FX_Networks_-_FXX/596/599/Simpsons_15_14.jpg,http://www.simpsonsworld.com/video/229331523584
 328,Co-Dependents Day,2004-03-21,FABF10,15,15,328,11.2,47246,6.9,560,http://static-media.fxx.com/img/FX_Networks_-_FXX/801/831/Co_Dependents_Day.jpg,http://www.simpsonsworld.com/video/227399235673
 331,Catch Em If You Can,2004-04-25,FABF14,15,18,331,9.3,47274,7,609,http://static-media.fxx.com/img/FX_Networks_-_FXX/817/447/Simpsons_15_19.jpg,http://www.simpsonsworld.com/video/227415619717
@@ -141,11 +141,11 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 370,Bart Has Two Mommies,2006-03-19,HABF07,17,14,370,8.75,44012,7,558,http://static-media.fxx.com/img/FX_Networks_-_FXX/84/966/bart_has_two_mommies.jpg,http://www.simpsonsworld.com/video/277113411511
 372,Million-Dollar Abie,2006-04-02,HABF09,17,16,372,7.83,42303,6.6,577,http://static-media.fxx.com/img/FX_Networks_-_FXX/851/995/million_dollar_abie.jpg,http://www.simpsonsworld.com/video/292950083730
 376,Regarding Margie,2006-05-07,HABF13,17,20,376,8.5,43162,6.7,558,http://static-media.fxx.com/img/FX_Networks_-_FXX/96/178/regardgin_marge.jpg,http://www.simpsonsworld.com/video/277125187506
-379,The Mook, the Chef, the Wife and Her Homer,2006-09-10,HABF15,18,1,379,11.5,41321,7.5,754,http://static-media.fxx.com/img/FX_Networks_-_FXX/860/778/the_mook_the_chef.jpg,http://www.simpsonsworld.com/video/292959299559
-381,Please Homer, Dont Hammer Em,2006-09-24,HABF20,18,3,381,9.72,41865,6.8,623,http://static-media.fxx.com/img/FX_Networks_-_FXX/280/307/please_homer_dont_hammer.jpg,http://www.simpsonsworld.com/video/283760707876
+379,The Mook, the Chef, the Wife and Her Homer,2006-09-10,HABF15,18,1,379,11.5,41321,7.5,754
+381,Please Homer, Dont Hammer Em,2006-09-24,HABF20,18,3,381,9.72,41865,6.8,623,http://static-media.fxx.com/img/FX_Networks_-_FXX/280/307/please_homer_dont_hammer.jpg
 383,G.I. (Annoyed Grunt),2006-11-12,HABF21,18,5,383,11.43,42160,6.9,656,http://static-media.fxx.com/img/FX_Networks_-_FXX/655/383/G.I..jpg,http://www.simpsonsworld.com/video/283080259896
 385,Ice Cream of Margie (with the Light Blue Hair),2006-11-26,HABF22,18,7,385,10.9,43032,7,603,http://static-media.fxx.com/img/FX_Networks_-_FXX/843/686/ice_cream_of_margie.jpg,http://www.simpsonsworld.com/video/292941379558
-387,Kill Gil, Volumes I & II,2006-12-17,JABF01,18,9,387,8.96,43700,6.4,624,http://static-media.fxx.com/img/FX_Networks_-_FXX/593/99/kill_gil.jpg,http://www.simpsonsworld.com/video/279793731867
+387,Kill Gil, Volumes I & II,2006-12-17,JABF01,18,9,387,8.96,43700,6.4,624,http://static-media.fxx.com/img/FX_Networks_-_FXX/593/99/kill_gil.jpg
 390,Little Big Girl,2007-02-11,JABF04,18,12,390,8.27,52730,7,672,http://static-media.fxx.com/img/FX_Networks_-_FXX/145/147/Simpsons_18_11_Little_Big_Girl.jpg,http://www.simpsonsworld.com/video/310462531619
 392,Yokel Chords,2007-03-04,JABF09,18,14,392,9.09,41561,7.1,644,http://static-media.fxx.com/img/FX_Networks_-_FXX/82/386/Simpsons_18_16_Yokel_Cords.jpg,http://www.simpsonsworld.com/video/307175491532
 394,Homerazzi,2007-03-25,JABF06,18,16,394,6.91,42602,7.2,610,http://static-media.fxx.com/img/FX_Networks_-_FXX/863/707/homerazzi.jpg,http://www.simpsonsworld.com/video/292962371807
@@ -174,7 +174,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 462,Moe Letter Blues,2010-05-09,MABF13,21,21,462,5.66,40904,6.9,491,http://static-media.fxx.com/img/FX_Networks_-_FXX/392/474/Simpsons_21_21.jpg,http://www.simpsonsworld.com/video/250592323527
 464,Judge Me Tender,2010-05-23,MABF15,21,23,464,5.74,41830,6.6,507,http://static-media.fxx.com/img/FX_Networks_-_FXX/571/375/Simpsons_21_23.jpg,http://www.simpsonsworld.com/video/255074883631
 466,Loan-a Lisa,2010-10-03,MABF17,22,2,466,8.59,35051,6.8,506,http://static-media.fxx.com/img/FX_Networks_-_FXX/438/959/Simpsons_22_02.jpg,http://www.simpsonsworld.com/video/263525955686
-469,Lisa Simpson, This Isnt Your Life,2010-11-14,MABF20,22,5,469,8.97,40637,7.2,482,http://static-media.fxx.com/img/FX_Networks_-_FXX/452/622/Simpsons_22_05.jpg,http://www.simpsonsworld.com/video/263540291528
+469,Lisa Simpson, This Isnt Your Life,2010-11-14,MABF20,22,5,469,8.97,40637,7.2,482,http://static-media.fxx.com/img/FX_Networks_-_FXX/452/622/Simpsons_22_05.jpg
 472,The Fight Before Christmas,2010-12-05,MABF22,22,8,472,9.54,43781,6.9,564,http://static-media.fxx.com/img/FX_Networks_-_FXX/462/883/TheFightBeforeChristmas.jpg,http://www.simpsonsworld.com/video/263551043814
 473,Donnie Fatso,2010-12-12,MABF19,22,9,473,7.18,40276,7,528,http://static-media.fxx.com/img/FX_Networks_-_FXX/482/903/DonnieFatso.jpg,http://www.simpsonsworld.com/video/263572035826
 476,Homer the Father,2011-01-23,NABF05,22,12,476,6.5,42691,7,486,http://static-media.fxx.com/img/FX_Networks_-_FXX/217/719/Simpsons_22_12.jpg,http://www.simpsonsworld.com/video/256851523744
@@ -186,10 +186,10 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 489,Treehouse of Horror XXII,2011-10-30,NABF19,23,3,489,8.1,63816,6.6,654,http://static-media.fxx.com/img/FX_Networks_-_FXX/680/507/reehouseofHorrorXXII.jpg,http://www.simpsonsworld.com/video/230493251807
 491,The Food Wife,2011-11-13,NABF20,23,5,491,7.5,42746,7.2,562,http://static-media.fxx.com/img/FX_Networks_-_FXX/184/682/TheFoodWife.jpg,http://www.simpsonsworld.com/video/233194563539
 494,The Ten-Per-Cent Solution,2011-12-04,PABF02,23,8,494,9.01,39002,6.2,476,http://static-media.fxx.com/img/FX_Networks_-_FXX/702/479/TheTenPerCentSolution.jpg,http://www.simpsonsworld.com/video/230516291714
-496,Politically Inept, with Homer Simpson,2012-01-08,PABF03,23,10,496,5.07,44074,6.1,549,http://static-media.fxx.com/img/FX_Networks_-_FXX/733/735/Simpsons_23_10.jpg,http://www.simpsonsworld.com/video/230549059731
+496,Politically Inept, with Homer Simpson,2012-01-08,PABF03,23,10,496,5.07,44074,6.1,549,http://static-media.fxx.com/img/FX_Networks_-_FXX/733/735/Simpsons_23_10.jpg
 498,Moe Goes from Rags to Riches,2012-01-29,PABF05,23,12,498,5.12,39838,5.7,562,http://static-media.fxx.com/img/FX_Networks_-_FXX/738/115/Simpsons_23_12.jpg,http://www.simpsonsworld.com/video/230553667901
 447,Pranks and Greens,2009-11-22,LABF18,21,6,447,7.03,,6.7,543,,
-91,$pringfield (or, How I Learned to Stop Worrying and Love Legalized Gambling),1993-12-16,1F08,5,10,91,17.9,82216,8.5,1274,http://static-media.fxx.com/img/FX_Networks_-_FXX/684/590/Simpsons_05_10.jpg,http://www.simpsonsworld.com/video/305659459565
+91,$pringfield (or, How I Learned to Stop Worrying and Love Legalized Gambling),1993-12-16,1F08,5,10,91,17.9,82216,8.5,1274,http://static-media.fxx.com/img/FX_Networks_-_FXX/684/590/Simpsons_05_10.jpg
 504,Beware My Cheating Bart,2012-04-15,PABF11,23,18,504,4.86,43422,7.1,470,http://static-media.fxx.com/img/FX_Networks_-_FXX/838/515/Beware_my_cheating.jpg,http://www.simpsonsworld.com/video/311189571768
 506,The Spy Who Learned Me,2012-05-06,PABF13,23,20,506,4.84,43544,6.9,405,http://static-media.fxx.com/img/FX_Networks_-_FXX/771/823/TheSpyWhoLearnedMe.jpg,http://www.simpsonsworld.com/video/230588995967
 508,Lisa Goes Gaga,2012-05-20,PABF14,23,22,508,4.82,44434,4.5,1215,http://static-media.fxx.com/img/FX_Networks_-_FXX/180/779/LisaGoesGaga.jpg,http://www.simpsonsworld.com/video/233190467851
@@ -315,7 +315,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 187,Realty Bites,1997-12-07,5F06,9,9,187,10.6,25183,7.5,888,http://static-media.fxx.com/img/FX_Networks_-_FXX/151/630/Simpsons_09_11.jpg,http://www.simpsonsworld.com/video/280404547525
 174,The Old Man and the Lisa,1997-04-20,4F17,8,21,174,14,56833,7.9,967,http://static-media.fxx.com/img/FX_Networks_-_FXX/425/35/Simpsons_08_21.jpg,http://www.simpsonsworld.com/video/436383811985
 159,A Milhouse Divided,1996-12-01,4F04,8,6,159,12.8,60956,8,1008,http://static-media.fxx.com/img/FX_Networks_-_FXX/1024/983/Simpsons_08_08.jpg,http://www.simpsonsworld.com/video/277025347786
-170,My Sister, My Sitter,1997-03-02,4F13,8,17,170,15.1,54247,8.1,1020,http://static-media.fxx.com/img/FX_Networks_-_FXX/346/931/Simpsons_08_17.jpg,http://www.simpsonsworld.com/video/436301891875
+170,My Sister, My Sitter,1997-03-02,4F13,8,17,170,15.1,54247,8.1,1020,http://static-media.fxx.com/img/FX_Networks_-_FXX/346/931/Simpsons_08_17.jpg
 193,The Last Temptation of Krust,1998-02-22,5F10,9,15,193,9.5,20298,7.5,878,http://static-media.fxx.com/img/FX_Networks_-_FXX/580/347/Simpsons_09_15.jpg,http://www.simpsonsworld.com/video/294812739638
 183,The Cartridge Family,1997-11-02,5F01,9,5,183,10.3,30921,8.2,1081,http://static-media.fxx.com/img/FX_Networks_-_FXX/18/227/Simpsons_09_06.jpg,http://www.simpsonsworld.com/video/302813251779
 172,Grade School Confidential,1997-04-06,4F09,8,19,172,13.3,60584,8.2,995,http://static-media.fxx.com/img/FX_Networks_-_FXX/452/887/Simpsons_08_13.jpg,http://www.simpsonsworld.com/video/436412995642
@@ -334,9 +334,9 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 210,Lisa Gets an A,1998-11-22,AABF03,10,7,210,8,50013,8,909,http://static-media.fxx.com/img/FX_Networks_-_FXX/674/475/Simpsons_10_07.jpg,http://www.simpsonsworld.com/video/473152579638
 211,Homer Simpson in: Kidney Trouble,1998-12-06,AABF04,10,8,211,7.2,50300,7.3,863,http://static-media.fxx.com/img/FX_Networks_-_FXX/679/855/Simpsons_10_08.jpg,http://www.simpsonsworld.com/video/473158211896
 252,Lisa the Tree Hugger,2000-11-19,CABF01,12,4,252,14.9,39480,7.2,731,http://static-media.fxx.com/img/FX_Networks_-_FXX/881/786/Simpsons_12_05.jpg,http://www.simpsonsworld.com/video/306939971530
-215,Sunday, Cruddy Sunday,1999-01-31,AABF08,10,12,215,11.5,50051,6.9,880,http://static-media.fxx.com/img/FX_Networks_-_FXX/655/431/Simpsons_10_12.jpg,http://www.simpsonsworld.com/video/473132611959
+215,Sunday, Cruddy Sunday,1999-01-31,AABF08,10,12,215,11.5,50051,6.9,880,http://static-media.fxx.com/img/FX_Networks_-_FXX/655/431/Simpsons_10_12.jpg
 220,Maximum Homerdrive,1999-03-28,AABF13,10,17,220,15.5,54195,7.6,843,http://static-media.fxx.com/img/FX_Networks_-_FXX/619/795/Simpsons_10_17.jpg,http://www.simpsonsworld.com/video/473095235738
-232,Hello Gutter, Hello Fadder,1999-11-14,BABF02,11,6,232,9.2,44615,7.3,759,http://static-media.fxx.com/img/FX_Networks_-_FXX/532/499/Simpsons_11_06.jpg,http://www.simpsonsworld.com/video/294762563857
+232,Hello Gutter, Hello Fadder,1999-11-14,BABF02,11,6,232,9.2,44615,7.3,759,http://static-media.fxx.com/img/FX_Networks_-_FXX/532/499/Simpsons_11_06.jpg
 221,Simpsons Bible Stories,1999-04-04,AABF14,10,18,221,12.2,47155,7.3,851,http://static-media.fxx.com/img/FX_Networks_-_FXX/100/486/Simpsons_10_18.jpg,http://www.simpsonsworld.com/video/299678275566
 260,Tennis the Menace,2001-02-11,CABF07,12,12,260,14,51004,6.9,730,http://static-media.fxx.com/img/FX_Networks_-_FXX/257/143/Simpsons_12_11.jpg,http://www.simpsonsworld.com/video/300916291603
 213,Viva Ned Flanders,1999-01-10,AABF06,10,10,213,11.5,56561,7.8,928,http://static-media.fxx.com/img/FX_Networks_-_FXX/638/839/Simpsons_10_10.jpg,http://www.simpsonsworld.com/video/473115203586
@@ -348,7 +348,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 227,Beyond Blunderdome,1999-09-26,AABF23,11,1,227,8.1,34394,7.3,917,http://static-media.fxx.com/img/FX_Networks_-_FXX/849/555/Simpsons_11_04.jpg,http://www.simpsonsworld.com/video/306906179700
 225,They Saved Lisas Brain,1999-05-09,AABF18,10,22,225,6.8,47951,7.3,804,http://static-media.fxx.com/img/FX_Networks_-_FXX/813/919/Simpsons_10_22.jpg,http://www.simpsonsworld.com/video/306868803826
 216,Homer to the Max,1999-02-07,AABF09,10,13,216,8.3,55726,7.7,882,http://static-media.fxx.com/img/FX_Networks_-_FXX/663/239/Simpsons_10_13.jpg,http://www.simpsonsworld.com/video/473140803870
-234,Take My Wife, Sleaze,1999-11-28,BABF05,11,8,234,8.9,41484,7.1,775,http://static-media.fxx.com/img/FX_Networks_-_FXX/950/1010/Simpsons_11_09.jpg,http://www.simpsonsworld.com/video/301643843522
+234,Take My Wife, Sleaze,1999-11-28,BABF05,11,8,234,8.9,41484,7.1,775,http://static-media.fxx.com/img/FX_Networks_-_FXX/950/1010/Simpsons_11_09.jpg
 236,Little Big Mom,2000-01-09,BABF04,11,10,236,10,48194,7.3,715,http://static-media.fxx.com/img/FX_Networks_-_FXX/244/955/Simpsons_11_08.jpg,http://www.simpsonsworld.com/video/300903491898
 237,Faith Off,2000-01-16,BABF06,11,11,237,10.4,43869,6.9,734,http://static-media.fxx.com/img/FX_Networks_-_FXX/250/311/Simpsons_11_10.jpg,http://www.simpsonsworld.com/video/300909123775
 259,Worst Episode Ever,2001-02-04,CABF08,12,11,259,18.5,49893,7.5,761,http://static-media.fxx.com/img/FX_Networks_-_FXX/142/718/Simpsons_12_12__493414.jpg,http://www.simpsonsworld.com/video/310459971509
@@ -358,7 +358,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 241,Missionary: Impossible,2000-02-20,BABF10,11,15,241,9.8,50427,7.3,777,http://static-media.fxx.com/img/FX_Networks_-_FXX/141/243/Simpsons_11_15.jpg,http://www.simpsonsworld.com/video/310458435665
 244,Days of Wine and Dohses,2000-04-09,BABF14,11,18,244,8.3,48786,7.4,724,http://static-media.fxx.com/img/FX_Networks_-_FXX/872/1003/Simpsons_11_18.jpg,http://www.simpsonsworld.com/video/306930755636
 148,Bart on the Road,1996-03-31,3F17,7,20,148,11.8,70913,8.6,1110,http://static-media.fxx.com/img/FX_Networks_-_FXX/1001/35/Simpsons_07_19.jpg,http://www.simpsonsworld.com/video/277000259951
-264,Bye, Bye, Nerdie,2001-03-11,CABF11,12,16,264,16.1,45718,6.5,691,http://static-media.fxx.com/img/FX_Networks_-_FXX/49/483/Simpsons_12_15__389134.jpg,http://www.simpsonsworld.com/video/302846019892
+264,Bye, Bye, Nerdie,2001-03-11,CABF11,12,16,264,16.1,45718,6.5,691
 267,Im Goin to Praiseland,2001-05-06,CABF15,12,19,267,13.1,49321,7.3,721,http://static-media.fxx.com/img/FX_Networks_-_FXX/51/935/Simpsons_12_19.jpg,http://www.simpsonsworld.com/video/302848579632
 269,Simpsons Tall Tales,2001-05-20,CABF17,12,21,269,13.4,56698,7,688,http://static-media.fxx.com/img/FX_Networks_-_FXX/990/551/Simpsons_12_21.jpg,http://www.simpsonsworld.com/video/301685315594
 287,I Am Furious (Yellow),2002-04-28,DABF13,13,18,287,12.4,69650,7.7,704,http://static-media.fxx.com/img/FX_Networks_-_FXX/85/619/i_am_furious_yellow.jpg,http://www.simpsonsworld.com/video/302883907921
@@ -381,12 +381,12 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 310,Old Yeller-Belly,2003-05-04,EABF14,14,19,310,11.59,43223,6.8,574,http://static-media.fxx.com/img/FX_Networks_-_FXX/487/746/Simpsons_Old_YellerBelly.jpg,http://www.simpsonsworld.com/video/221701187546
 298,Special Edna,2003-01-05,EABF02,14,7,298,15,40867,7.1,593,http://static-media.fxx.com/img/FX_Networks_-_FXX/265/74/Simpsons_14_07.jpg,http://www.simpsonsworld.com/video/221467715532
 302,Barting Over,2003-02-16,EABF05,14,11,302,21.3,47276,6.6,650,http://static-media.fxx.com/img/FX_Networks_-_FXX/482/867/Simpsons_Barting_Over.jpg,http://www.simpsonsworld.com/video/221696067841
-309,Dude, Wheres My Ranch?,2003-04-27,EABF13,14,18,309,11.71,49000,7,651,http://static-media.fxx.com/img/FX_Networks_-_FXX/486/770/Simpsons_14_18.jpg,http://www.simpsonsworld.com/video/221700163549
+309,Dude, Wheres My Ranch?,2003-04-27,EABF13,14,18,309,11.71,49000,7,651,http://static-media.fxx.com/img/FX_Networks_-_FXX/486/770/Simpsons_14_18.jpg
 312,The Bart of War,2003-05-18,EABF16,14,21,312,12.1,50464,6.6,575,http://static-media.fxx.com/img/FX_Networks_-_FXX/977/955/Simpsons_The_Bart_of_War.jpg,http://www.simpsonsworld.com/video/229731395601
 314,Treehouse of Horror XIV,2003-11-02,EABF21,15,1,314,16.22,68381,7.4,738,http://static-media.fxx.com/img/FX_Networks_-_FXX/741/271/Treehouse_of_Horror_XIV.jpg,http://www.simpsonsworld.com/video/227335747784
 165,Mountain of Madness,1997-02-02,4F10,8,12,165,9.1,60763,8.6,1137,http://static-media.fxx.com/img/FX_Networks_-_FXX/313/723/Simpsons_08_14.jpg,http://www.simpsonsworld.com/video/436267075791
 319,Today I Am a Clown,2003-12-07,FABF01,15,6,319,10.5,37890,6.6,576,http://static-media.fxx.com/img/FX_Networks_-_FXX/764/718/Today_I_am_a_Clown.jpg,http://www.simpsonsworld.com/video/227360323557
-321,Marge vs. Singles, Seniors, Childless Couples and Teens and Gays,2004-01-04,FABF03,15,8,321,12,50276,6.7,589,http://static-media.fxx.com/img/FX_Networks_-_FXX/773/3/Marge_vs.jpg,http://www.simpsonsworld.com/video/227369027832
+321,Marge vs. Singles, Seniors, Childless Couples and Teens and Gays,2004-01-04,FABF03,15,8,321,12,50276,6.7,589
 323,Diatribe of a Mad Housewife,2004-01-25,FABF05,15,10,323,10.6,45062,7.3,596,http://static-media.fxx.com/img/FX_Networks_-_FXX/782/287/Diatribe_of_a_Mad_Housewife.jpg,http://www.simpsonsworld.com/video/227378755925
 337,Alls Fair in Oven War,2004-11-14,FABF20,16,2,337,11.64,41064,7,566,http://static-media.fxx.com/img/FX_Networks_-_FXX/136/587/Alls_Fair_in_Oven_War.jpg,http://www.simpsonsworld.com/video/257840195722
 334,Bart-Mangled Banner,2004-05-16,FABF17,15,21,334,8.7,56275,6.2,593,http://static-media.fxx.com/img/FX_Networks_-_FXX/812/567/Bart_Mangled_Banner.jpg,http://www.simpsonsworld.com/video/227410499679
@@ -420,7 +420,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 416,Papa Dont Leech,2008-04-13,KABF09,19,16,416,6.9,39238,6.1,585,http://static-media.fxx.com/img/FX_Networks_-_FXX/287/639/papa_dont_leach.jpg,http://www.simpsonsworld.com/video/283768387739
 378,Marge and Homer Turn a Couple Play,2006-05-21,HABF16,17,22,378,8.23,42778,6.6,587,http://static-media.fxx.com/img/FX_Networks_-_FXX/856/874/Simpsons_17_22.jpg,http://www.simpsonsworld.com/video/292955203576
 388,The Wife Aquatic,2007-01-07,JABF03,18,10,388,13.9,41312,6.6,615,http://static-media.fxx.com/img/FX_Networks_-_FXX/284/210/the_wife_aquatic.jpg,http://www.simpsonsworld.com/video/283764803572
-423,Double, Double, Boy in Trouble,2008-10-19,KABF14,20,3,423,8.09,45781,7,638,http://static-media.fxx.com/img/FX_Networks_-_FXX/565/23/double_double.jpg,http://www.simpsonsworld.com/video/304460355919
+423,Double, Double, Boy in Trouble,2008-10-19,KABF14,20,3,423,8.09,45781,7,638
 382,Treehouse of Horror XVII,2006-11-05,HABF17,18,4,382,10.43,68799,7.1,723,http://static-media.fxx.com/img/FX_Networks_-_FXX/73/407/treehouse_horror.jpg,http://www.simpsonsworld.com/video/302871107984
 411,That 90s Show,2008-01-27,KABF04,19,11,411,7.6,43485,6.3,1069,http://static-media.fxx.com/img/FX_Networks_-_FXX/87/799/that_90s_show.jpg,http://www.simpsonsworld.com/video/299664963588
 428,The Burns and the Bees,2008-12-07,KABF21,20,8,428,6.19,38247,6.6,615,http://static-media.fxx.com/img/FX_Networks_-_FXX/186/663/the_burns_and_the_bees.jpg,http://www.simpsonsworld.com/video/310506051725
@@ -435,17 +435,17 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 395,Marge Gamer,2007-04-22,JABF10,18,17,395,6.4,47107,7.3,678,http://static-media.fxx.com/img/FX_Networks_-_FXX/11/219/Simpsons_18_17_Marge_Gamer_1280x720_335181891611.jpg,http://www.simpsonsworld.com/video/277036099916
 398,Stop! Or My Dog Will Shoot,2007-05-13,JABF12,18,20,398,6.48,42892,7,569,http://static-media.fxx.com/img/FX_Networks_-_FXX/68/527/stop_or_my_dog_will_shoot.jpg,http://www.simpsonsworld.com/video/302865987860
 414,Dial N for Nerder,2008-03-09,KABF07,19,14,414,7.3,41658,7.3,626,http://static-media.fxx.com/img/FX_Networks_-_FXX/52/411/dial_N_for_nuerder.jpg,http://www.simpsonsworld.com/video/302849091724
-412,Love, Springfieldian Style,2008-02-17,KABF05,19,12,412,7.81,40507,6.6,636,http://static-media.fxx.com/img/FX_Networks_-_FXX/153/455/love_springfield_style.jpg,http://www.simpsonsworld.com/video/310471235766
+412,Love, Springfieldian Style,2008-02-17,KABF05,19,12,412,7.81,40507,6.6,636,http://static-media.fxx.com/img/FX_Networks_-_FXX/153/455/love_springfield_style.jpg
 427,MyPods and Boomsticks,2008-11-30,KABF20,20,7,427,7.8,40353,7.1,728,http://static-media.fxx.com/img/FX_Networks_-_FXX/179/831/mypods_and_broomstick.jpg,http://www.simpsonsworld.com/video/310498883779
-421,Sex, Pies and Idiot Scrapes,2008-09-28,KABF17,20,1,421,9.3,45735,7.2,780,http://static-media.fxx.com/img/FX_Networks_-_FXX/741/843/sex_pies.jpg,http://www.simpsonsworld.com/video/311088195682
+421,Sex, Pies and Idiot Scrapes,2008-09-28,KABF17,20,1,421,9.3,45735,7.2,780,http://static-media.fxx.com/img/FX_Networks_-_FXX/741/843/sex_pies.jpg
 418,Any Given Sundance,2008-05-04,KABF11,19,18,418,6.18,41440,7,585,http://static-media.fxx.com/img/FX_Networks_-_FXX/289/91/any_given_sundance.jpg,http://www.simpsonsworld.com/video/283769923976
 206,Bart the Mother,1998-09-27,5F22,10,3,206,7.35,43240,7.5,899,http://static-media.fxx.com/img/FX_Networks_-_FXX/633/458/Simpsons_10_04.jpg,http://www.simpsonsworld.com/video/473109571557
-430,Take My Life, Please,2009-02-15,LABF01,20,10,430,6.82,40679,7,591,http://static-media.fxx.com/img/FX_Networks_-_FXX/952/439/Simpsons_20_10.jpg,http://www.simpsonsworld.com/video/273728067781
-432,No Loan Again, Naturally,2009-03-08,LABF03,20,12,432,5.99,41165,7,582,http://static-media.fxx.com/img/FX_Networks_-_FXX/286/423/no_loan_again_naturally.jpg,http://www.simpsonsworld.com/video/273029699673
+430,Take My Life, Please,2009-02-15,LABF01,20,10,430,6.82,40679,7,591,http://static-media.fxx.com/img/FX_Networks_-_FXX/952/439/Simpsons_20_10.jpg
+432,No Loan Again, Naturally,2009-03-08,LABF03,20,12,432,5.99,41165,7,582,http://static-media.fxx.com/img/FX_Networks_-_FXX/286/423/no_loan_again_naturally.jpg
 465,Elementary School Musical,2010-09-26,MABF21,22,1,465,7.75,31638,6.3,691,http://static-media.fxx.com/img/FX_Networks_-_FXX/433/79/ElementarySchoolMusical.jpg,http://www.simpsonsworld.com/video/263519811935
-439,Waverly Hills, 9-0-2-1-Doh,2009-05-03,LABF10,20,19,439,6.75,45032,7.1,613,http://static-media.fxx.com/img/FX_Networks_-_FXX/151/763/waverly_hills.jpg,http://www.simpsonsworld.com/video/299732035764
+439,Waverly Hills, 9-0-2-1-Doh,2009-05-03,LABF10,20,19,439,6.75,45032,7.1,613,http://static-media.fxx.com/img/FX_Networks_-_FXX/151/763/waverly_hills.jpg
 463,The Bob Next Door,2010-05-16,MABF11,21,22,463,6.26,43446,7.2,545,http://static-media.fxx.com/img/FX_Networks_-_FXX/334/867/The_Bob_Next_Door.jpg,http://www.simpsonsworld.com/video/250531907855
-437,The Good, the Sad and the Drugly,2009-04-19,LABF07,20,17,437,6.5,45179,7.2,605,http://static-media.fxx.com/img/FX_Networks_-_FXX/312/799/the_good_sad_and_drugly.jpg,http://www.simpsonsworld.com/video/273057347598
+437,The Good, the Sad and the Drugly,2009-04-19,LABF07,20,17,437,6.5,45179,7.2,605,http://static-media.fxx.com/img/FX_Networks_-_FXX/312/799/the_good_sad_and_drugly.jpg
 451,Once Upon a Time in Springfield,2010-01-10,LABF20,21,10,451,14.62,40194,6.7,552,http://static-media.fxx.com/img/FX_Networks_-_FXX/189/347/Once_Upon_a_Time_in_Springfield.jpg,http://www.simpsonsworld.com/video/250379331672
 443,Bart Gets a Z,2009-10-04,LABF15,21,2,443,9.32,38196,6.6,585,http://static-media.fxx.com/img/FX_Networks_-_FXX/197/399/Bart_Gets_a_Z.jpg,http://www.simpsonsworld.com/video/310517315862
 436,Eeny Teeny Maya Moe,2009-04-05,LABF06,20,16,436,6.5,40864,7.2,604,http://static-media.fxx.com/img/FX_Networks_-_FXX/321/83/eeny_teenie_maya_moe.jpg,http://www.simpsonsworld.com/video/273066051746
@@ -456,7 +456,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 477,The Blue and the Gray,2011-02-13,NABF06,22,13,477,5.61,42028,6.9,461,http://static-media.fxx.com/img/FX_Networks_-_FXX/318/447/Simpsons_22_13.jpg,http://www.simpsonsworld.com/video/254809667917
 454,The Color Yellow,2010-02-21,MABF06,21,13,454,6.08,41059,6.6,496,http://static-media.fxx.com/img/FX_Networks_-_FXX/595/799/The_Color_Yellow.jpg,http://www.simpsonsworld.com/video/255100483932
 470,The Fool Monty,2010-11-21,NABF01,22,6,470,6.58,38097,6.5,479,http://static-media.fxx.com/img/FX_Networks_-_FXX/456/526/TheFoolMonty.jpg,http://www.simpsonsworld.com/video/263544387571
-449,O Brother, Where Bart Thou?,2009-12-13,MABF01,21,8,449,7.11,38097,7.2,542,http://static-media.fxx.com/img/FX_Networks_-_FXX/124/407/O_Brother_Where_Bart_Thou.jpg,http://www.simpsonsworld.com/video/250311235599
+449,O Brother, Where Bart Thou?,2009-12-13,MABF01,21,8,449,7.11,38097,7.2,542,http://static-media.fxx.com/img/FX_Networks_-_FXX/124/407/O_Brother_Where_Bart_Thou.jpg
 453,Boy Meets Curl,2010-02-14,MABF05,21,12,453,5.87,44945,6.8,525,http://static-media.fxx.com/img/FX_Networks_-_FXX/195/203/Boy_Meets_Curl.jpg,http://www.simpsonsworld.com/video/250385475646
 481,Love Is a Many Strangled Thing,2011-03-27,NABF10,22,17,481,6.14,41202,6.5,470,http://static-media.fxx.com/img/FX_Networks_-_FXX/338/466/Simpsons_22_17.jpg,http://www.simpsonsworld.com/video/254830659539
 446,The Devil Wears Nada,2009-11-15,LABF17,21,5,446,9.04,42893,6.7,560,http://static-media.fxx.com/img/FX_Networks_-_FXX/117/575/Simpsons_21_05.jpg,http://www.simpsonsworld.com/video/250304067959
@@ -482,8 +482,8 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 499,The Daughter Also Rises,2012-02-12,PABF06,23,13,499,4.26,40669,6.5,490,http://static-media.fxx.com/img/FX_Networks_-_FXX/746/423/TheDaughterAlsoRises.jpg,http://www.simpsonsworld.com/video/230562371905
 539,Steal This Episode,2014-01-05,SABF05,25,9,539,12.04,45354,7.6,648,http://static-media.fxx.com/img/FX_Networks_-_FXX/203/255/Steal_this_Episode.jpg,http://www.simpsonsworld.com/video/310523459925
 501,Exit Through the Kwik-E-Mart,2012-03-04,PABF09,23,15,501,5.09,45133,6.9,425,http://static-media.fxx.com/img/FX_Networks_-_FXX/572/355/Exit%20through.jpg,http://www.simpsonsworld.com/video/304468035701
-523,Black Eyed, Please,2013-03-10,RABF09,24,15,523,4.85,42925,7,418,http://static-media.fxx.com/img/FX_Networks_-_FXX/1017/18/Black_Eyed_Please.jpg,http://www.simpsonsworld.com/video/257689667578
-503,Them, Robot,2012-03-18,PABF10,23,17,503,5.25,43615,7.1,493,http://static-media.fxx.com/img/FX_Networks_-_FXX/774/751/ThemRobot.jpg,http://www.simpsonsworld.com/video/230592067926
+523,Black Eyed, Please,2013-03-10,RABF09,24,15,523,4.85,42925,7,418,http://static-media.fxx.com/img/FX_Networks_-_FXX/1017/18/Black_Eyed_Please.jpg
+503,Them, Robot,2012-03-18,PABF10,23,17,503,5.25,43615,7.1,493,http://static-media.fxx.com/img/FX_Networks_-_FXX/774/751/ThemRobot.jpg
 532,Treehouse of Horror XXIV,2013-10-06,RABF16,25,2,532,6.42,64758,7.1,654,http://static-media.fxx.com/img/FX_Networks_-_FXX/975/803/Simpsons_25_01.jpg,http://www.simpsonsworld.com/video/310259779794
 526,Pulpit Friction,2013-04-28,RABF11,24,18,526,4.54,41184,6.5,405,http://static-media.fxx.com/img/FX_Networks_-_FXX/30/131/Pulpit_Friction.jpg,http://www.simpsonsworld.com/video/257728579751
 519,The Changing of the Guardian,2013-01-27,RABF04,24,11,519,5.23,42215,6.6,405,http://static-media.fxx.com/img/FX_Networks_-_FXX/1011/663/The_Changing_of_the_Guardian.jpg,http://www.simpsonsworld.com/video/257684035668
@@ -525,7 +525,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 31,Brush with Greatness,1991-04-11,7F18,2,18,31,20.6,58561,8,1257,http://static-media.fxx.com/img/FX_Networks_-_FXX/381/719/brush_w_greatness.jpg,http://www.simpsonsworld.com/video/272055875843
 45,Flaming Moes,1991-11-21,8F08,3,10,45,23.9,58968,8.8,1618,http://static-media.fxx.com/img/FX_Networks_-_FXX/688/495/FlamingMoes.jpg,http://www.simpsonsworld.com/video/305663555961
 5,Bart the General,1990-02-04,7G05,1,5,5,27.1,63129,8.1,1732,http://static-media.fxx.com/img/FX_Networks_-_FXX/274/735/Simpsons_01_05.jpg,http://www.simpsonsworld.com/video/300934723994
-59,Brother, Can You Spare Two Dimes?,1992-08-27,8F23,3,24,59,17.2,50936,8.2,1227,http://static-media.fxx.com/img/FX_Networks_-_FXX/954/11/BrotherCanYouSpare.jpg,http://www.simpsonsworld.com/video/279098435798
+59,Brother, Can You Spare Two Dimes?,1992-08-27,8F23,3,24,59,17.2,50936,8.2,1227,http://static-media.fxx.com/img/FX_Networks_-_FXX/954/11/BrotherCanYouSpare.jpg
 62,Homer the Heretic,1992-10-08,9F01,4,3,62,19.3,64605,9,1747,http://static-media.fxx.com/img/FX_Networks_-_FXX/991/623/Simpsons_04_03.jpg,http://www.simpsonsworld.com/video/279137859827
 83,Cape Feare,1993-10-07,9F22,5,2,83,20,65585,9,2010,http://static-media.fxx.com/img/FX_Networks_-_FXX/699/231/Simpsons_05_02__845470.jpg,http://www.simpsonsworld.com/video/305674819788
 88,Barts Inner Child,1993-11-11,1F05,5,7,88,18.7,74139,7.7,1085,http://static-media.fxx.com/img/FX_Networks_-_FXX/310/695/Simpsons_05_07.jpg,http://www.simpsonsworld.com/video/275202627817
@@ -559,7 +559,7 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 348,Mobile Homer,2005-03-20,GABF07,16,13,348,8.49,45489,7,530,http://static-media.fxx.com/img/FX_Networks_-_FXX/279/699/Mobile_Homer.jpg,http://www.simpsonsworld.com/video/264432707841
 351,Dont Fear the Roofer,2005-05-01,GABF10,16,16,351,11.92,41620,7.4,661,http://static-media.fxx.com/img/FX_Networks_-_FXX/945/19/Dont_Fear_the_Roofer.jpg,http://www.simpsonsworld.com/video/260835395771
 369,The Seemingly Never-Ending Story,2006-03-12,HABF06,17,13,369,9.72,48854,7.4,642,http://static-media.fxx.com/img/FX_Networks_-_FXX/79/87/the_seemingly_never_ending.jpg,http://www.simpsonsworld.com/video/277107267767
-371,Homer Simpson, This Is Your Wife,2006-03-26,HABF08,17,15,371,10.09,41323,6.5,854,http://static-media.fxx.com/img/FX_Networks_-_FXX/90/322/homer_simpsons_this_is_your_wife.jpg,http://www.simpsonsworld.com/video/277119043544
+371,Homer Simpson, This Is Your Wife,2006-03-26,HABF08,17,15,371,10.09,41323,6.5,854,http://static-media.fxx.com/img/FX_Networks_-_FXX/90/322/homer_simpsons_this_is_your_wife.jpg
 374,The Wettest Stories Ever Told,2006-04-23,HABF11,17,18,374,7.04,42280,6.7,549,http://static-media.fxx.com/img/FX_Networks_-_FXX/171/23/the_wettest_stories_ever_told.jpg,http://www.simpsonsworld.com/video/310489667660
 403,Midnight Towboy,2007-10-07,JABF21,19,3,403,7.7,35926,7.2,637,http://static-media.fxx.com/img/FX_Networks_-_FXX/869/63/midnight_towboy.jpg,http://www.simpsonsworld.com/video/292968003585
 426,Homer and Lisa Exchange Cross Words,2008-11-16,KABF19,20,6,426,8.52,38879,7.1,599,http://static-media.fxx.com/img/FX_Networks_-_FXX/220/846/homer_and_lisa_exchange.jpg,http://www.simpsonsworld.com/video/310541891517
@@ -582,9 +582,9 @@ id,title,original_air_date,production_code,season,number_in_season,number_in_ser
 303,Im Spelling As Fast As I Can,2003-02-16,EABF07,14,12,303,22.1,42885,7.3,628,http://static-media.fxx.com/img/FX_Networks_-_FXX/485/295/Simpsons_Im_Spelling_as_Fast_as_I_Can.jpg,http://www.simpsonsworld.com/video/221698627830
 304,A Star Is Born-Again,2003-03-02,EABF08,14,13,304,14.4,42185,7.1,599,http://static-media.fxx.com/img/FX_Networks_-_FXX/481/891/Simpsons_A_Star_is_BornAgain.jpg,http://www.simpsonsworld.com/video/221695043703
 317,The Regina Monologues,2003-11-23,EABF22,15,4,317,12.2,43134,7.1,705,http://static-media.fxx.com/img/FX_Networks_-_FXX/753/983/The_Regina_Monologues.jpg,http://www.simpsonsworld.com/video/227349059824
-356,The Father, the Son, and the Holy Guest Star,2005-05-15,GABF09,16,21,356,9.69,48303,7.2,635,http://static-media.fxx.com/img/FX_Networks_-_FXX/301/171/The_Father_the_Son_and_the_Holy_Guest_Star.jpg,http://www.simpsonsworld.com/video/264455235845
+356,The Father, the Son, and the Holy Guest Star,2005-05-15,GABF09,16,21,356,9.69,48303,7.2,635
 361,Marges Son Poisoning,2005-11-13,GABF20,17,5,361,11.4,39428,6.9,578,http://static-media.fxx.com/img/FX_Networks_-_FXX/566/747/marges_son_poison.jpg,http://www.simpsonsworld.com/video/279766083701
-373,Kiss Kiss, Bang Bangalore,2006-04-09,HABF10,17,17,373,8.2,47829,7.2,677,http://static-media.fxx.com/img/FX_Networks_-_FXX/276/903/kiss_kiss_bang_bangalore.jpg,http://www.simpsonsworld.com/video/283757123904
+373,Kiss Kiss, Bang Bangalore,2006-04-09,HABF10,17,17,373,8.2,47829,7.2,677,http://static-media.fxx.com/img/FX_Networks_-_FXX/276/903/kiss_kiss_bang_bangalore.jpg
 380,Jazzy and the Pussycats,2006-09-17,HABF18,18,2,380,8.94,33495,6.7,671,http://static-media.fxx.com/img/FX_Networks_-_FXX/771/599/jazzy_and_the_pussycats.jpg,http://www.simpsonsworld.com/video/283202115995
 401,He Loves to Fly and He Dohs,2007-09-23,JABF20,19,1,401,9.7,36253,6.7,706,http://static-media.fxx.com/img/FX_Networks_-_FXX/845/639/he_loves_to_fly_and_he_dohs.jpg,http://www.simpsonsworld.com/video/292943427892
 404,I Dont Wanna Know Why the Caged Bird Sings,2007-10-14,JABF19,19,4,404,8.8,35850,6.9,620,http://static-media.fxx.com/img/FX_Networks_-_FXX/138/815/i_dont_wana_know_why_cage.jpg,http://www.simpsonsworld.com/video/310455875747
