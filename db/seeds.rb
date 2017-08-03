@@ -7,37 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'CSV'
 
-script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines.csv")
-script_line_text_groomed = script_line_csv_text.gsub /"/, ''
-script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
+# script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines.csv")
+# script_line_text_groomed = script_line_csv_text.gsub /"/, ''
+# script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
 
 # The below handled grooming
-CSV.open("db/simpsons_data/simpsons_script_lines_groomed.csv", "w") do |csv_out|
-  script_line_csv.each do |row|
-    csv_out << row.take(13)
-  end
-end
-
-# script_string = File.read("db/simpsons_data/eleven_script_lines.csv")
-# replaced = true
-# until replaced == false
-#   replaced = false
-#   if script_string.include("\"")
+# CSV.open("db/simpsons_data/simpsons_script_lines_groomed.csv", "w") do |csv_out|
+#   CSV.foreach("db/simpsons_data/simpsons_script_lines_sans_commas_quotes.csv") do |row|
+#     csv_out << row.take(13)
 #   end
 # end
+
 # new_s = script_string.gsub /"/, ''
 #
 # script_csv_arrays = CSV.read("db/simpsons_data/simpsons_script_lines.csv")
-#
-# script_headers = script_csv_arrays[0]
-#
-# script_row_objects = []
 #
 # script_csv_arrays.each do |script_line|
 #   next if script_line[0] = "id"
 #   script_row_objects << CSV::Row.new(script_headers, script_line, header_row = false)
 # end
-
 
 
 
@@ -84,6 +72,11 @@ location_csv.each do |location|
 end
 
 ScriptLine.destroy_all
+
+# script_string = File.read("db/simpsons_data/simpsons_script_lines.csv")
+# less_quotes = script_string.gsub /"/, ''
+# less_commas_quotes = less_quotes.gsub ', ', ' '
+# File.write('db/simpsons_data/simpsons_script_lines_sans_commas_quotes.csv', less_commas_quotes)
 
 script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines_groomed.csv")
 script_line_csv = CSV.parse(script_line_csv_text.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
