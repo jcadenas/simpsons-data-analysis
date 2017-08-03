@@ -7,14 +7,38 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'CSV'
 
+# script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines.csv")
+# script_line_text_groomed = script_line_csv_text.gsub /"/, ''
+# script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
+
 # The below handled grooming
-# CSV.open("db/simpsons_data/simpsons_locations_groomed.csv", "w") do |csv_out|
-#
-#   CSV.foreach("db/simpsons_data/simpsons_locations.csv") do |row|
-#     csv_out << row.take(3)
+# CSV.open("db/simpsons_data/simpsons_script_lines_groomed.csv", "w") do |csv_out|
+#   script_line_csv.each do |row|
+#     csv_out << row.take(13)
 #   end
-#
 # end
+
+# script_string = File.read("db/simpsons_data/eleven_script_lines.csv")
+# replaced = true
+# until replaced == false
+#   replaced = false
+#   if script_string.include("\"")
+#   end
+# end
+# new_s = script_string.gsub /"/, ''
+#
+# script_csv_arrays = CSV.read("db/simpsons_data/simpsons_script_lines.csv")
+#
+# script_headers = script_csv_arrays[0]
+#
+# script_row_objects = []
+#
+# script_csv_arrays.each do |script_line|
+#   next if script_line[0] = "id"
+#   script_row_objects << CSV::Row.new(script_headers, script_line, header_row = false)
+# end
+
+
 
 
 Character.destroy_all
@@ -57,4 +81,21 @@ location_csv.each do |location|
   location_hash['loc_id'] = location_hash['id'].to_i
   location_hash.delete('id')
   Location.create!(location_hash)
+end
+
+ScriptLine.destroy_all
+
+script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines_groomed.csv")
+script_line_csv = CSV.parse(script_line_csv_text.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
+script_line_csv.each do |script_line|
+  script_line_hash = script_line.to_hash
+  script_line_hash['script_line_id'] = script_line_hash['id'].to_i
+  script_line_hash.delete('id')
+  script_line_hash['episode_id'] = script_line_hash['episode_id'].to_i
+  script_line_hash['number'] = script_line_hash['number'].to_i
+  script_line_hash['timestamp_in_ms'] = script_line_hash['timestamp_in_ms'].to_i
+  script_line_hash['character_id'] = script_line_hash['character_id'].to_i
+  script_line_hash['location_id'] = script_line_hash['location_id'].to_i
+  script_line_hash['word_count'] = script_line_hash['word_count'].to_i
+  ScriptLine.create!(script_line_hash)
 end
