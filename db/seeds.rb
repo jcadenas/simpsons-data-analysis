@@ -8,10 +8,10 @@
 require 'CSV'
 
 # The below handled grooming
-# CSV.open("db/simpsons_data/simpsons_episodes_groomed.csv", "w") do |csv_out|
+# CSV.open("db/simpsons_data/simpsons_locations_groomed.csv", "w") do |csv_out|
 #
-#   CSV.foreach("db/simpsons_data/simpsons_episodes.csv") do |row|
-#     csv_out << row.take(13)
+#   CSV.foreach("db/simpsons_data/simpsons_locations.csv") do |row|
+#     csv_out << row.take(3)
 #   end
 #
 # end
@@ -46,4 +46,15 @@ episode_csv.each do |episode|
   episode_hash['imdb_rating'] = episode_hash['imdb_rating'].to_f
   episode_hash['imdb_votes'] = episode_hash['imdb_votes'].to_f
   Episode.create!(episode_hash)
+end
+
+Location.destroy_all
+
+location_csv_text = File.read("db/simpsons_data/simpsons_locations_groomed.csv")
+location_csv = CSV.parse(location_csv_text.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
+location_csv.each do |location|
+  location_hash = location.to_hash
+  location_hash['loc_id'] = location_hash['id'].to_i
+  location_hash.delete('id')
+  Location.create!(location_hash)
 end

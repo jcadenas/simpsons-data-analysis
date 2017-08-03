@@ -139,7 +139,7 @@ id,name,normalized_name
 138,Various Street Locations,various street locations
 139,Old Folks Home,old folk home
 140,Simpson Kitchen,simpson kitchen
-141,GIRDLES N SUCH, FANCY LINGERIE,girdles n such fancy lingerie
+141,GIRDLES N SUCH, FANCY LINGERIE
 142,THE JOCK SHOPPE,the jock shoppe
 143,The Singing Sirloin,the singing sirloin
 144,Barneys Bowlarama,barney bowlarama
@@ -176,7 +176,7 @@ id,name,normalized_name
 175,Girls Bathroom,girls bathroom
 176,Springfield Airport,springfield airport
 177,CHARTER FLIGHT,charter flight
-178,TIRANA, ALBANIA AIRPORT,tirana albania airport
+178,TIRANA, ALBANIA AIRPORT
 179,FRENCH COUNTRYSIDE,french countryside
 180,Chateau Maison,chateau maison
 181,FRENCH MOUNTAINSIDE,french mountainside
@@ -210,7 +210,7 @@ id,name,normalized_name
 209,Springfield County,springfield county
 210,Simpson Hallway,simpson hallway
 211,NEIGHBORHOOD,neighborhood
-212,CONTINENTAL CONGRESS, PHILADELPHIA,continental congress philadelphia
+212,CONTINENTAL CONGRESS, PHILADELPHIA
 213,Simpson Basement,simpson basement
 214,SNOWY STREET,snowy street
 215,WINFIELDS HOUSE,winfield house
@@ -444,7 +444,7 @@ id,name,normalized_name
 442,Springfield Elementary School Bus Stop,springfield elementary school bus stop
 443,THE AH FUDGE! CHOCOLATE FACTORY IN SHELBYVILLE,the ah fudge chocolate factory in shelbyville
 444,CHOCOLATE FACTORY ORIENTATION ROOM,chocolate factory orientation room
-445,Ah, Fudge! Chocolate Factory,ah fudge chocolate factory
+445,Ah, Fudge! Chocolate Factory
 446,Legitimate Businessmans Social Club,legitimate businessman social club
 447,Club,club
 448,PIZZA DELIVERY TRUCK,pizza delivery truck
@@ -1501,7 +1501,7 @@ id,name,normalized_name
 1497,GLOBEX,globex
 1498,Cypress Creek Elementary School,cypress creek elementary school
 1499,Hallway Outside the Classroom,hallway outside the classroom
-1500,Miscellaneous, Etc.,miscellaneous etc
+1500,Miscellaneous, Etc.
 1501,SPRINGFIELD GYM,springfield gym
 1502,BACK ROADS,back roads
 1503,Car Wash,car wash
@@ -1629,7 +1629,7 @@ id,name,normalized_name
 1625,Donnys Discount Gas,donny discount gas
 1626,Springfield Zoo,springfield zoo
 1627,ELSEWHERE IN THE ZOO,elsewhere in the zoo
-1628,Baboon County, U.S.A.,baboon county usa
+1628,Baboon County, U.S.A.
 1629,35 INDUSTRY WAY,35 industry way
 1630,Barts Factory,bart factory
 1631,CAJUN RESTAURANT,cajun restaurant
@@ -1680,7 +1680,7 @@ id,name,normalized_name
 1676,SPRINGFIELD PRIVATE PRESCHOOL,springfield private preschool
 1677,King Toots Window,king toot window
 1678,ARMY SURPLUS STORE,army surplus store
-1679,PARIS, FRANCE,paris france
+1679,PARIS, FRANCE
 1680,FRENCH MILITARY BASE,french military base
 1681,FRENCH MISSILE ROOM,french missile room
 1682,PARIS STREET,paris street
@@ -1780,7 +1780,7 @@ id,name,normalized_name
 1777,BURNS BEARCAT,burns bearcat
 1778,Airfield,airfield
 1779,AIRCRAFT HANGAR,aircraft hangar
-1780,10,000 FEET OVER THE GULF OF MEXICO,10000 feet over the gulf of mexico
+1780,10,000 FEET OVER THE GULF OF MEXICO
 1781,Burnss Plane,burns plane
 1782,GOVERNMENT JET,government jet
 1783,Havana International Airport,havana international airport
@@ -1890,7 +1890,7 @@ id,name,normalized_name
 1887,Car Dealership,car dealership
 1888,WILD ANIMAL PARK,wild animal park
 1889,PORTA-JOHN,porta-john
-1890,PORTA-JOHN, CONTINUOUS,porta-john continuous
+1890,PORTA-JOHN, CONTINUOUS
 1891,Canyonero,canyonero
 1892,P.J. OHARRIGANS,pj oharrigan
 1893,TWO-LANE HIGHWAY,two-lane highway
@@ -2591,7 +2591,7 @@ id,name,normalized_name
 2589,H.k. Duffs Office,hk duff office
 2590,Duff Executive Office,duff executive office
 2591,Space Station,space station
-2592,$100,000 Pyramid Set,100000 pyramid set
+2592,$100,000 Pyramid Set
 2593,SPRINGFIELD BOWERY,springfield bowery
 2594,VIEWING AREA,viewing area
 2595,SPRINGFIELD HOSPITAL WAITING ROOM,springfield hospital waiting room
@@ -2858,7 +2858,7 @@ id,name,normalized_name
 2857,U.S.,us
 2858,Rented Van,rented van
 2859,STREETS OF WINNIPEG,streets of winnipeg
-2860,BORDER CROSSING, CANADIAN SIDE,border crossing canadian side
+2860,BORDER CROSSING, CANADIAN SIDE
 2861,CANADIAN JAIL,canadian jail
 2862,AIRPORT HANGAR,airport hangar
 2863,Canadian Warehouse,canadian warehouse
@@ -3098,7 +3098,7 @@ id,name,normalized_name
 3097,WAITING AREA,waiting area
 3098,Homers Throne Room,homer throne room
 3099,CEREMONIAL CHAMBER,ceremonial chamber
-3100,PLYMOUTH, ENGLAND,plymouth england
+3100,PLYMOUTH, ENGLAND
 3101,DOCKS,docks
 3102,DECK OF THE SHIP,deck of the ship
 3103,Mayflower,mayflower
@@ -3456,9 +3456,9 @@ id,name,normalized_name
 3455,PENITENTIARY,penitentiary
 3456,Tunisian Desert,tunisian desert
 3457,HAWAIIAN BAR,hawaiian bar
-3458,SYDNEY, AUSTRALIA,sydney australia
+3458,SYDNEY, AUSTRALIA
 3459,Australian Bar,australian bar
-3460,STOCKHOLM, SWEDEN,stockholm sweden
+3460,STOCKHOLM, SWEDEN
 3461,Inga-Bar Beermans,inga-bar beerman
 3462,Andes Mountains,andes mountains
 3463,Machu Picchu,machu picchu
@@ -3771,7 +3771,7 @@ id,name,normalized_name
 3770,EXPRESSIONS- THE NEXT MORNING,expressions- the next morning
 3771,CAMP STAGE,camp stage
 3772,EXPRESSIONS- WOODED CLEARING,expressions- wooded clearing
-3773,THE HAGUE, NETHERLANDS,the hague netherlands
+3773,THE HAGUE, NETHERLANDS
 3774,INTERNATIONAL COURT OF JUSTICE,international court of justice
 3775,EXPRESSIONS- GREAT LAWN,expressions- great lawn
 3776,EXPRESSIONS,expressions
@@ -3781,7 +3781,7 @@ id,name,normalized_name
 3780,Nearly-empty Coffee House,nearly-empty coffee house
 3781,Ethan and Kurts Apartment,ethan and kurt apartment
 3782,FANCY NIGHTCLUB,fancy nightclub
-3783,LARGE, PILLARED, IMPOSING-LOOKING BANK,large pillared imposing-looking bank
+3783,LARGE, PILLARED
 3784,Asia de Cuba de Springfield,asia de cuba de springfield
 3785,NELSONS BIKE SHOP,nelson bike shop
 3786,ROLLER RINK,roller rink
@@ -4014,7 +4014,7 @@ id,name,normalized_name
 4013,GUT CHECK SET,gut check set
 4014,ALL-AMERICAN HOUSE,all-american house
 4015,Spiffanys,spiffany
-4016,MAIN STREET, USA,main street usa
+4016,MAIN STREET, USA
 4017,Colonial Meeting House,colonial meeting house
 4018,gut Check With Homer Simpson Soundstage,gut check with homer simpson soundstage
 4019,Lotion Store,lotion store
@@ -4205,7 +4205,7 @@ id,name,normalized_name
 4204,Chef Naziwas Bedroom,chef naziwa bedroom
 4205,SEX SHOP,sex shop
 4206,Dog Stomach,dog stomach
-4207,RUB A DUB DUB, THREE MEN SELLING TUBS,rub a dub dub three men selling tubs
+4207,RUB A DUB DUB, THREE MEN SELLING TUBS
 4208,Hot Tub Store,hot tub store
 4209,SPRINGFIELD SWAMP,springfield swamp
 4210,OOGLE MOBILE,oogle mobile
@@ -4386,7 +4386,7 @@ id,name,normalized_name
 4385,FUTURISTIC SIMPSON HOUSE,futuristic simpson house
 4386,FUTURISTIC (1970S-STYLE) SPRINGFIELD STREETS,futuristic springfield streets
 4387,THE RICH TEXANS MANSION,the rich texan mansion
-4388,LARGE, BOXY BUILDING,large boxy building
+4388,LARGE, BOXY BUILDING
 4389,STRANGE BUILDING,strange building
 4390,STATE HOUSE,state house
 4391,STATE CAPITOL BUILDING,state capitol building
