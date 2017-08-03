@@ -7,16 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'CSV'
 
-# script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines.csv")
-# script_line_text_groomed = script_line_csv_text.gsub /"/, ''
-# script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
+script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines.csv")
+script_line_text_groomed = script_line_csv_text.gsub /"/, ''
+script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
 
 # The below handled grooming
-# CSV.open("db/simpsons_data/simpsons_script_lines_groomed.csv", "w") do |csv_out|
-#   script_line_csv.each do |row|
-#     csv_out << row.take(13)
-#   end
-# end
+CSV.open("db/simpsons_data/simpsons_script_lines_groomed.csv", "w") do |csv_out|
+  script_line_csv.each do |row|
+    csv_out << row.take(13)
+  end
+end
 
 # script_string = File.read("db/simpsons_data/eleven_script_lines.csv")
 # replaced = true
