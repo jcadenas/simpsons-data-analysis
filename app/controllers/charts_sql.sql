@@ -1,9 +1,13 @@
+
+-- Top characters by spoken line count
 SELECT
-character_id, COUNT(id) as line_count
+  script_lines.character_id, characters.normalized_name, COUNT(script_lines.id) as line_count
 FROM
-script_lines
+  script_lines
+JOIN
+  characters ON script_lines.character_id = characters.character_id
 GROUP BY
-character_id
+  script_lines.character_id, characters.normalized_name
 ORDER BY
-COUNT(id) desc
+  COUNT(script_lines.id) desc
 LIMIT 30;
