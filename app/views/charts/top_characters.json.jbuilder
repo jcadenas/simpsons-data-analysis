@@ -1,7 +1,5 @@
-json.set! :top_characters do
-  json.array! @top_characters do |character|
-    json.character_id character['character_id']
-    json.normalized_name character['normalized_name']
-    json.line_count character['line_count']
-  end
+json.array! @top_characters do |character|
+  json.character_id character['character_id']
+  json.normalized_name character['normalized_name']
+  json.line_count character['line_count']
 end
