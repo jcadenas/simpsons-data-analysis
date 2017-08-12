@@ -16,16 +16,24 @@ require 'CSV'
 # -  Write a new groomed csv file with the string File.write('foo.txt', 'bar')
 
 # CLEANING TEMPLATE --------------------------------------------
-require 'CSV'
-csv_text = File.read("db/simpsons_data/simpsons_locations.csv")
-q
-no_quotes = csv_text.gsub /"/, ''
-q
-no_apostrophes = no_quotes.gsub /'/, ''
-q
-no_commas = no_apostrophes.gsub ", ", ' '
-q
-File.write('db/simpsons_data/simpsons_locations_groomed.csv', no_commas)
+# require 'CSV'
+# csv_text = File.read("db/simpsons_data/simpsons_characters.csv")
+# q
+# no_quotes = csv_text.gsub /"/, ''
+# q
+# no_apostrophes = no_quotes.gsub /'/, ''
+# q
+# no_commas = no_apostrophes.gsub ", ", ' '
+# q
+# File.write('db/simpsons_data/simpsons_characters_groomed_II.csv', no_commas)
+
+# Handy for lingering commas resulting in setting '' equal to something when seeding
+# CSV.open("db/simpsons_data/simpsons_locations_groomed_II.csv", "w") do |csv_out|
+#   CSV.foreach("db/simpsons_data/simpsons_locations_groomed.csv") do |row|
+#     csv_out << row.take(3)  #enter required number of columns here
+#   end
+# end
+
 # --------------------------------------------------------------
 
 
@@ -35,12 +43,6 @@ File.write('db/simpsons_data/simpsons_locations_groomed.csv', no_commas)
 # script_line_text_groomed = script_line_csv_text.gsub /"/, ''
 # script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
 
-# The below handled grooming
-# CSV.open("db/simpsons_data/simpsons_script_lines_groomed.csv", "w") do |csv_out|
-#   CSV.foreach("db/simpsons_data/simpsons_script_lines_sans_commas_quotes.csv") do |row|
-#     csv_out << row.take(13)
-#   end
-# end
 
 # new_s = script_string.gsub /"/, ''
 #
@@ -86,7 +88,7 @@ end
 
 Location.destroy_all
 
-location_csv_text = File.read("db/simpsons_data/simpsons_locations_groomed.csv")
+location_csv_text = File.read("db/simpsons_data/simpsons_locations_groomed_II.csv")
 location_csv = CSV.parse(location_csv_text.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
 location_csv.each do |location|
   location_hash = location.to_hash
