@@ -15,6 +15,18 @@ require 'CSV'
 # -  Remove all ", "s from resulting string with new_s = script_string.gsub ", ", ' '
 # -  Write a new groomed csv file with the string File.write('foo.txt', 'bar')
 
+# CLEANING TEMPLATE --------------------------------------------
+require 'CSV'
+csv_text = File.read("db/simpsons_data/simpsons_locations.csv")
+q
+no_quotes = csv_text.gsub /"/, ''
+q
+no_apostrophes = no_quotes.gsub /'/, ''
+q
+no_commas = no_apostrophes.gsub ", ", ' '
+q
+File.write('db/simpsons_data/simpsons_locations_groomed.csv', no_commas)
+# --------------------------------------------------------------
 
 
 
@@ -39,7 +51,7 @@ require 'CSV'
 #   script_row_objects << CSV::Row.new(script_headers, script_line, header_row = false)
 # end
 
-episode_csv_text = File.read("db/simpsons_data/simpsons_episodes.csv")
+
 
 Character.destroy_all
 
