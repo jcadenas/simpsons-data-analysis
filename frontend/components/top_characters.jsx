@@ -1,5 +1,5 @@
 import React from 'react';
-import { scaleLinear } from 'd3-scale';
+import { scaleLinear, scaleBand} from 'd3-scale';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 
@@ -19,11 +19,38 @@ class TopCharacters extends React.Component {
    }
    createBarChart() {
       const node = this.node;
+
+      // Size of Data Visualization
+      const margin = { top: 50, right: 50, bottom: 50, left: 50 };
+      const outerWidth = 900;
+      const outerHeight = 300;
+      const innerWidth = outerWidth - margin.left - margin.right;
+      const innerHeight = outerHeight - margin.top - margin.bottom;
+      const innerPadding = 0.2;
+      const outerPadding = 0.4;
+
+      // Update node's size
+      select(node)
+        .attr('width', outerWidth)
+        .attr('height', outerHeight);
+
+      const yColumn = 'line_count';
+      const xColumn = 'normalized_name';
+
       const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = parseInt(this.props.chart_data[0].line_count);
+      const dataMax = parseInt(this.props.chart_data[0][yColumn]);
+      debugger;
+      const xScale = scaleBand()
+        .domain(this.props.chart_data.map( (d) => d[xColumn] ))
+        .range([0, innerWidth])
+        .paddingInner(innerPadding)
+        .paddingOuter(outerPadding)
+
       const yScale = scaleLinear()
          .domain([0, dataMax])
-         .range([0, 300]);
+         .range([0, innerHeight]);
+
+  // Enter & Bind
    select(node)
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
@@ -32,6 +59,7 @@ class TopCharacters extends React.Component {
       .enter()
       .append('rect');
 
+  // Exit
    select(node)
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
@@ -40,21 +68,20 @@ class TopCharacters extends React.Component {
       .exit()
       .remove();
 
+  // Update
    select(node)
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
         return parseInt(d.line_count);
       })
-      .style('fill', '#fe9922')
-      .attr('x', (d,i) => i * 25)
-      .attr('y', d => 300 - yScale(getLineCountInt(d)))
+      .style('fill', '#3F7FBF')
+      .attr('x', (d) => xScale(d[xColumn]))
+      .attr('y', d => innerHeight - yScale(getLineCountInt(d)))
       .attr('height', d => yScale(getLineCountInt(d)))
-      .attr('width', 25);
+      .attr('width', xScale.bandwidth());
    }
 render() {
-      return <svg ref={node => this.node = node}
-      width={500} height={500}>
-      </svg>
+      return <svg ref={node => this.node = node}></svg>
    }
 }
 
