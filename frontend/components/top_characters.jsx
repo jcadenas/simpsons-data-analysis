@@ -1,5 +1,7 @@
 import React from 'react';
-import { scaleLinear, scaleBand} from 'd3-scale';
+import { scaleLinear, scaleBand } from 'd3-scale';
+import { format } from 'd3-format';
+import { axisTop, axisLeft } from 'd3-axis';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 
@@ -21,9 +23,9 @@ class TopCharacters extends React.Component {
       const node = this.node;
 
       // Size of Data Visualization
-      const margin = { top: 50, right: 50, bottom: 50, left: 50 };
-      const outerWidth = 900;
-      const outerHeight = 300;
+      const margin = { top: 50, right: 50, bottom: 50, left: 100 };
+      const outerWidth = 500;
+      const outerHeight = 700;
       const innerWidth = outerWidth - margin.left - margin.right;
       const innerHeight = outerHeight - margin.top - margin.bottom;
       const innerPadding = 0.2;
@@ -34,21 +36,38 @@ class TopCharacters extends React.Component {
         .attr('width', outerWidth)
         .attr('height', outerHeight);
 
-      const yColumn = 'line_count';
-      const xColumn = 'normalized_name';
+      const g = select(node).append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      const xAxisG = g.append("g")
+        .attr("transform", "translate(0," + innerHeight + ")");
+      const yAxisG = g.append("g")
+
+      const yColumn = 'normalized_name';
+      const xColumn = 'line_count';
 
       const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = parseInt(this.props.chart_data[0][yColumn]);
-      debugger;
-      const xScale = scaleBand()
-        .domain(this.props.chart_data.map( (d) => d[xColumn] ))
-        .range([0, innerWidth])
+      const dataMax = parseInt(this.props.chart_data[0][xColumn]);
+      const yScale = scaleBand()
+        .domain(this.props.chart_data.map( (d) => d[yColumn] ))
+        .range([0, innerHeight])
         .paddingInner(innerPadding)
         .paddingOuter(outerPadding)
 
-      const yScale = scaleLinear()
+      const xScale = scaleLinear()
          .domain([0, dataMax])
-         .range([0, innerHeight]);
+         .range([0, innerWidth]);
+
+      const xAxis = axisTop(xScale);
+        //  .ticks(5)
+        //  .tickFormat(format("s"))
+        //  .outerTickSize(0);
+      const yAxis = axisLeft(yScale);
+        //  .outerTickSize(0);
+
+      xAxisG.call(xAxis);
+      yAxisG.call(yAxis);
+
+
 
   // Enter & Bind
    select(node)
@@ -72,13 +91,14 @@ class TopCharacters extends React.Component {
    select(node)
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
-        return parseInt(d.line_count);
+        return getLineCountInt(d);
       })
       .style('fill', '#3F7FBF')
-      .attr('x', (d) => xScale(d[xColumn]))
-      .attr('y', d => innerHeight - yScale(getLineCountInt(d)))
-      .attr('height', d => yScale(getLineCountInt(d)))
-      .attr('width', xScale.bandwidth());
+      .attr('x', 5)
+      .attr('y', d => yScale(d[yColumn]))
+      .attr('width', d => xScale(getLineCountInt(d)))
+      .attr('height', yScale.bandwidth());
+
    }
 render() {
       return <svg ref={node => this.node = node}></svg>
