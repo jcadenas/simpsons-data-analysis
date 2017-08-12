@@ -7,41 +7,48 @@ import { select } from 'd3-selection';
 class TopCharacters extends React.Component {
 
   constructor(props){
-      super(props)
-      this.createBarChart = this.createBarChart.bind(this)
+    super(props)
+    this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-     debugger;
-      this.createBarChart()
+    this.props.fetchTopCharacters();
    }
-   componentDidUpdate() {
-      this.createBarChart()
+
+   componentDidUpdate(nextProps) {
+    this.createBarChart();
    }
    createBarChart() {
       const node = this.node;
-      const dataMax = max(this.props.data);
+      const getLineCountInt = (obj) => parseInt(obj.line_count);
+      const dataMax = parseInt(this.props.chart_data[0].line_count);
       const yScale = scaleLinear()
          .domain([0, dataMax])
-         .range([0, this.props.size[1]]);
+         .range([0, 300]);
    select(node)
       .selectAll('rect')
-      .data(this.props.data)
+      .data(this.props.chart_data, (d) => {
+        return getLineCountInt(d);
+      })
       .enter()
       .append('rect');
 
    select(node)
       .selectAll('rect')
-      .data(this.props.data)
+      .data(this.props.chart_data, (d) => {
+        return getLineCountInt(d);
+      })
       .exit()
       .remove();
 
    select(node)
       .selectAll('rect')
-      .data(this.props.data)
+      .data(this.props.chart_data, (d) => {
+        return parseInt(d.line_count);
+      })
       .style('fill', '#fe9922')
       .attr('x', (d,i) => i * 25)
-      .attr('y', d => this.props.size[1] - yScale(d))
-      .attr('height', d => yScale(d))
+      .attr('y', d => 300 - yScale(getLineCountInt(d)))
+      .attr('height', d => yScale(getLineCountInt(d)))
       .attr('width', 25);
    }
 render() {
@@ -51,21 +58,25 @@ render() {
    }
 }
 
-export default TopCharacters;
+//  Connect Store & Export Component
 
-// import { connect } from 'react-redux';
-//
-// const mapStateToProps = state => {
-//   return ({
-//     chart: state.channels.entities[TopCharacters],
-//   });
-// }
-//
-// // const mapDispatchToProps = (dispatch) => {
-// //
-// // }
-//
-// export default connect(
-//   mapStateToProps,
-//   null
-// )(TopCharacters);
+import { connect } from 'react-redux';
+import { fetchTopCharacters } from '../actions/chart_actions';
+
+const mapStateToProps = state => {
+  // debugger;
+  return ({
+    chart_data: state.charts.entities["top_characters"],
+  });
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    fetchTopCharacters: () => dispatch(fetchTopCharacters())
+  });
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TopCharacters);

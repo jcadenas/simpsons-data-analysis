@@ -9,6 +9,7 @@ const defaultState = {
 
 const ChartReducer = (state = defaultState, action) => {
   let newState;
+  // debugger;
   switch(action.type){
 
     case RECEIVE_TOP_CHARACTERS: {

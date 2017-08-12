@@ -26,6 +26,7 @@ export const receiveTopCharactersErrors = (errors) => {
 // ASYNC ACTION CREATORS -----------------------------
 
 export const fetchTopCharacters = () => (dispatch) => {
+  // debugger;
   return APIUtil.fetchTopCharacters()
     .then(
       (resp) => dispatch(receiveTopCharacters(resp)),
