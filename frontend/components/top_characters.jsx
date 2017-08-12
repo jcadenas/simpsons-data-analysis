@@ -25,7 +25,7 @@ class TopCharacters extends React.Component {
       // Size of Data Visualization
       const margin = { top: 50, right: 50, bottom: 50, left: 130 };
       const outerWidth = 500;
-      const outerHeight = 700;
+      const outerHeight = 500;
       const innerWidth = outerWidth - margin.left - margin.right;
       const innerHeight = outerHeight - margin.top - margin.bottom;
       const innerPadding = 0.2;

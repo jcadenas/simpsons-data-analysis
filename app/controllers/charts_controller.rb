@@ -15,7 +15,7 @@ class ChartsController < ApplicationController
       script_lines.character_id, characters.normalized_name
     ORDER BY
       COUNT(script_lines.id) desc
-    LIMIT 20
+    LIMIT 15
     SQL
 
     @top_characters = JSON.parse(@top_characters.to_json)
