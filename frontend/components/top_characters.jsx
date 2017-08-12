@@ -23,7 +23,7 @@ class TopCharacters extends React.Component {
       const node = this.node;
 
       // Size of Data Visualization
-      const margin = { top: 50, right: 50, bottom: 50, left: 100 };
+      const margin = { top: 50, right: 50, bottom: 50, left: 130 };
       const outerWidth = 500;
       const outerHeight = 700;
       const innerWidth = outerWidth - margin.left - margin.right;
@@ -36,11 +36,10 @@ class TopCharacters extends React.Component {
         .attr('width', outerWidth)
         .attr('height', outerHeight);
 
-      const g = select(node).append("g")
+      const group = select(node).append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-      const xAxisG = g.append("g")
-        .attr("transform", "translate(0," + innerHeight + ")");
-      const yAxisG = g.append("g")
+      const xAxisG = group.append("g");
+      const yAxisG = group.append("g");
 
       const yColumn = 'normalized_name';
       const xColumn = 'line_count';
@@ -57,12 +56,12 @@ class TopCharacters extends React.Component {
          .domain([0, dataMax])
          .range([0, innerWidth]);
 
-      const xAxis = axisTop(xScale);
-        //  .ticks(5)
-        //  .tickFormat(format("s"))
-        //  .outerTickSize(0);
-      const yAxis = axisLeft(yScale);
-        //  .outerTickSize(0);
+      const xAxis = axisTop(xScale)
+         .ticks(5)
+         .tickFormat(format("s"))
+         .tickSizeOuter(0);
+      const yAxis = axisLeft(yScale)
+         .tickSizeOuter(0);
 
       xAxisG.call(xAxis);
       yAxisG.call(yAxis);
@@ -70,7 +69,7 @@ class TopCharacters extends React.Component {
 
 
   // Enter & Bind
-   select(node)
+   group
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
         return getLineCountInt(d);
@@ -79,7 +78,7 @@ class TopCharacters extends React.Component {
       .append('rect');
 
   // Exit
-   select(node)
+   group
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
         return getLineCountInt(d);
@@ -88,13 +87,13 @@ class TopCharacters extends React.Component {
       .remove();
 
   // Update
-   select(node)
+   group
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
         return getLineCountInt(d);
       })
       .style('fill', '#3F7FBF')
-      .attr('x', 5)
+      .attr('x', 1)
       .attr('y', d => yScale(d[yColumn]))
       .attr('width', d => xScale(getLineCountInt(d)))
       .attr('height', yScale.bandwidth());
