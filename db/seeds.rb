@@ -7,6 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'CSV'
 
+
+# How to Clean CSV
+# -  Read CSV into string with File.read()
+# -  Remove all "s from resulting string with new_s = script_string.gsub /"/, ''
+# -  Remove all 's from resulting string with new_s = script_string.gsub /'/, ''
+# -  Remove all ", "s from resulting string with new_s = script_string.gsub ", ", ' '
+# -  Write a new groomed csv file with the string File.write('foo.txt', 'bar')
+
+
+
+
+
 # script_line_csv_text = File.read("db/simpsons_data/simpsons_script_lines.csv")
 # script_line_text_groomed = script_line_csv_text.gsub /"/, ''
 # script_line_csv = CSV.parse(script_line_text_groomed.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8'), headers: true)
@@ -27,7 +39,7 @@ require 'CSV'
 #   script_row_objects << CSV::Row.new(script_headers, script_line, header_row = false)
 # end
 
-
+episode_csv_text = File.read("db/simpsons_data/simpsons_episodes.csv")
 
 Character.destroy_all
 
