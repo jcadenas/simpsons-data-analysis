@@ -20,3 +20,15 @@ FROM
 ORDER BY
   imdb_rating DESC, original_air_date
 LIMIT 30;
+
+
+-- Top Seasons by Avg Episode IMDB Rating
+SELECT
+  season, AVG(imdb_rating) AS avg_ep_imdb_rating
+FROM
+  episodes
+GROUP BY
+  season
+ORDER BY
+  AVG(imdb_rating) DESC
+LIMIT 30;

@@ -60,8 +60,9 @@ class TopEpisodes extends React.Component {
       const yColumn = 'title';
       const xColumn = 'imdb_rating';
 
-      const getIMDBRatingInt = (obj) => parseInt(obj.imdb_rating);
-      const dataMax = parseInt(this.props.chart_data[0][xColumn]);
+      const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
+      // const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
+      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][xColumn]));
       const yScale = scaleBand()
         .domain(this.props.chart_data.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
@@ -69,7 +70,7 @@ class TopEpisodes extends React.Component {
         .paddingOuter(outerPadding)
 
       const xScale = scaleLinear()
-         .domain([0, dataMax])
+         .domain([8.5, 9.2])
          .range([0, innerWidth]);
 
       const xAxis = axisTop(xScale)
@@ -83,22 +84,17 @@ class TopEpisodes extends React.Component {
       yAxisG.transition().duration(300).call(yAxis);
 
 
-
   // Enter & Bind
    group
       .selectAll('rect')
-      .data(this.props.chart_data, (d) => {
-        return getIMDBRatingInt(d);
-      })
+      .data(this.props.chart_data)
       .enter()
       .append('rect');
-
+  debugger;
   // Exit
    group
       .selectAll('rect')
-      .data(this.props.chart_data, (d) => {
-        return getIMDBRatingInt(d);
-      })
+      .data(this.props.chart_data)
       .exit()
       .remove();
 
@@ -110,22 +106,22 @@ class TopEpisodes extends React.Component {
       .style('fill', '#3F7FBF')
       .attr('x', 1)
       .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getIMDBRatingInt(d)))
+      .attr('width', d => xScale(getIMDBRatingFloat(d)))
       .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
     //   .data(this.props.chart_data, (d) => {
-    //     return getIMDBRatingInt(d);
+    //     return getIMDBRatingFloat(d);
     //   })
     //   .enter()
     //   .append("text")
     //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getIMDBRatingInt(d)))
+    //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
     //   .attr("y", d => yScale(d[yColumn]))
     //   .attr("dy", "1em")
-    //   .text(d => getIMDBRatingInt(d));
+    //   .text(d => getIMDBRatingFloat(d));
 
    }
 render() {

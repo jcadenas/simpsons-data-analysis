@@ -47,6 +47,7 @@ class TopCharacters extends React.Component {
       const innerPadding = 0.2;
       const outerPadding = 0.4;
 
+
       // Update node's size
       select(node)
         .attr('width', outerWidth)
@@ -61,7 +62,7 @@ class TopCharacters extends React.Component {
       const xColumn = 'line_count';
 
       const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = parseInt(this.props.chart_data[0][xColumn]);
+      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
       const yScale = scaleBand()
         .domain(this.props.chart_data.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
@@ -87,18 +88,14 @@ class TopCharacters extends React.Component {
   // Enter & Bind
    group
       .selectAll('rect')
-      .data(this.props.chart_data, (d) => {
-        return getLineCountInt(d);
-      })
+      .data(this.props.chart_data)
       .enter()
       .append('rect');
 
   // Exit
    group
       .selectAll('rect')
-      .data(this.props.chart_data, (d) => {
-        return getLineCountInt(d);
-      })
+      .data(this.props.chart_data)
       .exit()
       .remove();
 

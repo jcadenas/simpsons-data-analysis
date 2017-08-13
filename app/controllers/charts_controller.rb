@@ -32,7 +32,7 @@ class ChartsController < ApplicationController
       episodes
     ORDER BY
       imdb_rating DESC, original_air_date
-    LIMIT 30;
+    LIMIT 15;
     SQL
 
     @top_episodes = JSON.parse(@top_episodes.to_json)
