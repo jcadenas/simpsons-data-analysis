@@ -23,3 +23,9 @@ export const fetchTopLocations = () => {
     url: '/api/charts/top_locations'
   });
 };
+
+export const fetchSeasonsByIMDBRating = () => {
+  return $.ajax({
+    url: '/api/charts/seasons_by_imdb_rating'
+  });
+};

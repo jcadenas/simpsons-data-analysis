@@ -10,6 +10,8 @@ export const RECEIVE_TOP_SEASONS = 'RECEIVE_TOP_SEASONS';
 export const RECEIVE_TOP_SEASONS_ERRORS = 'RECEIVE_TOP_SEASONS_ERRORS';
 export const RECEIVE_TOP_LOCATIONS = 'RECEIVE_TOP_LOCATIONS';
 export const RECEIVE_TOP_LOCATIONS_ERRORS = 'RECEIVE_TOP_LOCATIONS_ERRORS';
+export const RECEIVE_SEASONS_BY_IMDB_RATING = 'RECEIVE_SEASONS_BY_IMDB_RATING';
+export const RECEIVE_SEASONS_BY_IMDB_RATING_ERRORS = 'RECEIVE_SEASONS_BY_IMDB_RATING_ERRORS';
 
 
 
@@ -71,6 +73,20 @@ export const receiveTopLocationsErrors = (errors) => {
   });
 };
 
+export const receiveSeasonsByIMDBRating = (seasons_by_imdb_rating) => {
+  return ({
+    type: RECEIVE_SEASONS_BY_IMDB_RATING,
+    seasons_by_imdb_rating
+  });
+};
+
+export const receiveSeasonsByIMDBRatingErrors = (errors) => {
+  return ({
+    type: RECEIVE_SEASONS_BY_IMDB_RATING_ERRORS,
+    errors
+  });
+};
+
 // ASYNC ACTION CREATORS -----------------------------
 
 export const fetchTopCharacters = () => (dispatch) => {
@@ -99,4 +115,11 @@ export const fetchTopLocations = () => (dispatch) => {
     .then(
       (res) => dispatch(receiveTopLocations(res)),
       (errors) => dispatch(receiveTopLocationsErrors(errors.responseJSON)));
+};
+
+export const fetchSeasonsByIMDBRating = () => (dispatch) => {
+  return APIUtil.fetchSeasonsByIMDBRating()
+    .then(
+      (res) => dispatch(receiveSeasonsByIMDBRating(res)),
+      (errors) => dispatch(receiveSeasonsByIMDBRatingErrors(errors.responseJSON)));
 };

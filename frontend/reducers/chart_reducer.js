@@ -2,7 +2,8 @@ import {
   RECEIVE_TOP_CHARACTERS,
   RECEIVE_TOP_EPISODES,
   RECEIVE_TOP_SEASONS,
-  RECEIVE_TOP_LOCATIONS
+  RECEIVE_TOP_LOCATIONS,
+  RECEIVE_SEASONS_BY_IMDB_RATING
 } from '../actions/chart_actions';
 import { merge } from 'lodash';
 
@@ -33,6 +34,11 @@ const ChartReducer = (state = defaultState, action) => {
 
     case RECEIVE_TOP_LOCATIONS: {
       newState = merge({}, state, {entities: { ['top_locations']: action.top_locations}});
+      return newState;
+    }
+
+    case RECEIVE_SEASONS_BY_IMDB_RATING: {
+      newState = merge({}, state, {entities: { ['seasons_by_imdb_rating']: action.seasons_by_imdb_rating}});
       return newState;
     }
 
