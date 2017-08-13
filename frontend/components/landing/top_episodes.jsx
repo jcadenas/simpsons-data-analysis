@@ -92,7 +92,6 @@ class TopEpisodes extends React.Component {
       .data(this.props.chart_data)
       .enter()
       .append('rect');
-  debugger;
   // Exit
    group
       .selectAll('rect')

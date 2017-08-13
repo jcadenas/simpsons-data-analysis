@@ -32,3 +32,17 @@ GROUP BY
 ORDER BY
   AVG(imdb_rating) DESC
 LIMIT 30;
+
+
+-- Top Locations by Number of lines spoken
+SELECT
+  locations.loc_id, locations.name, COUNT(script_lines.id) AS line_count
+FROM
+  script_lines
+JOIN
+  locations ON script_lines.location_id = locations.loc_id
+GROUP BY
+  locations.loc_id, locations.name
+ORDER BY
+  COUNT(script_lines.id) DESC
+LIMIT 30;

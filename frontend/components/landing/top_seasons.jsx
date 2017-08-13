@@ -6,7 +6,7 @@ import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 import { connect } from 'react-redux';
-import { fetchTopEpisodes } from '../../actions/chart_actions';
+import { fetchTopSeasons } from '../../actions/chart_actions';
 
 
 class TopSeasons extends React.Component {
@@ -16,7 +16,7 @@ class TopSeasons extends React.Component {
     this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-    this.props.fetchTopEpisodes();
+    this.props.fetchTopSeasons();
    }
 
    componentDidUpdate() {
@@ -59,11 +59,10 @@ class TopSeasons extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'title';
-      const xColumn = 'imdb_rating';
-
-      const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
-      // const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
+      const yColumn = 'season';
+      const xColumn = 'avg_ep_imdb_rating';
+      const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
+      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
       const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][xColumn]));
       const yScale = scaleBand()
         .domain(this.props.chart_data.map( (d) => d[yColumn] ))
@@ -72,7 +71,7 @@ class TopSeasons extends React.Component {
         .paddingOuter(outerPadding)
 
       const xScale = scaleLinear()
-         .domain([8.5, 9.2])
+         .domain([6, dataMax])
          .range([0, innerWidth]);
 
       const xAxis = axisTop(xScale)
@@ -92,7 +91,6 @@ class TopSeasons extends React.Component {
       .data(this.props.chart_data)
       .enter()
       .append('rect');
-  debugger;
   // Exit
    group
       .selectAll('rect')
@@ -135,17 +133,17 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.entities["top_episodes"],
+    chart_data: state.charts.entities["top_seasons"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchTopEpisodes: () => dispatch(fetchTopEpisodes())
+    fetchTopSeasons: () => dispatch(fetchTopSeasons())
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopEpisodes);
+)(TopSeasons);

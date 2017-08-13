@@ -51,11 +51,30 @@ class ChartsController < ApplicationController
       season
     ORDER BY
       AVG(imdb_rating) DESC
-    LIMIT 30;
+    LIMIT 15;
     SQL
 
     @top_seasons = JSON.parse(@top_seasons.to_json)
     render :top_seasons
+
+  end
+
+  def top_locations
+
+    @top_locations = ActiveRecord::Base.connection.execute(<<-SQL)
+    SELECT
+      season, AVG(imdb_rating) AS avg_ep_imdb_rating
+    FROM
+      episodes
+    GROUP BY
+      season
+    ORDER BY
+      AVG(imdb_rating) DESC
+    LIMIT 15;
+    SQL
+
+    @top_locations = JSON.parse(@top_locations.to_json)
+    render :top_locations
 
   end
 
