@@ -35,7 +35,8 @@ class ChartsController < ApplicationController
     LIMIT 30;
     SQL
 
-    @top_episodes = JSON.parse(@top_characters.to_json)
+    @top_episodes = JSON.parse(@top_episodes.to_json)
+    render :top_episodes
 
   end
 
