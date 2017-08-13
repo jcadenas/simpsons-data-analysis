@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
 
   window.Actions = Actions;
+  window.APIUtil = APIUtil;
 
   }
 );

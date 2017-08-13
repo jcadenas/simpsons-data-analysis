@@ -1,4 +1,7 @@
-import { RECEIVE_TOP_CHARACTERS } from '../actions/chart_actions';
+import {
+  RECEIVE_TOP_CHARACTERS,
+  RECEIVE_TOP_EPISODES
+} from '../actions/chart_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -14,6 +17,11 @@ const ChartReducer = (state = defaultState, action) => {
 
     case RECEIVE_TOP_CHARACTERS: {
       newState = merge({}, state, {entities: { ['top_characters']: action.top_characters}});
+      return newState;
+    }
+
+    case RECEIVE_TOP_EPISODES: {
+      newState = merge({}, state, {entities: { ['top_episodes']: action.top_episodes}});
       return newState;
     }
 
