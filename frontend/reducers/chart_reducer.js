@@ -1,6 +1,7 @@
 import {
   RECEIVE_TOP_CHARACTERS,
-  RECEIVE_TOP_EPISODES
+  RECEIVE_TOP_EPISODES,
+  RECEIVE_TOP_SEASONS
 } from '../actions/chart_actions';
 import { merge } from 'lodash';
 
@@ -12,7 +13,6 @@ const defaultState = {
 
 const ChartReducer = (state = defaultState, action) => {
   let newState;
-  // debugger;
   switch(action.type){
 
     case RECEIVE_TOP_CHARACTERS: {
@@ -22,6 +22,11 @@ const ChartReducer = (state = defaultState, action) => {
 
     case RECEIVE_TOP_EPISODES: {
       newState = merge({}, state, {entities: { ['top_episodes']: action.top_episodes}});
+      return newState;
+    }
+
+    case RECEIVE_TOP_SEASONS: {
+      newState = merge({}, state, {entities: { ['top_seasons']: action.top_seasons}});
       return newState;
     }
 
