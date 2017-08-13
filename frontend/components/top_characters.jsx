@@ -2,6 +2,7 @@ import React from 'react';
 import { scaleLinear, scaleBand } from 'd3-scale';
 import { format } from 'd3-format';
 import { axisTop, axisLeft } from 'd3-axis';
+import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 
@@ -16,9 +17,24 @@ class TopCharacters extends React.Component {
     this.props.fetchTopCharacters();
    }
 
-   componentDidUpdate(nextProps) {
-    this.createBarChart();
+   componentDidUpdate() {
+
+     this.createBarChart()
+
+
+    // Cool animation code. Not yet complete.
+    // const slices = [];
+    // for (let i = 0; i < this.props.chart_data.length; i++) {
+    //   slices.push(this.props.chart_data.slice(0, i+1));
+    // }
+    //
+    // slices.forEach( (slice, index) => {
+    //   setTimeout( () => {
+    //     this.draw(slice);
+    //   }, index * 300);
+    // });
    }
+
    createBarChart() {
       const node = this.node;
 
@@ -58,13 +74,13 @@ class TopCharacters extends React.Component {
 
       const xAxis = axisTop(xScale)
          .ticks(5)
-         .tickFormat(format("s"))
+         .tickFormat(format(".2s"))
          .tickSizeOuter(0);
       const yAxis = axisLeft(yScale)
          .tickSizeOuter(0);
 
-      xAxisG.call(xAxis);
-      yAxisG.call(yAxis);
+      xAxisG.transition().duration(300).call(xAxis);
+      yAxisG.transition().duration(300).call(yAxis);
 
 
 
@@ -89,14 +105,27 @@ class TopCharacters extends React.Component {
   // Update
    group
       .selectAll('rect')
-      .data(this.props.chart_data, (d) => {
-        return getLineCountInt(d);
-      })
+        .transition()
+        .duration(300)
       .style('fill', '#3F7FBF')
       .attr('x', 1)
       .attr('y', d => yScale(d[yColumn]))
       .attr('width', d => xScale(getLineCountInt(d)))
       .attr('height', yScale.bandwidth());
+
+    // Adding Labels to the Bars
+    // group
+    //   .selectAll(".text")
+    //   .data(this.props.chart_data, (d) => {
+    //     return getLineCountInt(d);
+    //   })
+    //   .enter()
+    //   .append("text")
+    //   .attr("class","label")
+    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
+    //   .attr("y", d => yScale(d[yColumn]))
+    //   .attr("dy", "1em")
+    //   .text(d => getLineCountInt(d));
 
    }
 render() {

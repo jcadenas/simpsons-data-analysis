@@ -23,4 +23,20 @@ class ChartsController < ApplicationController
 
   end
 
+  def top_episodes
+
+    @top_episodes = ActiveRecord::Base.connection.execute(<<-SQL)
+    SELECT
+      ep_id, title, imdb_rating, original_air_date, season, number_in_season, us_viewers_in_millions
+    FROM
+      episodes
+    ORDER BY
+      imdb_rating DESC, original_air_date
+    LIMIT 30;
+    SQL
+
+    @top_episodes = JSON.parse(@top_characters.to_json)
+
+  end
+
 end
