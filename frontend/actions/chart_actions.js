@@ -8,6 +8,8 @@ export const RECEIVE_TOP_EPISODES = 'RECEIVE_TOP_EPISODES';
 export const RECEIVE_TOP_EPISODES_ERRORS = 'RECEIVE_TOP_EPISODES_ERRORS';
 export const RECEIVE_TOP_SEASONS = 'RECEIVE_TOP_SEASONS';
 export const RECEIVE_TOP_SEASONS_ERRORS = 'RECEIVE_TOP_SEASONS_ERRORS';
+export const RECEIVE_TOP_LOCATIONS = 'RECEIVE_TOP_LOCATIONS';
+export const RECEIVE_TOP_LOCATIONS_ERRORS = 'RECEIVE_TOP_LOCATIONS_ERRORS';
 
 
 
@@ -55,6 +57,20 @@ export const receiveTopSeasonsErrors = (errors) => {
   });
 };
 
+export const receiveTopLocations = (top_locations) => {
+  return ({
+    type: RECEIVE_TOP_LOCATIONS,
+    top_locations
+  });
+};
+
+export const receiveTopLocationsErrors = (errors) => {
+  return ({
+    type: RECEIVE_TOP_LOCATIONS_ERRORS,
+    errors
+  });
+};
+
 // ASYNC ACTION CREATORS -----------------------------
 
 export const fetchTopCharacters = () => (dispatch) => {
@@ -75,5 +91,12 @@ export const fetchTopSeasons = () => (dispatch) => {
   return APIUtil.fetchTopSeasons()
     .then(
       (res) => dispatch(receiveTopSeasons(res)),
-      (errors) => dispatch(receiveTopEpisodesErrors(errors.responseJSON)));
+      (errors) => dispatch(receiveTopSeasonsErrors(errors.responseJSON)));
+};
+
+export const fetchTopLocations = () => (dispatch) => {
+  return APIUtil.fetchTopLocations()
+    .then(
+      (res) => dispatch(receiveTopLocations(res)),
+      (errors) => dispatch(receiveTopLocationsErrors(errors.responseJSON)));
 };
