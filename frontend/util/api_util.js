@@ -11,3 +11,9 @@ export const fetchTopEpisodes = () => {
     url: '/api/charts/top_episodes'
   });
 };
+
+export const fetchTopSeasons = () => {
+  return $.ajax({
+    url: '/api/charts/top_seasons'
+  });
+};
