@@ -63,13 +63,15 @@ class ChartsController < ApplicationController
 
     @top_locations = ActiveRecord::Base.connection.execute(<<-SQL)
     SELECT
-      season, AVG(imdb_rating) AS avg_ep_imdb_rating
+      locations.loc_id, locations.name, COUNT(script_lines.id) AS line_count
     FROM
-      episodes
+      script_lines
+    JOIN
+      locations ON script_lines.location_id = locations.loc_id
     GROUP BY
-      season
+      locations.loc_id, locations.name
     ORDER BY
-      AVG(imdb_rating) DESC
+      COUNT(script_lines.id) DESC
     LIMIT 15;
     SQL
 

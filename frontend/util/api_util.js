@@ -17,3 +17,9 @@ export const fetchTopSeasons = () => {
     url: '/api/charts/top_seasons'
   });
 };
+
+export const fetchTopLocations = () => {
+  return $.ajax({
+    url: '/api/charts/top_locations'
+  });
+};
