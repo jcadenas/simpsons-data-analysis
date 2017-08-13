@@ -7,14 +7,14 @@ import { max } from 'd3-array';
 import { select } from 'd3-selection';
 
 
-class TopCharacters extends React.Component {
+class TopEpisodes extends React.Component {
 
   constructor(props){
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-    this.props.fetchTopCharacters();
+    this.props.fetchTopEpisodes();
    }
 
    componentDidUpdate() {
@@ -57,10 +57,10 @@ class TopCharacters extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'normalized_name';
-      const xColumn = 'line_count';
+      const yColumn = 'title';
+      const xColumn = 'imdb_rating';
 
-      const getLineCountInt = (obj) => parseInt(obj.line_count);
+      const getIMDBRatingInt = (obj) => parseInt(obj.imdb_rating);
       const dataMax = parseInt(this.props.chart_data[0][xColumn]);
       const yScale = scaleBand()
         .domain(this.props.chart_data.map( (d) => d[yColumn] ))
@@ -88,7 +88,7 @@ class TopCharacters extends React.Component {
    group
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
-        return getLineCountInt(d);
+        return getIMDBRatingInt(d);
       })
       .enter()
       .append('rect');
@@ -97,7 +97,7 @@ class TopCharacters extends React.Component {
    group
       .selectAll('rect')
       .data(this.props.chart_data, (d) => {
-        return getLineCountInt(d);
+        return getIMDBRatingInt(d);
       })
       .exit()
       .remove();
@@ -110,22 +110,22 @@ class TopCharacters extends React.Component {
       .style('fill', '#3F7FBF')
       .attr('x', 1)
       .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getLineCountInt(d)))
+      .attr('width', d => xScale(getIMDBRatingInt(d)))
       .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
     //   .data(this.props.chart_data, (d) => {
-    //     return getLineCountInt(d);
+    //     return getIMDBRatingInt(d);
     //   })
     //   .enter()
     //   .append("text")
     //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
+    //   .attr("x", d =>  1 + xScale(getIMDBRatingInt(d)))
     //   .attr("y", d => yScale(d[yColumn]))
     //   .attr("dy", "1em")
-    //   .text(d => getLineCountInt(d));
+    //   .text(d => getIMDBRatingInt(d));
 
    }
 render() {
@@ -136,21 +136,21 @@ render() {
 //  Connect Store & Export Component
 
 import { connect } from 'react-redux';
-import { fetchTopCharacters } from '../actions/chart_actions';
+import { fetchTopEpisodes } from '../actions/chart_actions';
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.entities["top_characters"],
+    chart_data: state.charts.entities["top_episodes"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchTopCharacters: () => dispatch(fetchTopCharacters())
+    fetchTopEpisodes: () => dispatch(fetchTopEpisodes())
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopCharacters);
+)(TopEpisodes);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import TopCharacters from './top_characters';
+import TopEpisodes from './top_episodes';
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <header>
       <h2>Hi-dilly ho-dilly, neighbor-inho!</h2>
       <TopCharacters />
+      <TopEpisodes />
     </header>
   );
 };
