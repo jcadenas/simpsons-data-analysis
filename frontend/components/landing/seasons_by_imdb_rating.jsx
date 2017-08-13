@@ -1,10 +1,11 @@
 import React from 'react';
-import { scaleLinear, scaleBand } from 'd3-scale';
+import { scaleLinear, scaleBand, scaleOrdinal } from 'd3-scale';
 import { format } from 'd3-format';
 import { axisTop, axisLeft } from 'd3-axis';
 import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
+import { line } from 'd3-shape';
 import { connect } from 'react-redux';
 import { fetchSeasonsByIMDBRating } from '../../actions/chart_actions';
 
@@ -59,22 +60,20 @@ class SeasonsByIMDBRating extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'season';
-      const xColumn = 'avg_ep_imdb_rating';
+      const yColumn = 'avg_ep_imdb_rating';
+      const xColumn = 'season';
       const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
-      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
-      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][xColumn]));
-      const yScale = scaleBand()
-        .domain(this.props.chart_data.map( (d) => d[yColumn] ))
-        .range([0, innerHeight])
-        .paddingInner(innerPadding)
-        .paddingOuter(outerPadding)
+      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][yColumn]));
+      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][yColumn]));
+      const xScale = scaleOrdinal()
+        .domain(this.props.chart_data.map( (d) => d[xColumn] ))
+        .range([0, innerWidth]);
 
-      const xScale = scaleLinear()
-         .domain([6, dataMax])
-         .range([0, innerWidth]);
+      const yScale = scaleLinear()
+         .domain([dataMin, dataMax])
+         .range([0, innerHeight]);
 
-      const xAxis = axisTop(xScale)
+      const xAxis = axisBottom(xScale)
          .ticks(5)
          .tickFormat(format(".2s"))
          .tickSizeOuter(0);
@@ -84,30 +83,20 @@ class SeasonsByIMDBRating extends React.Component {
       xAxisG.transition().duration(300).call(xAxis);
       yAxisG.transition().duration(300).call(yAxis);
 
+      const line = line()
+        .x(d => xScale(d[xColumn]))
+        .y(d => yScale(getIMDBRatingFloat(d)));
 
-  // Enter & Bind
-   group
-      .selectAll('rect')
-      .data(this.props.chart_data)
-      .enter()
-      .append('rect');
-  // Exit
-   group
-      .selectAll('rect')
-      .data(this.props.chart_data)
-      .exit()
-      .remove();
+      group
+        .append("path")
+        .data(this.props.chart_data)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
+        .attr("stroke-width", 1.5)
+        .attr("d", line);
 
-  // Update
-   group
-      .selectAll('rect')
-        .transition()
-        .duration(300)
-      .style('fill', '#3F7FBF')
-      .attr('x', 1)
-      .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getIMDBRatingFloat(d)))
-      .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
@@ -133,7 +122,7 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.entities["top_seasons"],
+    chart_data: state.charts.entities["seasons_by_imdb_rating"],
   });
 }
 
