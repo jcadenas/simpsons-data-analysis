@@ -46,3 +46,17 @@ GROUP BY
 ORDER BY
   COUNT(script_lines.id) DESC
 LIMIT 30;
+
+
+-- Seasons by Avg IMDB Rating
+SELECT
+  season, AVG(imdb_rating) AS avg_ep_imdb_rating
+FROM
+  episodes
+WHERE
+  season < 27
+GROUP BY
+  season
+ORDER BY
+  season
+LIMIT 30;
