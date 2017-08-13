@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import TopCharacters from './top_characters';
-import TopEpisodes from './top_episodes';
+import TopCharacters from './landing/top_characters';
+import TopEpisodes from './landing/top_episodes';
 
 
 const App = () => {

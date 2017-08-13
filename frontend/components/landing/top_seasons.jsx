@@ -5,16 +5,18 @@ import { axisTop, axisLeft } from 'd3-axis';
 import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
+import { connect } from 'react-redux';
+import { fetchTopEpisodes } from '../../actions/chart_actions';
 
 
-class TopCharacters extends React.Component {
+class TopSeasons extends React.Component {
 
   constructor(props){
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-    this.props.fetchTopCharacters();
+    this.props.fetchTopEpisodes();
    }
 
    componentDidUpdate() {
@@ -47,7 +49,6 @@ class TopCharacters extends React.Component {
       const innerPadding = 0.2;
       const outerPadding = 0.4;
 
-
       // Update node's size
       select(node)
         .attr('width', outerWidth)
@@ -58,11 +59,12 @@ class TopCharacters extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'normalized_name';
-      const xColumn = 'line_count';
+      const yColumn = 'title';
+      const xColumn = 'imdb_rating';
 
-      const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
+      const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
+      // const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
+      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][xColumn]));
       const yScale = scaleBand()
         .domain(this.props.chart_data.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
@@ -70,7 +72,7 @@ class TopCharacters extends React.Component {
         .paddingOuter(outerPadding)
 
       const xScale = scaleLinear()
-         .domain([0, dataMax])
+         .domain([8.5, 9.2])
          .range([0, innerWidth]);
 
       const xAxis = axisTop(xScale)
@@ -84,14 +86,13 @@ class TopCharacters extends React.Component {
       yAxisG.transition().duration(300).call(yAxis);
 
 
-
   // Enter & Bind
    group
       .selectAll('rect')
       .data(this.props.chart_data)
       .enter()
       .append('rect');
-
+  debugger;
   // Exit
    group
       .selectAll('rect')
@@ -107,22 +108,22 @@ class TopCharacters extends React.Component {
       .style('fill', '#3F7FBF')
       .attr('x', 1)
       .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getLineCountInt(d)))
+      .attr('width', d => xScale(getIMDBRatingFloat(d)))
       .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
     //   .data(this.props.chart_data, (d) => {
-    //     return getLineCountInt(d);
+    //     return getIMDBRatingFloat(d);
     //   })
     //   .enter()
     //   .append("text")
     //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
+    //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
     //   .attr("y", d => yScale(d[yColumn]))
     //   .attr("dy", "1em")
-    //   .text(d => getLineCountInt(d));
+    //   .text(d => getIMDBRatingFloat(d));
 
    }
 render() {
@@ -132,22 +133,19 @@ render() {
 
 //  Connect Store & Export Component
 
-import { connect } from 'react-redux';
-import { fetchTopCharacters } from '../actions/chart_actions';
-
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.entities["top_characters"],
+    chart_data: state.charts.entities["top_episodes"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchTopCharacters: () => dispatch(fetchTopCharacters())
+    fetchTopEpisodes: () => dispatch(fetchTopEpisodes())
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopCharacters);
+)(TopEpisodes);

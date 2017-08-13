@@ -18,7 +18,7 @@ SELECT
 FROM
   episodes
 ORDER BY
-  imdb_rating DESC, original_air_date
+  imdb_rating DESC, us_viewers_in_millions DESC
 LIMIT 30;
 
 

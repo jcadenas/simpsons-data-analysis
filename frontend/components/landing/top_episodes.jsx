@@ -5,6 +5,8 @@ import { axisTop, axisLeft } from 'd3-axis';
 import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
+import { connect } from 'react-redux';
+import { fetchTopEpisodes } from '../../actions/chart_actions';
 
 
 class TopEpisodes extends React.Component {
@@ -130,9 +132,6 @@ render() {
 }
 
 //  Connect Store & Export Component
-
-import { connect } from 'react-redux';
-import { fetchTopEpisodes } from '../actions/chart_actions';
 
 const mapStateToProps = state => {
   return ({
