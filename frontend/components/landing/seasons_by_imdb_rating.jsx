@@ -42,7 +42,7 @@ class SeasonsByIMDBRating extends React.Component {
       const node = this.node;
 
       // Size of Data Visualization
-      const margin = { top: 50, right: 50, bottom: 50, left: 130 };
+      const margin = { top: 50, right: 10, bottom: 50, left: 50 };
       const outerWidth = 500;
       const outerHeight = 500;
       const innerWidth = outerWidth - margin.left - margin.right;
@@ -62,14 +62,14 @@ class SeasonsByIMDBRating extends React.Component {
       const yColumn = 'avg_ep_imdb_rating';
       const xColumn = 'season';
       const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
-      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][yColumn]));
-      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][yColumn]));
+      // const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][yColumn]));
+      // const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][yColumn]));
       const xScale = scalePoint()
         .domain(this.props.chart_data.map( (d) => d[xColumn]))
         .range([0, innerWidth]);
 
       const yScale = scaleLinear()
-         .domain([dataMax, 5])
+         .domain([9, 6])
          .range([0, innerHeight]);
 
       const xAxis = axisBottom(xScale);
