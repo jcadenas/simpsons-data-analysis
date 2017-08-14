@@ -1,11 +1,11 @@
 import React from 'react';
-import { scaleLinear, scaleBand, scaleOrdinal } from 'd3-scale';
+import { scaleLinear, scaleBand, scalePoint } from 'd3-scale';
 import { format } from 'd3-format';
-import { axisTop, axisLeft } from 'd3-axis';
+import { axisBottom, axisLeft } from 'd3-axis';
 import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
-import { line } from 'd3-shape';
+import * as D3Shape from 'd3-shape';
 import { connect } from 'react-redux';
 import { fetchSeasonsByIMDBRating } from '../../actions/chart_actions';
 
@@ -14,7 +14,7 @@ class SeasonsByIMDBRating extends React.Component {
 
   constructor(props){
     super(props)
-    this.createBarChart = this.createBarChart.bind(this)
+    this.createLineChart = this.createLineChart.bind(this)
    }
    componentDidMount() {
     this.props.fetchSeasonsByIMDBRating();
@@ -22,7 +22,7 @@ class SeasonsByIMDBRating extends React.Component {
 
    componentDidUpdate() {
 
-     this.createBarChart()
+     this.createLineChart()
 
 
     // Cool animation code. Not yet complete.
@@ -38,7 +38,7 @@ class SeasonsByIMDBRating extends React.Component {
     // });
    }
 
-   createBarChart() {
+   createLineChart() {
       const node = this.node;
 
       // Size of Data Visualization
@@ -47,8 +47,6 @@ class SeasonsByIMDBRating extends React.Component {
       const outerHeight = 500;
       const innerWidth = outerWidth - margin.left - margin.right;
       const innerHeight = outerHeight - margin.top - margin.bottom;
-      const innerPadding = 0.2;
-      const outerPadding = 0.4;
 
       // Update node's size
       select(node)
@@ -57,7 +55,8 @@ class SeasonsByIMDBRating extends React.Component {
 
       const group = select(node).append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-      const xAxisG = group.append("g");
+      const xAxisG = group.append("g")
+        .attr("transform", "translate(0," + innerHeight + ")");
       const yAxisG = group.append("g");
 
       const yColumn = 'avg_ep_imdb_rating';
@@ -65,31 +64,28 @@ class SeasonsByIMDBRating extends React.Component {
       const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
       const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][yColumn]));
       const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][yColumn]));
-      const xScale = scaleOrdinal()
-        .domain(this.props.chart_data.map( (d) => d[xColumn] ))
+      const xScale = scalePoint()
+        .domain(this.props.chart_data.map( (d) => d[xColumn]))
         .range([0, innerWidth]);
 
       const yScale = scaleLinear()
-         .domain([dataMin, dataMax])
+         .domain([dataMax, 5])
          .range([0, innerHeight]);
 
-      const xAxis = axisBottom(xScale)
-         .ticks(5)
-         .tickFormat(format(".2s"))
-         .tickSizeOuter(0);
-      const yAxis = axisLeft(yScale)
-         .tickSizeOuter(0);
+      const xAxis = axisBottom(xScale);
+      const yAxis = axisLeft(yScale);
+        //  .tickSizeOuter(0);
 
       xAxisG.transition().duration(300).call(xAxis);
       yAxisG.transition().duration(300).call(yAxis);
 
-      const line = line()
+      const line = D3Shape.line()
         .x(d => xScale(d[xColumn]))
         .y(d => yScale(getIMDBRatingFloat(d)));
 
       group
         .append("path")
-        .data(this.props.chart_data)
+        .datum(this.props.chart_data)
         .attr("fill", "none")
         .attr("stroke", "steelblue")
         .attr("stroke-linejoin", "round")
