@@ -14,7 +14,8 @@ const ChartacterChartReducer = (state = defaultState, action) => {
   switch(action.type){
 
     case RECEIVE_MOST_INVOLVED_EPISODES: {
-      newState = merge({}, state, {entities: { ['most_involved_episodes']: action.episodes}});
+      window.merge = merge;
+      newState = Object.assign({}, state, {entities: { ['most_involved_episodes']: action.episodes}});
       return newState;
     }
 

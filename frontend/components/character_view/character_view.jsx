@@ -6,7 +6,6 @@ class CharacterView extends React.Component {
 
 
   render() {
-    debugger
     return(
       <section>
         <h2>Character View</h2>
