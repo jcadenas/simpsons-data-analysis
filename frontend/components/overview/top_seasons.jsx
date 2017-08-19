@@ -133,7 +133,7 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.entities["top_seasons"],
+    chart_data: state.charts.overview.entities["top_seasons"],
   });
 }
 

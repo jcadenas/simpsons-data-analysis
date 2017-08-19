@@ -146,7 +146,7 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.entities["seasons_by_imdb_rating"],
+    chart_data: state.charts.overview.entities["seasons_by_imdb_rating"],
   });
 }
 

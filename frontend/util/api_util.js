@@ -30,7 +30,7 @@ export const fetchSeasonsByIMDBRating = () => {
   });
 };
 
-export const fetchCharacterMostInvolvedEpisodes = (character_id) => {
+export const fetchMostInvolvedEpisodes = (character_id) => {
   return $.ajax({
     url: `/api/character_charts/most_involved_episodes/${character_id}`
   });
