@@ -29,3 +29,9 @@ export const fetchSeasonsByIMDBRating = () => {
     url: '/api/charts/seasons_by_imdb_rating'
   });
 };
+
+export const fetchCharacterMostInvolvedEpisodes = (character_id) => {
+  return $.ajax({
+    url: `/api/character_charts/most_involved_episodes/${character_id}`
+  });
+};
