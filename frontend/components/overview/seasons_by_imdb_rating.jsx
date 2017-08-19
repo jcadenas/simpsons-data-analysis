@@ -79,19 +79,47 @@ class SeasonsByIMDBRating extends React.Component {
       xAxisG.transition().duration(300).call(xAxis);
       yAxisG.transition().duration(300).call(yAxis);
 
-      const line = D3Shape.line()
-        .x(d => xScale(d[xColumn]))
-        .y(d => yScale(getIMDBRatingFloat(d)));
 
+      // Enter & Bind
       group
-        .append("path")
-        .datum(this.props.chart_data)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-linejoin", "round")
-        .attr("stroke-linecap", "round")
-        .attr("stroke-width", 1.5)
-        .attr("d", line);
+        .selectAll('circle')
+        .data(this.props.chart_data)
+        .enter()
+        .append('circle');
+
+      // Exit
+      group
+        .selectAll('circle')
+        .data(this.props.chart_data)
+        .exit()
+        .remove();
+
+      // Update
+      group
+        .selectAll('circle')
+          .transition()
+          .duration(300)
+        .attr("r", 3.5)
+        .attr('cx', d => xScale(d[xColumn]))
+        .attr('cy', d => yScale(d[yColumn]))
+        .style("stroke", 'black')
+        .style("fill", 'steelblue');
+
+
+      // Line Chart Below
+      // const line = D3Shape.line()
+      //   .x(d => xScale(d[xColumn]))
+      //   .y(d => yScale(getIMDBRatingFloat(d)));
+      //
+      // group
+      //   .append("path")
+      //   .datum(this.props.chart_data)
+      //   .attr("fill", "none")
+      //   .attr("stroke", "steelblue")
+      //   .attr("stroke-linejoin", "round")
+      //   .attr("stroke-linecap", "round")
+      //   .attr("stroke-width", 1.5)
+      //   .attr("d", line);
 
 
     // Adding Labels to the Bars

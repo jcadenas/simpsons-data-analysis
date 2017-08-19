@@ -87,30 +87,30 @@ class TopCharacters extends React.Component {
 
 
 
-  // Enter & Bind
-   group
-      .selectAll('rect')
-      .data(this.props.chart_data)
-      .enter()
-      .append('rect');
+      // Enter & Bind
+      group
+        .selectAll('rect')
+        .data(this.props.chart_data)
+        .enter()
+        .append('rect');
 
-  // Exit
-   group
-      .selectAll('rect')
-      .data(this.props.chart_data)
-      .exit()
-      .remove();
+      // Exit
+      group
+        .selectAll('rect')
+        .data(this.props.chart_data)
+        .exit()
+        .remove();
 
-  // Update
-   group
-      .selectAll('rect')
-        .transition()
-        .duration(300)
-      .style('fill', '#3F7FBF')
-      .attr('x', 1)
-      .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getLineCountInt(d)))
-      .attr('height', yScale.bandwidth());
+      // Update
+      group
+        .selectAll('rect')
+          .transition()
+          .duration(300)
+        .style('fill', '#3F7FBF')
+        .attr('x', 1)
+        .attr('y', d => yScale(d[yColumn]))
+        .attr('width', d => xScale(getLineCountInt(d)))
+        .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
