@@ -30,7 +30,7 @@ class Episode < ActiveRecord::Base
       episodes.ep_id, episodes.title, script_lines.character_id, script_lines.raw_character_text, episode_line_count.total_ep_line_count
     ORDER BY
       ROUND(COUNT(script_lines.id)/(episode_line_count.total_ep_line_count + 0.0), 3) DESC
-    LIMIT 30;
+    LIMIT 15;
     SQL
 
     connection.execute(query)

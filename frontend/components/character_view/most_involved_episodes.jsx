@@ -19,6 +19,12 @@ class MostInvolvedEpisodes extends React.Component {
     this.props.fetchMostInvolvedEpisodes(parseInt(this.props.characterId));
    }
 
+   componentWillReceiveProps(newProps) {
+     if (this.props.characterId !== newProps.characterId){
+       this.props.fetchMostInvolvedEpisodes(parseInt(newProps.characterId));
+     }
+   }
+
    componentDidUpdate() {
 
      this.createBarChart()
@@ -41,8 +47,8 @@ class MostInvolvedEpisodes extends React.Component {
       const node = this.node;
 
       // Size of Data Visualization
-      const margin = { top: 50, right: 50, bottom: 50, left: 130 };
-      const outerWidth = 500;
+      const margin = { top: 50, right: 50, bottom: 50, left: 200 };
+      const outerWidth = 700;
       const outerHeight = 500;
       const innerWidth = outerWidth - margin.left - margin.right;
       const innerHeight = outerHeight - margin.top - margin.bottom;
