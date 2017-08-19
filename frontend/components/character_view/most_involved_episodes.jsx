@@ -6,17 +6,17 @@ import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 import { connect } from 'react-redux';
-import { fetchTopCharacters } from '../../actions/chart_actions';
+import { fetchMostInvolvedEpisodes } from '../../actions/character_chart_actions';
 
 
-class TopCharacters extends React.Component {
+class MostInvolvedEpisodes extends React.Component {
 
   constructor(props){
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-    this.props.fetchTopCharacters();
+    this.props.fetchMostInvolvedEpisodes(parseInt(this.props.characterId));
    }
 
    componentDidUpdate() {
@@ -26,8 +26,8 @@ class TopCharacters extends React.Component {
 
     // Cool animation code. Not yet complete.
     // const slices = [];
-    // for (let i = 0; i < this.props.chart_data.length; i++) {
-    //   slices.push(this.props.chart_data.slice(0, i+1));
+    // for (let i = 0; i < this.props.chartData.length; i++) {
+    //   slices.push(this.props.chartData.slice(0, i+1));
     // }
     //
     // slices.forEach( (slice, index) => {
@@ -60,13 +60,13 @@ class TopCharacters extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'normalized_name';
-      const xColumn = 'line_count';
+      const yColumn = 'title';
+      const xColumn = 'percent_of_lines';
 
-      const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
+      const getPercentOfLinesFloat = (obj) => parseFloat(obj.percent_of_lines);
+      const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
       const yScale = scaleBand()
-        .domain(this.props.chart_data.map( (d) => d[yColumn] ))
+        .domain(this.props.chartData.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
         .paddingInner(innerPadding)
         .paddingOuter(outerPadding)
@@ -77,7 +77,7 @@ class TopCharacters extends React.Component {
 
       const xAxis = axisTop(xScale)
          .ticks(5)
-         .tickFormat(format(".2s"))
+         .tickFormat(format(".0%"))
          .tickSizeOuter(0);
       const yAxis = axisLeft(yScale)
          .tickSizeOuter(0);
@@ -90,14 +90,14 @@ class TopCharacters extends React.Component {
       // Enter & Bind
       group
         .selectAll('rect')
-        .data(this.props.chart_data)
+        .data(this.props.chartData)
         .enter()
         .append('rect');
 
       // Exit
       group
         .selectAll('rect')
-        .data(this.props.chart_data)
+        .data(this.props.chartData)
         .exit()
         .remove();
 
@@ -109,13 +109,13 @@ class TopCharacters extends React.Component {
         .style('fill', '#3F7FBF')
         .attr('x', 1)
         .attr('y', d => yScale(d[yColumn]))
-        .attr('width', d => xScale(getLineCountInt(d)))
+        .attr('width', d => xScale(getPercentOfLinesFloat(d)))
         .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
-    //   .data(this.props.chart_data, (d) => {
+    //   .data(this.props.chartData, (d) => {
     //     return getLineCountInt(d);
     //   })
     //   .enter()
@@ -136,17 +136,17 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.overview.entities["top_characters"],
+    chartData: state.charts.character.entities["most_involved_episodes"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchTopCharacters: () => dispatch(fetchTopCharacters())
+    fetchMostInvolvedEpisodes: (characterId) => dispatch(fetchMostInvolvedEpisodes(characterId))
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopCharacters);
+)(MostInvolvedEpisodes);

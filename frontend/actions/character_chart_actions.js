@@ -19,8 +19,8 @@ export const receiveMostInvolvedEpisodes = (episodes) => {
 
 // ASYNC ACTION CREATORS -----------------------------
 
-export const fetchMostInvolvedEpisodes = () => (dispatch) => {
-  return APIUtil.fetchMostInvolvedEpisodes()
+export const fetchMostInvolvedEpisodes = (characterId) => (dispatch) => {
+  return APIUtil.fetchMostInvolvedEpisodes(characterId)
     .then(
       (res) => dispatch(receiveMostInvolvedEpisodes(res)));
 };

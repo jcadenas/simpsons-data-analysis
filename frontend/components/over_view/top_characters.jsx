@@ -6,17 +6,17 @@ import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 import { connect } from 'react-redux';
-import { fetchTopLocations } from '../../actions/chart_actions';
+import { fetchTopCharacters } from '../../actions/chart_actions';
 
 
-class TopLocations extends React.Component {
+class TopCharacters extends React.Component {
 
   constructor(props){
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-    this.props.fetchTopLocations();
+    this.props.fetchTopCharacters();
    }
 
    componentDidUpdate() {
@@ -26,8 +26,8 @@ class TopLocations extends React.Component {
 
     // Cool animation code. Not yet complete.
     // const slices = [];
-    // for (let i = 0; i < this.props.chart_data.length; i++) {
-    //   slices.push(this.props.chart_data.slice(0, i+1));
+    // for (let i = 0; i < this.props.chartData.length; i++) {
+    //   slices.push(this.props.chartData.slice(0, i+1));
     // }
     //
     // slices.forEach( (slice, index) => {
@@ -60,13 +60,13 @@ class TopLocations extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'name';
+      const yColumn = 'normalized_name';
       const xColumn = 'line_count';
 
       const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
+      const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
       const yScale = scaleBand()
-        .domain(this.props.chart_data.map( (d) => d[yColumn] ))
+        .domain(this.props.chartData.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
         .paddingInner(innerPadding)
         .paddingOuter(outerPadding)
@@ -87,35 +87,35 @@ class TopLocations extends React.Component {
 
 
 
-  // Enter & Bind
-   group
-      .selectAll('rect')
-      .data(this.props.chart_data)
-      .enter()
-      .append('rect');
+      // Enter & Bind
+      group
+        .selectAll('rect')
+        .data(this.props.chartData)
+        .enter()
+        .append('rect');
 
-  // Exit
-   group
-      .selectAll('rect')
-      .data(this.props.chart_data)
-      .exit()
-      .remove();
+      // Exit
+      group
+        .selectAll('rect')
+        .data(this.props.chartData)
+        .exit()
+        .remove();
 
-  // Update
-   group
-      .selectAll('rect')
-        .transition()
-        .duration(300)
-      .style('fill', '#3F7FBF')
-      .attr('x', 1)
-      .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getLineCountInt(d)))
-      .attr('height', yScale.bandwidth());
+      // Update
+      group
+        .selectAll('rect')
+          .transition()
+          .duration(300)
+        .style('fill', '#3F7FBF')
+        .attr('x', 1)
+        .attr('y', d => yScale(d[yColumn]))
+        .attr('width', d => xScale(getLineCountInt(d)))
+        .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
-    //   .data(this.props.chart_data, (d) => {
+    //   .data(this.props.chartData, (d) => {
     //     return getLineCountInt(d);
     //   })
     //   .enter()
@@ -136,17 +136,17 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.overview.entities["top_locations"],
+    chartData: state.charts.overview.entities["top_characters"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchTopLocations: () => dispatch(fetchTopLocations())
+    fetchTopCharacters: () => dispatch(fetchTopCharacters())
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopLocations);
+)(TopCharacters);

@@ -5,7 +5,7 @@ import Root from './components/root';
 
 // TESTING
 import * as APIUtil from './util/api_util';
-import * as Actions from './actions/chart_actions';
+import * as Actions from './actions/character_chart_actions';
 
 
 

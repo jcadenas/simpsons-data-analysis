@@ -6,17 +6,17 @@ import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 import { connect } from 'react-redux';
-import { fetchTopSeasons } from '../../actions/chart_actions';
+import { fetchTopLocations } from '../../actions/chart_actions';
 
 
-class TopSeasons extends React.Component {
+class TopLocations extends React.Component {
 
   constructor(props){
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
    }
    componentDidMount() {
-    this.props.fetchTopSeasons();
+    this.props.fetchTopLocations();
    }
 
    componentDidUpdate() {
@@ -26,8 +26,8 @@ class TopSeasons extends React.Component {
 
     // Cool animation code. Not yet complete.
     // const slices = [];
-    // for (let i = 0; i < this.props.chart_data.length; i++) {
-    //   slices.push(this.props.chart_data.slice(0, i+1));
+    // for (let i = 0; i < this.props.chartData.length; i++) {
+    //   slices.push(this.props.chartData.slice(0, i+1));
     // }
     //
     // slices.forEach( (slice, index) => {
@@ -49,6 +49,7 @@ class TopSeasons extends React.Component {
       const innerPadding = 0.2;
       const outerPadding = 0.4;
 
+
       // Update node's size
       select(node)
         .attr('width', outerWidth)
@@ -59,19 +60,19 @@ class TopSeasons extends React.Component {
       const xAxisG = group.append("g");
       const yAxisG = group.append("g");
 
-      const yColumn = 'season';
-      const xColumn = 'avg_ep_imdb_rating';
-      const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
-      const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
-      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][xColumn]));
+      const yColumn = 'name';
+      const xColumn = 'line_count';
+
+      const getLineCountInt = (obj) => parseInt(obj.line_count);
+      const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
       const yScale = scaleBand()
-        .domain(this.props.chart_data.map( (d) => d[yColumn] ))
+        .domain(this.props.chartData.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
         .paddingInner(innerPadding)
         .paddingOuter(outerPadding)
 
       const xScale = scaleLinear()
-         .domain([6, dataMax])
+         .domain([0, dataMax])
          .range([0, innerWidth]);
 
       const xAxis = axisTop(xScale)
@@ -85,16 +86,18 @@ class TopSeasons extends React.Component {
       yAxisG.transition().duration(300).call(yAxis);
 
 
+
   // Enter & Bind
    group
       .selectAll('rect')
-      .data(this.props.chart_data)
+      .data(this.props.chartData)
       .enter()
       .append('rect');
+
   // Exit
    group
       .selectAll('rect')
-      .data(this.props.chart_data)
+      .data(this.props.chartData)
       .exit()
       .remove();
 
@@ -106,22 +109,22 @@ class TopSeasons extends React.Component {
       .style('fill', '#3F7FBF')
       .attr('x', 1)
       .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getIMDBRatingFloat(d)))
+      .attr('width', d => xScale(getLineCountInt(d)))
       .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
-    //   .data(this.props.chart_data, (d) => {
-    //     return getIMDBRatingFloat(d);
+    //   .data(this.props.chartData, (d) => {
+    //     return getLineCountInt(d);
     //   })
     //   .enter()
     //   .append("text")
     //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
+    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
     //   .attr("y", d => yScale(d[yColumn]))
     //   .attr("dy", "1em")
-    //   .text(d => getIMDBRatingFloat(d));
+    //   .text(d => getLineCountInt(d));
 
    }
 render() {
@@ -133,17 +136,17 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.overview.entities["top_seasons"],
+    chartData: state.charts.overview.entities["top_locations"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchTopSeasons: () => dispatch(fetchTopSeasons())
+    fetchTopLocations: () => dispatch(fetchTopLocations())
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TopSeasons);
+)(TopLocations);

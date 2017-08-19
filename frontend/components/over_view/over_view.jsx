@@ -5,12 +5,13 @@ import TopSeasons from './top_seasons';
 import TopLocations from './top_locations';
 import SeasonsByIMDBRating from './seasons_by_imdb_rating';
 
-class Overview extends React.Component {
+class OverView extends React.Component {
 
 
   render() {
     return(
       <section>
+        <h2>Over View</h2>
         <TopCharacters />
         <TopEpisodes />
         <TopSeasons />
@@ -22,4 +23,4 @@ class Overview extends React.Component {
 
 }
 
-export default Overview;
+export default OverView;

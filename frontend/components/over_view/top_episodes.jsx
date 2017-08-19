@@ -26,8 +26,8 @@ class TopEpisodes extends React.Component {
 
     // Cool animation code. Not yet complete.
     // const slices = [];
-    // for (let i = 0; i < this.props.chart_data.length; i++) {
-    //   slices.push(this.props.chart_data.slice(0, i+1));
+    // for (let i = 0; i < this.props.chartData.length; i++) {
+    //   slices.push(this.props.chartData.slice(0, i+1));
     // }
     //
     // slices.forEach( (slice, index) => {
@@ -63,10 +63,10 @@ class TopEpisodes extends React.Component {
       const xColumn = 'imdb_rating';
 
       const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
-      // const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][xColumn]));
-      const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][xColumn]));
+      // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+      const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][xColumn]));
       const yScale = scaleBand()
-        .domain(this.props.chart_data.map( (d) => d[yColumn] ))
+        .domain(this.props.chartData.map( (d) => d[yColumn] ))
         .range([0, innerHeight])
         .paddingInner(innerPadding)
         .paddingOuter(outerPadding)
@@ -89,13 +89,13 @@ class TopEpisodes extends React.Component {
   // Enter & Bind
    group
       .selectAll('rect')
-      .data(this.props.chart_data)
+      .data(this.props.chartData)
       .enter()
       .append('rect');
   // Exit
    group
       .selectAll('rect')
-      .data(this.props.chart_data)
+      .data(this.props.chartData)
       .exit()
       .remove();
 
@@ -113,7 +113,7 @@ class TopEpisodes extends React.Component {
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
-    //   .data(this.props.chart_data, (d) => {
+    //   .data(this.props.chartData, (d) => {
     //     return getIMDBRatingFloat(d);
     //   })
     //   .enter()
@@ -134,7 +134,7 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.overview.entities["top_episodes"],
+    chartData: state.charts.overview.entities["top_episodes"],
   });
 }
 

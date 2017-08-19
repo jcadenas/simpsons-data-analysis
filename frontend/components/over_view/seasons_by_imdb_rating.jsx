@@ -27,8 +27,8 @@ class SeasonsByIMDBRating extends React.Component {
 
     // Cool animation code. Not yet complete.
     // const slices = [];
-    // for (let i = 0; i < this.props.chart_data.length; i++) {
-    //   slices.push(this.props.chart_data.slice(0, i+1));
+    // for (let i = 0; i < this.props.chartData.length; i++) {
+    //   slices.push(this.props.chartData.slice(0, i+1));
     // }
     //
     // slices.forEach( (slice, index) => {
@@ -62,10 +62,10 @@ class SeasonsByIMDBRating extends React.Component {
       const yColumn = 'avg_ep_imdb_rating';
       const xColumn = 'season';
       const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
-      // const dataMax = Math.ceil(parseFloat(this.props.chart_data[0][yColumn]));
-      // const dataMin = Math.floor(parseFloat(this.props.chart_data[this.props.chart_data.length - 1][yColumn]));
+      // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][yColumn]));
+      // const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][yColumn]));
       const xScale = scalePoint()
-        .domain(this.props.chart_data.map( (d) => d[xColumn]))
+        .domain(this.props.chartData.map( (d) => d[xColumn]))
         .range([0, innerWidth]);
 
       const yScale = scaleLinear()
@@ -83,14 +83,14 @@ class SeasonsByIMDBRating extends React.Component {
       // Enter & Bind
       group
         .selectAll('circle')
-        .data(this.props.chart_data)
+        .data(this.props.chartData)
         .enter()
         .append('circle');
 
       // Exit
       group
         .selectAll('circle')
-        .data(this.props.chart_data)
+        .data(this.props.chartData)
         .exit()
         .remove();
 
@@ -113,7 +113,7 @@ class SeasonsByIMDBRating extends React.Component {
       //
       // group
       //   .append("path")
-      //   .datum(this.props.chart_data)
+      //   .datum(this.props.chartData)
       //   .attr("fill", "none")
       //   .attr("stroke", "steelblue")
       //   .attr("stroke-linejoin", "round")
@@ -125,7 +125,7 @@ class SeasonsByIMDBRating extends React.Component {
     // Adding Labels to the Bars
     // group
     //   .selectAll(".text")
-    //   .data(this.props.chart_data, (d) => {
+    //   .data(this.props.chartData, (d) => {
     //     return getIMDBRatingFloat(d);
     //   })
     //   .enter()
@@ -146,7 +146,7 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chart_data: state.charts.overview.entities["seasons_by_imdb_rating"],
+    chartData: state.charts.overview.entities["seasons_by_imdb_rating"],
   });
 }
 
