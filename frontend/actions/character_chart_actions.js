@@ -5,6 +5,7 @@ import * as APIUtil from '../util/api_util';
 export const RECEIVE_MOST_INVOLVED_EPISODES = 'RECEIVE_MOST_INVOLVED_EPISODES';
 export const RECEIVE_CHARACTER_TOP_LOCATIONS = 'RECEIVE_CHARACTER_TOP_LOCATIONS';
 export const RECEIVE_AVG_EP_INVOLVEMENT_BY_SEASON = 'RECEIVE_AVG_EP_INVOLVEMENT_BY_SEASON';
+export const RECEIVE_SEASON_INVOLVEMENT = 'RECEIVE_SEASON_INVOLVEMENT';
 
 
 
@@ -32,6 +33,13 @@ export const receiveAvgEpInvolvementBySeason = (seasons) => {
   });
 };
 
+export const receiveSeasonalInvolvement = (seasons) => {
+  return ({
+    type: RECEIVE_SEASON_INVOLVEMENT,
+    seasons
+  });
+};
+
 
 // ASYNC ACTION CREATORS -----------------------------
 
@@ -51,4 +59,10 @@ export const fetchAvgEpInvolvementBySeason = (characterId) => (dispatch) => {
   return APIUtil.fetchAvgEpInvolvementBySeason(characterId)
     .then(
       (res) => dispatch(receiveAvgEpInvolvementBySeason(res)));
+};
+
+export const fetchSeasonalInvolvement = (characterId) => (dispatch) => {
+  return APIUtil.fetchSeasonalInvolvement(characterId)
+    .then(
+      (res) => dispatch(receiveSeasonalInvolvement(res)));
 };

@@ -48,6 +48,12 @@ export const fetchAvgEpInvolvementBySeason = (characterId) => {
   });
 };
 
+export const fetchSeasonalInvolvement = (characterId) => {
+  return $.ajax({
+    url: `/api/character_charts/seasonal_involvement/${characterId}`
+  });
+};
+
 
 
 
