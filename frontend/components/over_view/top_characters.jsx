@@ -76,7 +76,7 @@ class TopCharacters extends React.Component {
       .domain(this.props.chartData.map( (d) => d[yColumn] ))
       .range([0, this.innerHeight])
       .paddingInner(this.innerPadding)
-      .paddingOuter(this.outerPadding)
+      .paddingOuter(this.outerPadding);
 
     const xScale = scaleLinear()
        .domain([0, dataMax])
