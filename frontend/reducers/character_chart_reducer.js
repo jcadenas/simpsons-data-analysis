@@ -2,7 +2,8 @@ import {
   RECEIVE_MOST_INVOLVED_EPISODES,
   RECEIVE_CHARACTER_TOP_LOCATIONS,
   RECEIVE_AVG_EP_INVOLVEMENT_BY_SEASON,
-  RECEIVE_SEASON_INVOLVEMENT
+  RECEIVE_SEASON_INVOLVEMENT,
+  RECEIVE_CHARACTER_TOP_EPISODES
 } from '../actions/character_chart_actions';
 import { merge } from 'lodash';
 
@@ -37,6 +38,12 @@ const ChartacterChartReducer = (state = defaultState, action) => {
     case RECEIVE_SEASON_INVOLVEMENT: {
       newState = Object.assign({}, state);
       newState.entities['seasonal_involvement'] = action.seasons;
+      return newState;
+    }
+
+    case RECEIVE_CHARACTER_TOP_EPISODES: {
+      newState = Object.assign({}, state);
+      newState.entities['top_episodes'] = action.episodes;
       return newState;
     }
 

@@ -54,6 +54,12 @@ export const fetchSeasonalInvolvement = (characterId) => {
   });
 };
 
+export const fetchCharacterTopEpisodes = (characterId) => {
+  return $.ajax({
+    url: `/api/character_charts/top_episodes/${characterId}`
+  });
+};
+
 
 
 
