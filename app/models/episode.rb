@@ -134,12 +134,12 @@ class Episode < ActiveRecord::Base
     JOIN
       script_lines ON episodes.ep_id = script_lines.episode_id
     WHERE
-      script_lines.character_id = 18
+      script_lines.character_id = ?
     GROUP BY
       episodes.ep_id, episodes.title, episodes.imdb_rating, script_lines.character_id
     ORDER BY
       episodes.imdb_rating DESC
-    LIMIT 30;
+    LIMIT 15;
     SQL
 
     connection.execute(query)
