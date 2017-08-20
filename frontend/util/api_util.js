@@ -41,3 +41,23 @@ export const fetchCharacterTopLocations = (characterId) => {
     url: `/api/character_charts/top_locations/${characterId}`
   });
 };
+
+export const fetchAvgEpInvolvementBySeason = (characterId) => {
+  return $.ajax({
+    url: `/api/character_charts/avg_ep_involvement_by_season/${characterId}`
+  });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Bottom of file

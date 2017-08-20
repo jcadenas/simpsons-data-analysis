@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   get '/api/character_charts/most_involved_episodes/:character_id', to: 'character_charts#most_involved_episodes', defaults: { format: :json }
   get '/api/character_charts/top_locations/:character_id', to: 'character_charts#top_locations', defaults: { format: :json }
+  get '/api/character_charts/avg_ep_involvement_by_season/:character_id', to: 'character_charts#avg_ep_involvement_by_season', defaults: { format: :json }
 
 end
