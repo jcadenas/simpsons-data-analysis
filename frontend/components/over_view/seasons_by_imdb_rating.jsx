@@ -12,17 +12,19 @@ import { fetchSeasonsByIMDBRating } from '../../actions/chart_actions';
 
 class SeasonsByIMDBRating extends React.Component {
 
-  constructor(props){
-    super(props)
-    this.createLineChart = this.createLineChart.bind(this)
-   }
-   componentDidMount() {
-    this.props.fetchSeasonsByIMDBRating();
-   }
+  constructor(props) {
+    super(props);
+    this.createLineChart = this.createLineChart.bind(this);
+    this.updateLineChart = this.updateLineChart.bind(this);
+  }
 
-   componentDidUpdate() {
+  componentDidMount() {
+     this.createLineChart();
+     this.props.fetchSeasonsByIMDBRating();
+  }
 
-     this.createLineChart()
+  componentDidUpdate() {
+    this.updateLineChart();
 
 
     // Cool animation code. Not yet complete.
@@ -38,105 +40,108 @@ class SeasonsByIMDBRating extends React.Component {
     // });
    }
 
+
    createLineChart() {
-      const node = this.node;
 
       // Size of Data Visualization
-      const margin = { top: 50, right: 10, bottom: 50, left: 50 };
-      const outerWidth = 500;
-      const outerHeight = 500;
-      const innerWidth = outerWidth - margin.left - margin.right;
-      const innerHeight = outerHeight - margin.top - margin.bottom;
+      this.margin = { top: 50, right: 10, bottom: 50, left: 50 };
+      this.outerWidth = 500;
+      this.outerHeight = 500;
+      this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
+      this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
 
       // Update node's size
-      select(node)
-        .attr('width', outerWidth)
-        .attr('height', outerHeight);
+      select(this.node)
+        .attr('width', this.outerWidth)
+        .attr('height', this.outerHeight);
 
-      const group = select(node).append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-      const xAxisG = group.append("g")
-        .attr("transform", "translate(0," + innerHeight + ")");
-      const yAxisG = group.append("g");
-
-      const yColumn = 'avg_ep_imdb_rating';
-      const xColumn = 'season';
-      const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
-      // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][yColumn]));
-      // const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][yColumn]));
-      const xScale = scalePoint()
-        .domain(this.props.chartData.map( (d) => d[xColumn]))
-        .range([0, innerWidth]);
-
-      const yScale = scaleLinear()
-         .domain([9, 6])
-         .range([0, innerHeight]);
-
-      const xAxis = axisBottom(xScale);
-      const yAxis = axisLeft(yScale);
-        //  .tickSizeOuter(0);
-
-      xAxisG.transition().duration(300).call(xAxis);
-      yAxisG.transition().duration(300).call(yAxis);
-
-
-      // Enter & Bind
-      group
-        .selectAll('circle')
-        .data(this.props.chartData)
-        .enter()
-        .append('circle');
-
-      // Exit
-      group
-        .selectAll('circle')
-        .data(this.props.chartData)
-        .exit()
-        .remove();
-
-      // Update
-      group
-        .selectAll('circle')
-          .transition()
-          .duration(300)
-        .attr("r", 3.5)
-        .attr('cx', d => xScale(d[xColumn]))
-        .attr('cy', d => yScale(d[yColumn]))
-        .style("stroke", 'black')
-        .style("fill", 'steelblue');
-
-
-      // Line Chart Below
-      // const line = D3Shape.line()
-      //   .x(d => xScale(d[xColumn]))
-      //   .y(d => yScale(getIMDBRatingFloat(d)));
-      //
-      // group
-      //   .append("path")
-      //   .datum(this.props.chartData)
-      //   .attr("fill", "none")
-      //   .attr("stroke", "steelblue")
-      //   .attr("stroke-linejoin", "round")
-      //   .attr("stroke-linecap", "round")
-      //   .attr("stroke-width", 1.5)
-      //   .attr("d", line);
-
-
-    // Adding Labels to the Bars
-    // group
-    //   .selectAll(".text")
-    //   .data(this.props.chartData, (d) => {
-    //     return getIMDBRatingFloat(d);
-    //   })
-    //   .enter()
-    //   .append("text")
-    //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
-    //   .attr("y", d => yScale(d[yColumn]))
-    //   .attr("dy", "1em")
-    //   .text(d => getIMDBRatingFloat(d));
+      this.group = select(this.node).append("g")
+        .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+      this.xAxisG = this.group.append("g")
+        .attr("transform", "translate(0," + this.innerHeight + ")");
+      this.yAxisG = this.group.append("g");
 
    }
+
+   updateLineChart() {
+     const yColumn = 'avg_ep_imdb_rating';
+     const xColumn = 'season';
+     const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
+     // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][yColumn]));
+     // const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][yColumn]));
+     const xScale = scalePoint()
+       .domain(this.props.chartData.map( (d) => d[xColumn]))
+       .range([0, this.innerWidth]);
+
+     const yScale = scaleLinear()
+        .domain([9, 6])
+        .range([0, this.innerHeight]);
+
+     const xAxis = axisBottom(xScale);
+     const yAxis = axisLeft(yScale);
+       //  .tickSizeOuter(0);
+
+     this.xAxisG.transition().duration(300).call(xAxis);
+     this.yAxisG.transition().duration(300).call(yAxis);
+
+
+     // Enter & Bind
+     this.group
+       .selectAll('circle')
+       .data(this.props.chartData)
+       .enter()
+       .append('circle');
+
+     // Exit
+     this.group
+       .selectAll('circle')
+       .data(this.props.chartData)
+       .exit()
+       .remove();
+
+     // Update
+     this.group
+       .selectAll('circle')
+         .transition()
+         .duration(300)
+       .attr("r", 3.5)
+       .attr('cx', d => xScale(d[xColumn]))
+       .attr('cy', d => yScale(d[yColumn]))
+       .style("stroke", 'black')
+       .style("fill", 'steelblue');
+
+
+     // Line Chart Below
+     // const line = D3Shape.line()
+     //   .x(d => xScale(d[xColumn]))
+     //   .y(d => yScale(getIMDBRatingFloat(d)));
+     //
+     // group
+     //   .append("path")
+     //   .datum(this.props.chartData)
+     //   .attr("fill", "none")
+     //   .attr("stroke", "steelblue")
+     //   .attr("stroke-linejoin", "round")
+     //   .attr("stroke-linecap", "round")
+     //   .attr("stroke-width", 1.5)
+     //   .attr("d", line);
+
+
+   // Adding Labels to the Bars
+   // group
+   //   .selectAll(".text")
+   //   .data(this.props.chartData, (d) => {
+   //     return getIMDBRatingFloat(d);
+   //   })
+   //   .enter()
+   //   .append("text")
+   //   .attr("class","label")
+   //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
+   //   .attr("y", d => yScale(d[yColumn]))
+   //   .attr("dy", "1em")
+   //   .text(d => getIMDBRatingFloat(d));
+   }
+
 render() {
       return <svg ref={node => this.node = node}></svg>
    }

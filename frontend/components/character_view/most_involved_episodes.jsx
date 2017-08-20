@@ -11,16 +11,8 @@ import { fetchMostInvolvedEpisodes } from '../../actions/character_chart_actions
 
 class MostInvolvedEpisodes extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
-    // Size of Data Visualization
-    this.margin = { top: 50, right: 50, bottom: 50, left: 200 };
-    this.outerWidth = 700;
-    this.outerHeight = 500;
-    this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
-    this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
-    this.innerPadding = 0.2;
-    this.outerPadding = 0.4;
     this.createBarChart = this.createBarChart.bind(this);
     this.updateBarChart = this.updateBarChart.bind(this);
    }
@@ -30,14 +22,14 @@ class MostInvolvedEpisodes extends React.Component {
    }
 
    componentWillReceiveProps(newProps) {
-     if (this.props.characterId !== newProps.characterId){
+     if (this.props.characterId !== newProps.characterId) {
        this.props.fetchMostInvolvedEpisodes(parseInt(newProps.characterId));
      }
    }
 
    componentDidUpdate() {
 
-     this.updateBarChart()
+     this.updateBarChart();
 
 
     // Cool animation code. Not yet complete.
@@ -54,7 +46,7 @@ class MostInvolvedEpisodes extends React.Component {
    }
 
 
-   updateBarChart(){
+   updateBarChart() {
      const yColumn = 'title';
      const xColumn = 'percent_of_lines';
 
@@ -110,6 +102,15 @@ class MostInvolvedEpisodes extends React.Component {
 
    createBarChart() {
 
+     // Size of Data Visualization
+     this.margin = { top: 50, right: 50, bottom: 50, left: 200 };
+     this.outerWidth = 700;
+     this.outerHeight = 500;
+     this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
+     this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
+     this.innerPadding = 0.2;
+     this.outerPadding = 0.4;
+
       // Update node's size
       select(this.node)
         .attr('width', outerWidth)
@@ -144,7 +145,7 @@ render() {
 
 const mapStateToProps = state => {
   return ({
-    chartData: state.charts.character.entities["most_involved_episodes"],
+    chartData: state.charts.character.entities["most_involved_episodes"]
   });
 }
 

@@ -14,15 +14,17 @@ class TopEpisodes extends React.Component {
   constructor(props){
     super(props)
     this.createBarChart = this.createBarChart.bind(this)
-   }
-   componentDidMount() {
+    this.udpateBarChart = this.updateBarChart.bind(this)
+  }
+
+  componentDidMount() {
+    this.createBarChart();
     this.props.fetchTopEpisodes();
-   }
+  }
 
-   componentDidUpdate() {
+  componentDidUpdate() {
 
-     this.createBarChart()
-
+    this.updateBarChart()
 
     // Cool animation code. Not yet complete.
     // const slices = [];
@@ -37,95 +39,97 @@ class TopEpisodes extends React.Component {
     // });
    }
 
-   createBarChart() {
-      const node = this.node;
+  createBarChart() {
 
       // Size of Data Visualization
-      const margin = { top: 50, right: 50, bottom: 50, left: 130 };
-      const outerWidth = 500;
-      const outerHeight = 500;
-      const innerWidth = outerWidth - margin.left - margin.right;
-      const innerHeight = outerHeight - margin.top - margin.bottom;
-      const innerPadding = 0.2;
-      const outerPadding = 0.4;
+      this.margin = { top: 50, right: 50, bottom: 50, left: 130 };
+      this.outerWidth = 500;
+      this.outerHeight = 500;
+      this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
+      this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
+      this.innerPadding = 0.2;
+      this.outerPadding = 0.4;
 
       // Update node's size
-      select(node)
-        .attr('width', outerWidth)
-        .attr('height', outerHeight);
+      select(this.node)
+        .attr('width', this.outerWidth)
+        .attr('height', this.outerHeight);
 
-      const group = select(node).append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-      const xAxisG = group.append("g");
-      const yAxisG = group.append("g");
+      this.group = select(this.node).append("g")
+        .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+      this.xAxisG = this.group.append("g");
+      this.yAxisG = this.group.append("g");
+  }
 
-      const yColumn = 'title';
-      const xColumn = 'imdb_rating';
+  updateBarChart() {
+    const yColumn = 'title';
+    const xColumn = 'imdb_rating';
 
-      const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
-      // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
-      const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][xColumn]));
-      const yScale = scaleBand()
-        .domain(this.props.chartData.map( (d) => d[yColumn] ))
-        .range([0, innerHeight])
-        .paddingInner(innerPadding)
-        .paddingOuter(outerPadding)
+    const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
+    // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+    const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][xColumn]));
+    const yScale = scaleBand()
+      .domain(this.props.chartData.map( (d) => d[yColumn] ))
+      .range([0, this.innerHeight])
+      .paddingInner(this.innerPadding)
+      .paddingOuter(this.outerPadding)
 
-      const xScale = scaleLinear()
-         .domain([8.5, 9.2])
-         .range([0, innerWidth]);
+    const xScale = scaleLinear()
+       .domain([8.5, 9.2])
+       .range([0, this.innerWidth]);
 
-      const xAxis = axisTop(xScale)
-         .ticks(5)
-         .tickFormat(format(".2s"))
-         .tickSizeOuter(0);
-      const yAxis = axisLeft(yScale)
-         .tickSizeOuter(0);
+    const xAxis = axisTop(xScale)
+       .ticks(5)
+       .tickFormat(format(".2s"))
+       .tickSizeOuter(0);
+    const yAxis = axisLeft(yScale)
+       .tickSizeOuter(0);
 
-      xAxisG.transition().duration(300).call(xAxis);
-      yAxisG.transition().duration(300).call(yAxis);
+    this.xAxisG.transition().duration(300).call(xAxis);
+    this.yAxisG.transition().duration(300).call(yAxis);
 
 
-  // Enter & Bind
-   group
-      .selectAll('rect')
-      .data(this.props.chartData)
-      .enter()
-      .append('rect');
-  // Exit
-   group
-      .selectAll('rect')
-      .data(this.props.chartData)
-      .exit()
-      .remove();
+// Enter & Bind
+ this.group
+    .selectAll('rect')
+    .data(this.props.chartData)
+    .enter()
+    .append('rect');
+// Exit
+ this.group
+    .selectAll('rect')
+    .data(this.props.chartData)
+    .exit()
+    .remove();
 
-  // Update
-   group
-      .selectAll('rect')
-        .transition()
-        .duration(300)
-      .style('fill', '#3F7FBF')
-      .attr('x', 1)
-      .attr('y', d => yScale(d[yColumn]))
-      .attr('width', d => xScale(getIMDBRatingFloat(d)))
-      .attr('height', yScale.bandwidth());
+// Update
+ this.group
+    .selectAll('rect')
+      .transition()
+      .duration(300)
+    .style('fill', '#3F7FBF')
+    .attr('x', 1)
+    .attr('y', d => yScale(d[yColumn]))
+    .attr('width', d => xScale(getIMDBRatingFloat(d)))
+    .attr('height', yScale.bandwidth());
 
-    // Adding Labels to the Bars
-    // group
-    //   .selectAll(".text")
-    //   .data(this.props.chartData, (d) => {
-    //     return getIMDBRatingFloat(d);
-    //   })
-    //   .enter()
-    //   .append("text")
-    //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
-    //   .attr("y", d => yScale(d[yColumn]))
-    //   .attr("dy", "1em")
-    //   .text(d => getIMDBRatingFloat(d));
+  // Adding Labels to the Bars
+  // group
+  //   .selectAll(".text")
+  //   .data(this.props.chartData, (d) => {
+  //     return getIMDBRatingFloat(d);
+  //   })
+  //   .enter()
+  //   .append("text")
+  //   .attr("class","label")
+  //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
+  //   .attr("y", d => yScale(d[yColumn]))
+  //   .attr("dy", "1em")
+  //   .text(d => getIMDBRatingFloat(d));
+  }
 
-   }
-render() {
+
+  render() {
       return <svg ref={node => this.node = node}></svg>
    }
 }

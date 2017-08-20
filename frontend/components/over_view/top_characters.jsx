@@ -12,16 +12,19 @@ import { fetchTopCharacters } from '../../actions/chart_actions';
 class TopCharacters extends React.Component {
 
   constructor(props){
-    super(props)
-    this.createBarChart = this.createBarChart.bind(this)
-   }
-   componentDidMount() {
+    super(props);
+    this.createBarChart = this.createBarChart.bind(this);
+    this.updateBarChart = this.updateBarChart.bind(this);
+  }
+
+  componentDidMount() {
+    this.createBarChart();
     this.props.fetchTopCharacters();
-   }
+  }
 
-   componentDidUpdate() {
+  componentDidUpdate() {
 
-     this.createBarChart()
+    this.updateBarChart();
 
 
     // Cool animation code. Not yet complete.
@@ -35,82 +38,86 @@ class TopCharacters extends React.Component {
     //     this.draw(slice);
     //   }, index * 300);
     // });
-   }
+  }
 
-   createBarChart() {
-      const node = this.node;
+  createBarChart() {
 
-      // Size of Data Visualization
-      const margin = { top: 50, right: 50, bottom: 50, left: 130 };
-      const outerWidth = 500;
-      const outerHeight = 500;
-      const innerWidth = outerWidth - margin.left - margin.right;
-      const innerHeight = outerHeight - margin.top - margin.bottom;
-      const innerPadding = 0.2;
-      const outerPadding = 0.4;
+    // Size of Data Visualization
+    this.margin = { top: 50, right: 50, bottom: 50, left: 130 };
+    this.outerWidth = 500;
+    this.outerHeight = 500;
+    this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
+    this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
+    this.innerPadding = 0.2;
+    this.outerPadding = 0.4;
 
 
-      // Update node's size
-      select(node)
-        .attr('width', outerWidth)
-        .attr('height', outerHeight);
+    // Update node's size
+    select(this.node)
+      .attr('width', this.outerWidth)
+      .attr('height', this.outerHeight);
 
-      const group = select(node).append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-      const xAxisG = group.append("g");
-      const yAxisG = group.append("g");
-
-      const yColumn = 'normalized_name';
-      const xColumn = 'line_count';
-
-      const getLineCountInt = (obj) => parseInt(obj.line_count);
-      const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
-      const yScale = scaleBand()
-        .domain(this.props.chartData.map( (d) => d[yColumn] ))
-        .range([0, innerHeight])
-        .paddingInner(innerPadding)
-        .paddingOuter(outerPadding)
-
-      const xScale = scaleLinear()
-         .domain([0, dataMax])
-         .range([0, innerWidth]);
-
-      const xAxis = axisTop(xScale)
-         .ticks(5)
-         .tickFormat(format(".2s"))
-         .tickSizeOuter(0);
-      const yAxis = axisLeft(yScale)
-         .tickSizeOuter(0);
-
-      xAxisG.transition().duration(300).call(xAxis);
-      yAxisG.transition().duration(300).call(yAxis);
+    this.group = select(this.node).append("g")
+      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+    this.xAxisG = this.group.append("g");
+    this.yAxisG = this.group.append("g");
 
 
 
-      // Enter & Bind
-      group
-        .selectAll('rect')
-        .data(this.props.chartData)
-        .enter()
-        .append('rect');
+  }
 
-      // Exit
-      group
-        .selectAll('rect')
-        .data(this.props.chartData)
-        .exit()
-        .remove();
+  updateBarChart(){
+    const yColumn = 'normalized_name';
+    const xColumn = 'line_count';
 
-      // Update
-      group
-        .selectAll('rect')
-          .transition()
-          .duration(300)
-        .style('fill', '#3F7FBF')
-        .attr('x', 1)
-        .attr('y', d => yScale(d[yColumn]))
-        .attr('width', d => xScale(getLineCountInt(d)))
-        .attr('height', yScale.bandwidth());
+    const getLineCountInt = (obj) => parseInt(obj.line_count);
+    const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+    const yScale = scaleBand()
+      .domain(this.props.chartData.map( (d) => d[yColumn] ))
+      .range([0, this.innerHeight])
+      .paddingInner(this.innerPadding)
+      .paddingOuter(this.outerPadding)
+
+    const xScale = scaleLinear()
+       .domain([0, dataMax])
+       .range([0, this.innerWidth]);
+
+    const xAxis = axisTop(xScale)
+       .ticks(5)
+       .tickFormat(format(".2s"))
+       .tickSizeOuter(0);
+    const yAxis = axisLeft(yScale)
+       .tickSizeOuter(0);
+
+    this.xAxisG.transition().duration(300).call(xAxis);
+    this.yAxisG.transition().duration(300).call(yAxis);
+
+
+
+    // Enter & Bind
+    this.group
+      .selectAll('rect')
+      .data(this.props.chartData)
+      .enter()
+      .append('rect');
+
+    // Exit
+    this.group
+      .selectAll('rect')
+      .data(this.props.chartData)
+      .exit()
+      .remove();
+
+    // Update
+    this.group
+      .selectAll('rect')
+        .transition()
+        .duration(300)
+      .style('fill', '#3F7FBF')
+      .attr('x', 1)
+      .attr('y', d => yScale(d[yColumn]))
+      .attr('width', d => xScale(getLineCountInt(d)))
+      .attr('height', yScale.bandwidth());
 
     // Adding Labels to the Bars
     // group
@@ -125,11 +132,11 @@ class TopCharacters extends React.Component {
     //   .attr("y", d => yScale(d[yColumn]))
     //   .attr("dy", "1em")
     //   .text(d => getLineCountInt(d));
+  }
 
-   }
-render() {
-      return <svg ref={node => this.node = node}></svg>
-   }
+  render() {
+    return <svg ref={node => this.node = node}></svg>
+  }
 }
 
 //  Connect Store & Export Component
