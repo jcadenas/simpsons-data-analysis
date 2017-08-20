@@ -125,4 +125,24 @@ class Episode < ActiveRecord::Base
     connection.execute(query)
   end
 
+  def self.top_episodes(character_id)
+    query = sanitize_sql([<<-SQL, character_id])
+    SELECT
+      episodes.ep_id, episodes.title, episodes.imdb_rating, script_lines.character_id
+    FROM
+      episodes
+    JOIN
+      script_lines ON episodes.ep_id = script_lines.episode_id
+    WHERE
+      script_lines.character_id = 18
+    GROUP BY
+      episodes.ep_id, episodes.title, episodes.imdb_rating, script_lines.character_id
+    ORDER BY
+      episodes.imdb_rating DESC
+    LIMIT 30;
+    SQL
+
+    connection.execute(query)
+  end
+
 end

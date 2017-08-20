@@ -35,5 +35,13 @@ class CharacterChartsController < ApplicationController
     render :seasonal_involvement
   end
 
+  def top_episodes
+    character_id = params[:character_id].to_i
+
+    @episodes = Episode.top_episodes(character_id)
+    @episodes = JSON.parse(@episodes.to_json)
+    render :top_episodes
+  end
+
 
 end

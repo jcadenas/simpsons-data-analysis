@@ -235,7 +235,20 @@ GROUP BY
 ORDER BY
   season;
 
-
+-- Characters best episodes
+SELECT
+  episodes.ep_id, episodes.title, episodes.imdb_rating, script_lines.character_id
+FROM
+  episodes
+JOIN
+  script_lines ON episodes.ep_id = script_lines.episode_id
+WHERE
+  script_lines.character_id = 18
+GROUP BY
+  episodes.ep_id, episodes.title, episodes.imdb_rating, script_lines.character_id
+ORDER BY
+  episodes.imdb_rating DESC
+LIMIT 30;
 
 
 
