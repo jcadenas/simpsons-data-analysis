@@ -1,5 +1,6 @@
 import {
-RECEIVE_MOST_INVOLVED_EPISODES
+RECEIVE_MOST_INVOLVED_EPISODES,
+RECEIVE_CHARACTER_TOP_LOCATIONS
 } from '../actions/character_chart_actions';
 import { merge } from 'lodash';
 
@@ -14,8 +15,12 @@ const ChartacterChartReducer = (state = defaultState, action) => {
   switch(action.type){
 
     case RECEIVE_MOST_INVOLVED_EPISODES: {
-      window.merge = merge;
       newState = Object.assign({}, state, {entities: { ['most_involved_episodes']: action.episodes}});
+      return newState;
+    }
+
+    case RECEIVE_CHARACTER_TOP_LOCATIONS: {
+      newState = Object.assign({}, state, {entities: { ['top_locations']: action.locations}});
       return newState;
     }
 

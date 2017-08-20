@@ -11,6 +11,13 @@ class CharacterChartsController < ApplicationController
 
   end
 
+  def top_locations
+    character_id = params[:character_id].to_i
+
+    @locations = Location.top_locations(character_id)
+    @locations = JSON.parse(@locations.to_json)
+    render :top_locations
+  end
 
 
 end

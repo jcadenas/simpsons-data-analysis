@@ -35,3 +35,9 @@ export const fetchMostInvolvedEpisodes = (characterId) => {
     url: `/api/character_charts/most_involved_episodes/${characterId}`
   });
 };
+
+export const fetchCharacterTopLocations = (characterId) => {
+  return $.ajax({
+    url: `/api/character_charts/top_locations/${characterId}`
+  });
+};
