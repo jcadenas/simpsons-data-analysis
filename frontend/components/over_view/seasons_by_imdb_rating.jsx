@@ -38,10 +38,10 @@ class SeasonsByIMDBRating extends React.Component {
     //     this.draw(slice);
     //   }, index * 300);
     // });
-   }
+  }
 
 
-   createLineChart() {
+  createLineChart() {
 
       // Size of Data Visualization
       this.margin = { top: 50, right: 10, bottom: 50, left: 50 };
@@ -61,9 +61,9 @@ class SeasonsByIMDBRating extends React.Component {
         .attr("transform", "translate(0," + this.innerHeight + ")");
       this.yAxisG = this.group.append("g");
 
-   }
+  }
 
-   updateLineChart() {
+  updateLineChart() {
      const yColumn = 'avg_ep_imdb_rating';
      const xColumn = 'season';
      const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
@@ -140,11 +140,12 @@ class SeasonsByIMDBRating extends React.Component {
    //   .attr("y", d => yScale(d[yColumn]))
    //   .attr("dy", "1em")
    //   .text(d => getIMDBRatingFloat(d));
-   }
+  }
 
-render() {
-      return <svg ref={node => this.node = node}></svg>
-   }
+  render() {
+    return <svg ref={node => this.node = node}></svg>
+  }
+  
 }
 
 //  Connect Store & Export Component

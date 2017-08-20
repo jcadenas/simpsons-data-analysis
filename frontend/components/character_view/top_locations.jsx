@@ -15,17 +15,18 @@ class TopLocations extends React.Component {
     super(props)
     this.createBarChart = this.createBarChart.bind(this);
     this.updateBarChart = this.updateBarChart.bind(this);
-   }
-   componentDidMount() {
+  }
+
+  componentDidMount() {
     this.createBarChart();
     this.props.fetchCharacterTopLocations(parseInt(this.props.characterId));
-   }
+  }
 
-   componentWillReceiveProps(newProps) {
-     if (this.props.characterId !== newProps.characterId) {
-       this.props.fetchCharacterTopLocations(parseInt(newProps.characterId));
-     }
-   }
+  componentWillReceiveProps(newProps) {
+    if (this.props.characterId !== newProps.characterId) {
+      this.props.fetchCharacterTopLocations(parseInt(newProps.characterId));
+    }
+  }
 
   componentDidUpdate() {
 

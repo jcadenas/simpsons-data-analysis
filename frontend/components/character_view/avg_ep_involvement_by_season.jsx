@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { fetchAvgEpInvolvementBySeason } from '../../actions/character_chart_actions';
 
 
-class SeasonsByIMDBRating extends React.Component {
+class AvgEpInvolvementBySeason extends React.Component {
 
   constructor(props) {
     super(props);
@@ -20,7 +20,13 @@ class SeasonsByIMDBRating extends React.Component {
 
   componentDidMount() {
      this.createLineChart();
-     this.props.fetchSeasonsByIMDBRating();
+     this.props.fetchAvgEpInvolvementBySeason(parseInt(this.props.characterId));
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.characterId !== newProps.characterId) {
+      this.props.fetchAvgEpInvolvementBySeason(parseInt(newProps.characterId));
+    }
   }
 
   componentDidUpdate() {
@@ -38,35 +44,35 @@ class SeasonsByIMDBRating extends React.Component {
     //     this.draw(slice);
     //   }, index * 300);
     // });
-   }
+  }
 
 
-   createLineChart() {
+  createLineChart() {
 
-      // Size of Data Visualization
-      this.margin = { top: 50, right: 10, bottom: 50, left: 50 };
-      this.outerWidth = 500;
-      this.outerHeight = 500;
-      this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
-      this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
+    // Size of Data Visualization
+    this.margin = { top: 50, right: 10, bottom: 50, left: 50 };
+    this.outerWidth = 500;
+    this.outerHeight = 500;
+    this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
+    this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
 
-      // Update node's size
-      select(this.node)
-        .attr('width', this.outerWidth)
-        .attr('height', this.outerHeight);
+    // Update node's size
+    select(this.node)
+      .attr('width', this.outerWidth)
+      .attr('height', this.outerHeight);
 
-      this.group = select(this.node).append("g")
-        .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
-      this.xAxisG = this.group.append("g")
-        .attr("transform", "translate(0," + this.innerHeight + ")");
-      this.yAxisG = this.group.append("g");
+    this.group = select(this.node).append("g")
+      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+    this.xAxisG = this.group.append("g")
+      .attr("transform", "translate(0," + this.innerHeight + ")");
+    this.yAxisG = this.group.append("g");
 
-   }
+  }
 
-   updateLineChart() {
-     const yColumn = 'avg_ep_imdb_rating';
+  updateLineChart() {
+     const yColumn = 'avg_episode_involvement';
      const xColumn = 'season';
-     const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
+     const getAvgInvolvement = (obj) => parseFloat(obj.avg_episode_involvement);
      // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][yColumn]));
      // const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][yColumn]));
      const xScale = scalePoint()
@@ -74,12 +80,12 @@ class SeasonsByIMDBRating extends React.Component {
        .range([0, this.innerWidth]);
 
      const yScale = scaleLinear()
-        .domain([9, 6])
+        .domain([.25, 0])
         .range([0, this.innerHeight]);
 
      const xAxis = axisBottom(xScale);
-     const yAxis = axisLeft(yScale);
-       //  .tickSizeOuter(0);
+     const yAxis = axisLeft(yScale)
+        .ticks(6);
 
      this.xAxisG.transition().duration(300).call(xAxis);
      this.yAxisG.transition().duration(300).call(yAxis);
@@ -140,28 +146,29 @@ class SeasonsByIMDBRating extends React.Component {
    //   .attr("y", d => yScale(d[yColumn]))
    //   .attr("dy", "1em")
    //   .text(d => getIMDBRatingFloat(d));
-   }
+  }
 
-render() {
-      return <svg ref={node => this.node = node}></svg>
-   }
+  render() {
+    return <svg ref={node => this.node = node}></svg>
+  }
+
 }
 
 //  Connect Store & Export Component
 
 const mapStateToProps = state => {
   return ({
-    chartData: state.charts.overview.entities["seasons_by_imdb_rating"],
+    chartData: state.charts.character.entities["avg_ep_involvement_by_season"],
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchSeasonsByIMDBRating: () => dispatch(fetchSeasonsByIMDBRating())
+    fetchAvgEpInvolvementBySeason: (character_id) => dispatch(fetchAvgEpInvolvementBySeason(character_id))
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SeasonsByIMDBRating);
+)(AvgEpInvolvementBySeason);
