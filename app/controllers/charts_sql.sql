@@ -63,6 +63,8 @@ LIMIT 30;
 
 -- Most Involved Episodes given a character id
 SELECT
+  episodes.season,
+  episodes.number_in_season,
   episodes.ep_id,
   episodes.title,
   script_lines.character_id,
@@ -88,7 +90,12 @@ JOIN
 WHERE
   script_lines.character_id = 15
 GROUP BY
-  episodes.ep_id, episodes.title, script_lines.character_id, script_lines.raw_character_text, episode_line_count.total_ep_line_count
+  episodes.season,
+  episodes.number_in_season,
+  episodes.ep_id, episodes.title,
+  script_lines.character_id,
+  script_lines.raw_character_text,
+  episode_line_count.total_ep_line_count
 ORDER BY
   ROUND(COUNT(script_lines.id)/(episode_line_count.total_ep_line_count + 0.0), 3) DESC
 LIMIT 30;
@@ -118,6 +125,52 @@ GROUP BY
   locations.loc_id, locations.name
 ORDER BY
   COUNT(script_lines.id) DESC
+LIMIT 30;
+
+-- Avg Involvement over All Seasons for a character
+-- (Of episodes they are in, what is the avg percentage by season?)
+SELECT
+  involvment_by_episode.character_id,
+  involvment_by_episode.season,
+  AVG(involvment_by_episode.percent_of_lines) AS avg_episode_involvement
+FROM
+  (
+    SELECT
+      episodes.season,
+      episodes.number_in_season,
+      episodes.ep_id,
+      episodes.title,
+      script_lines.character_id,
+      episode_line_count.total_ep_line_count,
+      COUNT(script_lines.id) AS character_line_count,
+      ROUND(COUNT(script_lines.id)/(episode_line_count.total_ep_line_count + 0.0), 3) AS percent_of_lines
+    FROM
+      episodes
+    JOIN
+      script_lines ON episodes.ep_id = script_lines.episode_id
+    JOIN
+       (
+       SELECT
+         script_lines.episode_id, COUNT(script_lines.id) AS total_ep_line_count
+       FROM
+         script_lines
+       GROUP BY
+         script_lines.episode_id
+       ORDER BY
+         COUNT(script_lines.id)
+       ) AS episode_line_count ON episode_line_count.episode_id = episodes.ep_id
+    WHERE
+      script_lines.character_id = 2
+    GROUP BY
+      episodes.season, episodes.number_in_season, episodes.ep_id, episodes.title, script_lines.character_id, script_lines.raw_character_text, episode_line_count.total_ep_line_count
+    ORDER BY
+      ROUND(COUNT(script_lines.id)/(episode_line_count.total_ep_line_count + 0.0), 3) DESC
+  ) AS involvment_by_episode
+GROUP BY
+  involvment_by_episode.character_id,
+  involvment_by_episode.season
+ORDER BY
+  involvment_by_episode.season
 LIMIT 30;
 
 
