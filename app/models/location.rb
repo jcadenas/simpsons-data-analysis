@@ -14,7 +14,7 @@ class Location < ActiveRecord::Base
       locations.loc_id, locations.name
     ORDER BY
       COUNT(script_lines.id) DESC
-    LIMIT 30;
+    LIMIT 15;
     SQL
 
     connection.execute(query)

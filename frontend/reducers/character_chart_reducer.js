@@ -15,12 +15,14 @@ const ChartacterChartReducer = (state = defaultState, action) => {
   switch(action.type){
 
     case RECEIVE_MOST_INVOLVED_EPISODES: {
-      newState = Object.assign({}, state, {entities: { ['most_involved_episodes']: action.episodes}});
+      newState = Object.assign({}, state);
+      newState.entities['most_involved_episodes'] = action.episodes;
       return newState;
     }
 
     case RECEIVE_CHARACTER_TOP_LOCATIONS: {
-      newState = Object.assign({}, state, {entities: { ['top_locations']: action.locations}});
+      newState = Object.assign({}, state);
+      newState.entities['top_locations'] = action.locations;
       return newState;
     }
 

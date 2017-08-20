@@ -6,31 +6,30 @@ import { transition } from 'd3-transition';
 import { max } from 'd3-array';
 import { select } from 'd3-selection';
 import { connect } from 'react-redux';
-import { fetchMostInvolvedEpisodes } from '../../actions/character_chart_actions';
+import { fetchCharacterTopLocations } from '../../actions/character_chart_actions';
 
 
-class MostInvolvedEpisodes extends React.Component {
+class TopLocations extends React.Component {
 
   constructor(props) {
     super(props)
     this.createBarChart = this.createBarChart.bind(this);
     this.updateBarChart = this.updateBarChart.bind(this);
-  }
-
-  componentDidMount() {
+   }
+   componentDidMount() {
     this.createBarChart();
-    this.props.fetchMostInvolvedEpisodes(parseInt(this.props.characterId));
-  }
+    this.props.fetchCharacterTopLocations(parseInt(this.props.characterId));
+   }
 
-  componentWillReceiveProps(newProps) {
+   componentWillReceiveProps(newProps) {
      if (this.props.characterId !== newProps.characterId) {
-       this.props.fetchMostInvolvedEpisodes(parseInt(newProps.characterId));
+       this.props.fetchCharacterTopLocations(parseInt(newProps.characterId));
      }
-  }
+   }
 
   componentDidUpdate() {
 
-    this.updateBarChart();
+     this.updateBarChart();
 
 
     // Cool animation code. Not yet complete.
@@ -47,58 +46,58 @@ class MostInvolvedEpisodes extends React.Component {
   }
 
 
-  updateBarChart() {
-   const yColumn = 'title';
-   const xColumn = 'percent_of_lines';
+   updateBarChart() {
+     const yColumn = 'name';
+     const xColumn = 'line_count';
 
-   const getPercentOfLinesFloat = (obj) => parseFloat(obj.percent_of_lines);
-   const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
-   const yScale = scaleBand()
-     .domain(this.props.chartData.map( (d) => d[yColumn] ))
-     .range([0, this.innerHeight])
-     .paddingInner(this.innerPadding)
-     .paddingOuter(this.outerPadding)
+     const getLineCountInt = (obj) => parseInt(obj.line_count);
+     const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+     const yScale = scaleBand()
+       .domain(this.props.chartData.map( (d) => d[yColumn] ))
+       .range([0, this.innerHeight])
+       .paddingInner(this.innerPadding)
+       .paddingOuter(this.outerPadding)
 
-   const xScale = scaleLinear()
-      .domain([0, dataMax])
-      .range([0, this.innerWidth]);
+     const xScale = scaleLinear()
+        .domain([0, dataMax])
+        .range([0, this.innerWidth]);
 
-   const xAxis = axisTop(xScale)
-      .ticks(5)
-      .tickFormat(format(".0%"))
-      .tickSizeOuter(0);
-   const yAxis = axisLeft(yScale)
-      .tickSizeOuter(0);
+     const xAxis = axisTop(xScale)
+        .ticks(5)
+        .tickFormat(format(".2s"))
+        .tickSizeOuter(0);
+     const yAxis = axisLeft(yScale)
+        .tickSizeOuter(0);
 
-   this.xAxisG.transition().duration(300).call(xAxis);
-   this.yAxisG.transition().duration(300).call(yAxis);
+     this.xAxisG.transition().duration(300).call(xAxis);
+     this.yAxisG.transition().duration(300).call(yAxis);
 
 
 
-   // Enter & Bind
-   this.group
-     .selectAll('rect')
-     .data(this.props.chartData)
-     .enter()
-     .append('rect');
+     // Enter & Bind
+     this.group
+       .selectAll('rect')
+       .data(this.props.chartData)
+       .enter()
+       .append('rect');
 
-   // Exit
-   this.group
-     .selectAll('rect')
-     .data(this.props.chartData)
-     .exit()
-     .remove();
+     // Exit
+     this.group
+       .selectAll('rect')
+       .data(this.props.chartData)
+       .exit()
+       .remove();
 
-   // Update
-   this.group
-     .selectAll('rect')
-       .transition()
-       .duration(300)
-     .style('fill', '#3F7FBF')
-     .attr('x', 1)
-     .attr('y', d => yScale(d[yColumn]))
-     .attr('width', d => xScale(getPercentOfLinesFloat(d)))
-     .attr('height', yScale.bandwidth());
+     // Update
+     this.group
+       .selectAll('rect')
+         .transition()
+         .duration(300)
+       .style('fill', '#3F7FBF')
+       .attr('x', 1)
+       .attr('y', d => yScale(d[yColumn]))
+       .attr('width', d => xScale(getLineCountInt(d)))
+       .attr('height', yScale.bandwidth());
    }
 
    createBarChart() {
@@ -137,26 +136,26 @@ class MostInvolvedEpisodes extends React.Component {
     //   .text(d => getLineCountInt(d));
 
    }
-  render() {
-    return <svg ref={node => this.node = node}></svg>
-  }
+render() {
+      return <svg ref={node => this.node = node}></svg>
+   }
 }
 
 //  Connect Store & Export Component
 
 const mapStateToProps = state => {
   return ({
-    chartData: state.charts.character.entities["most_involved_episodes"]
+    chartData: state.charts.character.entities["top_locations"]
   });
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchMostInvolvedEpisodes: (characterId) => dispatch(fetchMostInvolvedEpisodes(characterId))
+    fetchCharacterTopLocations: (characterId) => dispatch(fetchCharacterTopLocations(characterId))
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MostInvolvedEpisodes);
+)(TopLocations);
