@@ -84,4 +84,45 @@ class Episode < ActiveRecord::Base
 
     connection.execute(query)
   end
+
+  def self.seasonal_involvement(character_id)
+    query = sanitize_sql([<<-SQL, character_id])
+    SELECT
+      season_ep_count.season,
+      character_appearances.character_id,
+      ROUND(character_appearances.character_episode_count/(season_ep_count.ep_count + 0.0), 3) AS character_season_involvement
+    FROM
+      (
+        SELECT
+          episodes.season, script_lines.character_id, COUNT(DISTINCT(script_lines.episode_id)) AS character_episode_count
+        FROM
+          episodes
+        JOIN
+          script_lines ON episodes.ep_id = script_lines.episode_id
+        WHERE
+          script_lines.character_id = ?
+        GROUP BY
+          episodes.season, script_lines.character_id
+        ORDER BY
+          episodes.season
+      ) AS character_appearances
+    JOIN
+      (
+        SELECT
+          season, COUNT(ep_id) AS ep_count
+        FROM
+          episodes
+        GROUP BY
+          season
+        ORDER BY
+          season
+      ) AS season_ep_count ON character_appearances.season = season_ep_count.season
+    ORDER BY
+      season_ep_count.season
+    LIMIT 30;
+    SQL
+
+    connection.execute(query)
+  end
+
 end
