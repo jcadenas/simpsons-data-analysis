@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/api/charts/seasons_by_imdb_rating', to: 'charts#seasons_by_imdb_rating', defaults: { format: :json }
 
   get '/api/character_charts/most_involved_episodes/:character_id', to: 'character_charts#most_involved_episodes', defaults: { format: :json }
+  get '/api/character_charts/top_locations/:character_id', to: 'character_charts#top_locations', defaults: { format: :json }
 
 end

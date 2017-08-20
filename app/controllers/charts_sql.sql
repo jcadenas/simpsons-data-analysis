@@ -105,6 +105,27 @@ ORDER BY
 LIMIT 30;
 
 
+-- Top Locations for a Character
+SELECT
+  locations.loc_id, locations.name, COUNT(script_lines.id) AS line_count
+FROM
+  locations
+JOIN
+  script_lines ON locations.loc_id = script_lines.location_id
+WHERE
+  script_lines.character_id = 8
+GROUP BY
+  locations.loc_id, locations.name
+ORDER BY
+  COUNT(script_lines.id) DESC
+LIMIT 30;
+
+
+
+
+
+
+
 
 
 
