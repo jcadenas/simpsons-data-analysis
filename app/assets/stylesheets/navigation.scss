@@ -1,16 +1,32 @@
 .character-nav {
+  padding-top: 20px;
   width: 50vw;
+  display: flex;
   height: 60px;
   margin: 0 auto;
+  align-items: center;
 }
 
 .character-nav-list {
   display: flex;
-  width: 50vw;
+  width: 45vw;
   overflow-x: scroll;
+  border-left: 1px solid #d2d4d8;
+  border-right: 1px solid #d2d4d8;
 }
 
 .character-nav-item {
   margin-right: 20px;
+  margin-left: 20px;
   text-transform: capitalize;
+}
+
+.fa-angle {
+  color: grey;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.character-nav-active {
+  background: rgba(103, 150, 207, 0.73);
 }

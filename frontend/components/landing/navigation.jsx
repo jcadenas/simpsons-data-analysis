@@ -31,9 +31,11 @@ class CharacterNavigation extends React.Component {
       });
       return(
         <nav className="character-nav">
+          <i className="fa fa-angle-left fa-angle" aria-hidden="true"></i>
           <ul className="character-nav-list">
             {characters}
           </ul>
+          <i className="fa fa-angle-right fa-angle" aria-hidden="true"></i>
         </nav>
       );
     } else {
