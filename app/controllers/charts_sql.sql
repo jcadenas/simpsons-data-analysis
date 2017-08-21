@@ -5,11 +5,13 @@ FROM
   script_lines
 JOIN
   characters ON script_lines.character_id = characters.character_id
+WHERE
+  characters.normalized_name LIKE '%itchy%'
 GROUP BY
   script_lines.character_id, characters.normalized_name
 ORDER BY
   COUNT(script_lines.id) desc
-LIMIT 30;
+LIMIT 100;
 
 
 -- Top Episodes by IMDB Rating
