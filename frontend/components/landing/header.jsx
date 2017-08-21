@@ -13,7 +13,7 @@ const Header = (props) => {
         </div>
       </Link>
       <div className="header-contact">
-        <a href="http://www.github.com/jcadenas">
+        <a href="http://www.github.com/jcadenas/simpsons-data-analysis">
           <div className="header-contact-item">GitHub</div>
         </a>
         <a href="http://www.linkedin.com/in/juliancadenas">

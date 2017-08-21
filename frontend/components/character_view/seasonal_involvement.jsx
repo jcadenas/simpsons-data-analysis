@@ -82,6 +82,7 @@ class SeasonalInvolvement extends React.Component {
 
      const xAxis = axisBottom(xScale);
      const yAxis = axisLeft(yScale)
+        .tickFormat(format(".0%"))
         .ticks(10);
 
      this.xAxisG.transition().duration(300).call(xAxis);
