@@ -12,7 +12,7 @@ const App = () => {
       <Header />
       <Navigation />
       <Route path="/" exact component={OverView} />
-      <Route path="/character/:characterId" component={CharacterView} />
+      <Route path="/characters/:characterId" component={CharacterView} />
     </header>
   );
 };

@@ -20,7 +20,11 @@ class CharacterNavigation extends React.Component {
     if (this.props.characters.length) {
       const characters = this.props.characters.map((character, idx) => {
         return (
-          <NavLink to={`/characters/${character.character_id}`} key={idx} activeClassName="character-nav-active">
+          <NavLink
+            to={`/characters/${character.character_id}`}
+            key={idx}
+            activeClassName="character-nav-active"
+            className="character-nav-item">
             <CharacterNavigationItem character={character} />
           </NavLink>
         );
