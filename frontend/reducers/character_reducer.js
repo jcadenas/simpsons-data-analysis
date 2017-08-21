@@ -1,6 +1,6 @@
 import {
-RECEIVE_TOP_CHARACTERS
-} from '../actions/chart_actions';
+RECEIVE_NAV_CHARACTERS
+} from '../actions/navigation_actions';
 import { merge } from 'lodash';
 
 const defaultState = {
@@ -13,8 +13,8 @@ const ChartacterReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type){
 
-    case RECEIVE_TOP_CHARACTERS: {
-      newState = merge({}, state, {entities: action.top_characters});
+    case RECEIVE_NAV_CHARACTERS: {
+      newState = merge({}, state, {entities: action.characters});
       return newState;
     }
 

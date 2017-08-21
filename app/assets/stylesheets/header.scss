@@ -1,0 +1,33 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+g {
+  font-size: 10px;
+  font-weight: thin;
+  text-transform: capitalize;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d2d4d8;
+}
+
+.simpsons-logo-container {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.simpsons-logo {
+  height: 10vh;
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+}
+
+.header-contact-item {
+  display: flex;
+  margin-right: 20px;
+}

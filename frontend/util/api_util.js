@@ -60,6 +60,12 @@ export const fetchCharacterTopEpisodes = (characterId) => {
   });
 };
 
+export const fetchNavCharacters = () => {
+  return $.ajax({
+    url: `/api/characters/nav_characters`
+  });
+};
+
 
 
 
