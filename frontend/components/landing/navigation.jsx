@@ -16,7 +16,6 @@ class CharacterNavigation extends React.Component {
   }
 
   render(){
-    debugger;
     if (this.props.characters.length) {
       const characters = this.props.characters.map((character, idx) => {
         return (
@@ -49,7 +48,6 @@ class CharacterNavigation extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-  debugger
   return ({
     characters: state.characters.entities
   });

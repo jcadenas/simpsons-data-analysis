@@ -1,0 +1,14 @@
+.content-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.charts-container {
+  width: 900px;
+  height: calc(100vh - 10vh - 100px);
+  overflow-y: scroll;
+}
+
+.character-image {
+  width: 300px;
+}
