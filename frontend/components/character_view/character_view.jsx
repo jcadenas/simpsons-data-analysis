@@ -14,7 +14,7 @@ class CharacterView extends React.Component {
       if (window.images['char_'+this.props.match.params.characterId]){
         return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image" />
       } else {
-        return <img src={ window.images.char_31 } className="character-image" />
+        return <img src={ window.images.unknown } className="character-unknown" />
       };
     }
     return(
