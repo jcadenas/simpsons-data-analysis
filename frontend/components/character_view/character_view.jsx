@@ -6,21 +6,34 @@ import AvgEpInvolvementBySeason from './avg_ep_involvement_by_season';
 import SeasonalInvolvement from './seasonal_involvement';
 import TopEpisodes from './top_episodes';
 
+CHARTS = [
+  MostInvolvedEpisodes,
+  TopLocations,
+  AvgEpInvolvementBySeason,
+  SeasonalInvolvement,
+  TopEpisodes
+]
+
 class CharacterView extends React.Component {
+
+  constructor () {
+    this.characterImg = this.characterImg.bind(this);
+  }
+
+  characterImg() {
+    if (window.images['char_'+this.props.match.params.characterId]){
+      return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image" />
+    } else {
+      return <img src={ window.images.unknown } className="character-unknown" />
+    };
+  }
 
 
   render() {
-    const characterImg = () => {
-      if (window.images['char_'+this.props.match.params.characterId]){
-        return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image" />
-      } else {
-        return <img src={ window.images.unknown } className="character-unknown" />
-      };
-    }
     return(
       <section className="content-container" >
         <section className="character-detail" >
-          {characterImg()}
+          {this.characterImg()}
           <h2>Character View</h2>
         </section>
         <section className="charts-container" >
@@ -36,4 +49,13 @@ class CharacterView extends React.Component {
 
 }
 
-export default CharacterView;
+const mapStateToProps = (state) => {
+  return ({
+    characters: state.characters
+  })
+}
+
+
+
+
+export default connect(mapStateToProps, null)(CharacterView);
