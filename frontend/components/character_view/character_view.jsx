@@ -5,18 +5,35 @@ import TopLocations from './top_locations';
 import AvgEpInvolvementBySeason from './avg_ep_involvement_by_season';
 import SeasonalInvolvement from './seasonal_involvement';
 import TopEpisodes from './top_episodes';
+import ChartTabs from './chart_tabs';
 
-CHARTS = [
-  MostInvolvedEpisodes,
-  TopLocations,
-  AvgEpInvolvementBySeason,
-  SeasonalInvolvement,
-  TopEpisodes
+const CHARTS = [
+  {
+    title: "Most Involved Eps",
+    chart: <MostInvolvedEpisodes />
+  },
+  {
+    title: "Top Locations",
+    chart: <TopLocations />
+  },
+  {
+    title: "Avg Ep Involvement By Season",
+    chart: <AvgEpInvolvementBySeason />
+  },
+  {
+    title: "Seasonal Involvement",
+    chart: <SeasonalInvolvement />
+  },
+  {
+    title: "Top Episodes",
+    chart: <TopEpisodes />
+  }
 ]
 
 class CharacterView extends React.Component {
 
-  constructor () {
+  constructor (props) {
+    super(props);
     this.characterImg = this.characterImg.bind(this);
   }
 
@@ -37,11 +54,7 @@ class CharacterView extends React.Component {
           <h2>Character View</h2>
         </section>
         <section className="charts-container" >
-          <MostInvolvedEpisodes characterId={this.props.match.params.characterId}/>
-          <TopLocations characterId={this.props.match.params.characterId}/>
-          <AvgEpInvolvementBySeason characterId={this.props.match.params.characterId}/>
-          <SeasonalInvolvement characterId={this.props.match.params.characterId}/>
-          <TopEpisodes characterId={this.props.match.params.characterId}/>
+          <ChartTabs charts={CHARTS} />
         </section>
       </section>
     )

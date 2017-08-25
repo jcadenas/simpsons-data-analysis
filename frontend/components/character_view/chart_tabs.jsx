@@ -4,8 +4,8 @@ import React from 'react';
 class Headers extends React.Component {
   render() {
     let selected = this.props.selectedPane;
-    let headers = this.props.panes.map((pane, index) => {
-      let title = pane.title;
+    let headers = this.props.charts.map((chart, index) => {
+      let title = chart.title;
       let klass = '';
       if (index === selected) {
         klass = 'active';
@@ -29,7 +29,7 @@ class Headers extends React.Component {
  }
 }
 
-export default class Tabs extends React.Component {
+class ChartTabs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +43,7 @@ export default class Tabs extends React.Component {
   }
 
   render() {
-    let pane = this.props.panes[this.state.selectedPane];
+    let pane = this.props.charts[this.state.selectedPane];
 
     return (
       <div>
@@ -52,11 +52,11 @@ export default class Tabs extends React.Component {
           <Headers
             selectedPane={this.state.selectedPane}
             onTabChosen={this.selectTab}
-            panes={this.props.panes}>
+            charts={this.props.charts}>
           </Headers>
           <div className='tab-content'>
             <article>
-              {pane.content}
+              {pane.chart}
             </article>
           </div>
         </div>
@@ -64,3 +64,5 @@ export default class Tabs extends React.Component {
     );
   }
 }
+
+export default ChartTabs
