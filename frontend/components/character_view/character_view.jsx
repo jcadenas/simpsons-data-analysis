@@ -7,34 +7,63 @@ import SeasonalInvolvement from './seasonal_involvement';
 import TopEpisodes from './top_episodes';
 import ChartTabs from './chart_tabs';
 
-const CHARTS = [
-  {
-    title: "Most Involved Eps",
-    chart: <MostInvolvedEpisodes />
-  },
-  {
-    title: "Top Locations",
-    chart: <TopLocations />
-  },
-  {
-    title: "Avg Ep Involvement By Season",
-    chart: <AvgEpInvolvementBySeason />
-  },
-  {
-    title: "Seasonal Involvement",
-    chart: <SeasonalInvolvement />
-  },
-  {
-    title: "Top Episodes",
-    chart: <TopEpisodes />
-  }
-]
 
 class CharacterView extends React.Component {
 
   constructor (props) {
     super(props);
     this.characterImg = this.characterImg.bind(this);
+    this.CHARTS = [
+      {
+        title: "Most Involved Eps",
+        chart: <MostInvolvedEpisodes characterId={this.props.match.params.characterId} />
+      },
+      {
+        title: "Top Locations",
+        chart: <TopLocations characterId={this.props.match.params.characterId} />
+      },
+      {
+        title: "Avg Ep Involvement By Season",
+        chart: <AvgEpInvolvementBySeason characterId={this.props.match.params.characterId} />
+      },
+      {
+        title: "Seasonal Involvement",
+        chart: <SeasonalInvolvement characterId={this.props.match.params.characterId} />
+      },
+      {
+        title: "Top Episodes",
+        chart: <TopEpisodes characterId={this.props.match.params.characterId} />
+      }
+    ];
+  }
+
+
+  componentWillReceiveProps (newProps) {
+    debugger;
+    if (this.props.match.params.characterId !== newProps.match.params.characterId) {
+      this.CHARTS = [
+        {
+          title: "Most Involved Eps",
+          chart: <MostInvolvedEpisodes characterId={newProps.match.params.characterId} />
+        },
+        {
+          title: "Top Locations",
+          chart: <TopLocations characterId={newProps.match.params.characterId} />
+        },
+        {
+          title: "Avg Ep Involvement By Season",
+          chart: <AvgEpInvolvementBySeason characterId={newProps.match.params.characterId} />
+        },
+        {
+          title: "Seasonal Involvement",
+          chart: <SeasonalInvolvement characterId={newProps.match.params.characterId} />
+        },
+        {
+          title: "Top Episodes",
+          chart: <TopEpisodes characterId={newProps.match.params.characterId} />
+        }
+      ];
+    }
   }
 
   characterImg() {
@@ -47,6 +76,7 @@ class CharacterView extends React.Component {
 
 
   render() {
+    debugger;
     return(
       <section className="content-container" >
         <section className="character-detail" >
@@ -54,7 +84,7 @@ class CharacterView extends React.Component {
           <h2>Character View</h2>
         </section>
         <section className="charts-container" >
-          <ChartTabs charts={CHARTS} />
+          <ChartTabs charts={this.CHARTS} />
         </section>
       </section>
     )
