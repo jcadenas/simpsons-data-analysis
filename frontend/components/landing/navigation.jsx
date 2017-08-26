@@ -3,6 +3,7 @@ import { fetchNavCharacters } from '../../actions/navigation_actions';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CharacterNavigationItem from './character_navigation_item';
+import { characterNavToArray } from '../../selectors/character_nav_selector';
 
 
 class CharacterNavigation extends React.Component {
@@ -49,7 +50,7 @@ class CharacterNavigation extends React.Component {
 
 const mapStateToProps = (state) => {
   return ({
-    characters: state.characters.entities
+    characters: characterNavToArray(state.characters.entities)
   });
 };
 

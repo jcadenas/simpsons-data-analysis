@@ -39,7 +39,6 @@ class CharacterView extends React.Component {
 
 
   componentWillReceiveProps (newProps) {
-    debugger;
     if (this.props.match.params.characterId !== newProps.match.params.characterId) {
       this.CHARTS = [
         {
@@ -76,25 +75,41 @@ class CharacterView extends React.Component {
 
 
   render() {
-    debugger;
-    return(
-      <section className="content-container" >
-        <section className="character-detail" >
-          {this.characterImg()}
-          <h2>Character View</h2>
+    debugger
+    if (this.props.currentCharacter){
+      return(
+        <section className="content-container" >
+          <section className="character-detail" >
+            <h2>{this.props.currentCharacter.normalized_name}</h2>
+            {this.characterImg()}
+            <span>{this.props.currentCharacter.random_script_line}</span>
+          </section>
+          <section className="charts-container" >
+            <ChartTabs charts={this.CHARTS} />
+          </section>
         </section>
-        <section className="charts-container" >
-          <ChartTabs charts={this.CHARTS} />
+      )
+    } else {
+      return (
+        <section className="content-container" >
+          <section className="character-detail" >
+            <h2>Loading...</h2>
+            {this.characterImg()}
+          </section>
+          <section className="charts-container" >
+            <ChartTabs charts={this.CHARTS} />
+          </section>
         </section>
-      </section>
-    )
+      )
+    }
   }
 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    characters: state.characters
+    characters: state.characters,
+    currentCharacter: state.characters.entities[ownProps.match.params.characterId]
   })
 }
 
