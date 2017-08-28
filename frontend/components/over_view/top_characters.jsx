@@ -138,7 +138,7 @@ class TopCharacters extends React.Component {
     return (
       <article>
         <p className="chart-description">
-          Who are the shows top characters based on number on lines spoken?
+          Who are the shows top characters based on number of lines spoken?
         </p>
         <svg ref={node => this.node = node}></svg>
       </article>
