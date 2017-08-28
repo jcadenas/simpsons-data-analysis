@@ -32,7 +32,7 @@ class OverView extends React.Component {
       },
       {
         title: "Seasons by IMDB Rating",
-        chart: <TopEpisodes />
+        chart: <SeasonsByIMDBRating />
       }
     ];
   }

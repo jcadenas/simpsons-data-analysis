@@ -135,7 +135,14 @@ class TopLocations extends React.Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          What are the top locations throughout Springfield based on total number of lines spoken at each spot?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
 
 }

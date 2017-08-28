@@ -130,7 +130,14 @@ class TopSeasons extends React.Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          What are the top seasons based on average IMDB Rating?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
 
 }

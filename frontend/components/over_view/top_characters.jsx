@@ -135,7 +135,14 @@ class TopCharacters extends React.Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          Who are the shows top characters based on number on lines spoken?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
 }
 

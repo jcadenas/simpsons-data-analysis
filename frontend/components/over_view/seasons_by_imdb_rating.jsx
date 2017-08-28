@@ -143,9 +143,16 @@ class SeasonsByIMDBRating extends React.Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          How has a season's averge episode IMDB Rating trended?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
-  
+
 }
 
 //  Connect Store & Export Component
