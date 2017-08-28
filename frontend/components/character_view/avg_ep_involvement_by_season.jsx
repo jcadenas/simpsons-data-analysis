@@ -150,7 +150,14 @@ class AvgEpInvolvementBySeason extends React.Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          Of the episodes a character was in, on average, what % of the script did they account for and how did it change by season?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
 
 }

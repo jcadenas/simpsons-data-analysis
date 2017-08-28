@@ -1,0 +1,59 @@
+/* line 1, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.content-container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 8, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.charts-container {
+  width: 900px;
+  height: calc(100vh - 10vh - 100px);
+  overflow-y: scroll;
+}
+
+/* line 14, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.character-detail {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  display: block;
+}
+
+/* line 21, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.character-image-script-line {
+  position: absolute;
+  bottom: 20px;
+  z-index: 2;
+}
+
+/* line 27, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.character-image {
+  width: 300px;
+}
+
+/* line 31, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.character-unknown {
+  height: 300px;
+}
+
+/* line 35, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.script-line-container {
+  width: 300px;
+  height: 100px;
+  overflow: hidden;
+}
+
+/* line 41, /Users/juliancadenas/app_academy/app_academy/job_search/d3_projects/Simpsons-Data-Analysis/SimpsonsDataAnalysis/app/assets/stylesheets/content_container.scss */
+.script-line {
+  font-size: 16px;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  display: block;
+  line-height: 1em;
+  /* a */
+  max-height: 3em;
+  /* a x number of line to show (ex : 2 line)  */
+}

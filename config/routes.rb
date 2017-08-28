@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/api/character_charts/top_episodes/:character_id', to: 'character_charts#top_episodes', defaults: { format: :json }
 
   get '/api/characters/nav_characters', to: 'characters#nav_characters', defaults: { format: :json }
+  get '/api/characters/script_line/:character_id', to: 'characters#script_line', defaults: { format: :json }
 end

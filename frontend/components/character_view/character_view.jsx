@@ -6,6 +6,7 @@ import AvgEpInvolvementBySeason from './avg_ep_involvement_by_season';
 import SeasonalInvolvement from './seasonal_involvement';
 import TopEpisodes from './top_episodes';
 import ChartTabs from './chart_tabs';
+import { fetchScriptLine } from '../../actions/navigation_actions';
 
 
 class CharacterView extends React.Component {
@@ -13,9 +14,10 @@ class CharacterView extends React.Component {
   constructor (props) {
     super(props);
     this.characterImg = this.characterImg.bind(this);
+    this.handleScriptLineFetch = this.handleScriptLineFetch.bind(this);
     this.CHARTS = [
       {
-        title: "Most Involved Eps",
+        title: "Most Involved Episodes",
         chart: <MostInvolvedEpisodes characterId={this.props.match.params.characterId} />
       },
       {
@@ -37,12 +39,16 @@ class CharacterView extends React.Component {
     ];
   }
 
+  componentDidMount() {
+    this.props.fetchScriptLine(this.props.match.params.characterId);
+  }
 
   componentWillReceiveProps (newProps) {
     if (this.props.match.params.characterId !== newProps.match.params.characterId) {
+      this.props.fetchScriptLine(newProps.match.params.characterId);
       this.CHARTS = [
         {
-          title: "Most Involved Eps",
+          title: "Most Involved Episodes",
           chart: <MostInvolvedEpisodes characterId={newProps.match.params.characterId} />
         },
         {
@@ -65,28 +71,41 @@ class CharacterView extends React.Component {
     }
   }
 
+  handleScriptLineFetch() {
+    this.props.fetchScriptLine(this.props.match.params.characterId);
+  }
+
   characterImg() {
     if (window.images['char_'+this.props.match.params.characterId]){
-      return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image" />
+      return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image char-img" />
     } else {
-      return <img src={ window.images.unknown } className="character-unknown" />
+      return <img src={ window.images.unknown } className="character-unknown char-img" />
     };
   }
 
 
   render() {
-    debugger
     if (this.props.currentCharacter){
       return(
         <section className="content-container" >
           <section className="character-detail" >
-            <h2>{this.props.currentCharacter.normalized_name}</h2>
-            {this.characterImg()}
-            <span>{this.props.currentCharacter.random_script_line}</span>
+            <div className="character-name-header-container">
+              <h2 className="character-name-header">
+                {this.props.currentCharacter.normalized_name}
+              </h2>
+            </div>
+            <div className="character-image-script-line">
+              <div className="image-container">
+                {this.characterImg()}
+              </div>
+              <div className="script-line-container">
+                <p onClick={this.handleScriptLineFetch} className="script-line">
+                  "{this.props.currentCharacter.random_script_line}"
+                </p>
+              </div>
+            </div>
           </section>
-          <section className="charts-container" >
             <ChartTabs charts={this.CHARTS} />
-          </section>
         </section>
       )
     } else {
@@ -113,7 +132,13 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    fetchScriptLine: (character_id) => dispatch(fetchScriptLine(character_id))
+  })
+}
 
 
 
-export default connect(mapStateToProps, null)(CharacterView);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterView);

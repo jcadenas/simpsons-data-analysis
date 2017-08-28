@@ -20,5 +20,11 @@ class CharactersController < ApplicationController
 
   end
 
+  def script_line
+    @character = Character.find_by(character_id: params[:character_id])
+    @script_line = @character.script_lines.sample.raw_text
+    render :script_line
+  end
+
 
 end

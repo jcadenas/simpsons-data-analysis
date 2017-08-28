@@ -1,0 +1,24 @@
+.chart-header {
+  padding-top: 40px;
+  font-size: 34px;
+  font-weight: 900;
+  // color: rgb(76, 105, 175);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.chart-description {
+  margin: 0 auto;
+  padding-top: 10px;
+  color: rgb(122, 122, 122);
+  width: 400px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.25em;
+  letter-spacing: 1px;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}

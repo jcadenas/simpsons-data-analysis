@@ -66,6 +66,12 @@ export const fetchNavCharacters = () => {
   });
 };
 
+export const fetchScriptLine = (character_id) => {
+  return $.ajax({
+    url: `/api/characters/script_line/${character_id}`
+  });
+};
+
 
 
 
