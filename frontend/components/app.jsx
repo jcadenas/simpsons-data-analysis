@@ -9,6 +9,10 @@ import Navigation from './landing/navigation';
 const App = () => {
   return (
     <header>
+      <audio
+        src={window.audios.simpsons_theme}
+        autoPlay>
+      </audio>
       <Header />
       <Navigation />
       <Route path="/" exact component={OverView} />
