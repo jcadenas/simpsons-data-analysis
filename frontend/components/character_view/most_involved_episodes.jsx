@@ -138,7 +138,14 @@ class MostInvolvedEpisodes extends React.Component {
 
    }
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          What episodes was the character most involved in and how much of the script did the character account for?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
 }
 

@@ -16,6 +16,7 @@ class CharacterNavigation extends React.Component {
     this.props.fetchNavCharacters();
   }
 
+  // <h2 className="character-nav-header">characters</h2>
   render(){
     if (this.props.characters.length) {
       const characters = this.props.characters.map((character, idx) => {
@@ -30,13 +31,15 @@ class CharacterNavigation extends React.Component {
         );
       });
       return(
-        <nav className="character-nav">
-          <i className="fa fa-angle-left fa-angle" aria-hidden="true"></i>
-          <ul className="character-nav-list">
-            {characters}
-          </ul>
-          <i className="fa fa-angle-right fa-angle" aria-hidden="true"></i>
-        </nav>
+        <section className="character-nav-container">
+          <nav className="character-nav">
+            <i className="fa fa-angle-left fa-angle" aria-hidden="true"></i>
+            <ul className="character-nav-list">
+              {characters}
+            </ul>
+            <i className="fa fa-angle-right fa-angle" aria-hidden="true"></i>
+          </nav>
+        </section>
       );
     } else {
       return (

@@ -5,7 +5,7 @@ import TopLocations from './top_locations';
 import AvgEpInvolvementBySeason from './avg_ep_involvement_by_season';
 import SeasonalInvolvement from './seasonal_involvement';
 import TopEpisodes from './top_episodes';
-import ChartTabs from './chart_tabs';
+import ChartTabs from '../chart_tabs';
 import { fetchScriptLine } from '../../actions/navigation_actions';
 
 

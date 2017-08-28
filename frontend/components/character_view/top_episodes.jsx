@@ -138,7 +138,14 @@ class TopEpisodes extends React.Component {
 
    }
 render() {
-      return <svg ref={node => this.node = node}></svg>
+  return (
+    <article>
+      <p className="chart-description">
+        Of the episodes the character had a spoken line in, which had the best IMDB rating?
+      </p>
+      <svg ref={node => this.node = node}></svg>
+    </article>
+  );
    }
 }
 

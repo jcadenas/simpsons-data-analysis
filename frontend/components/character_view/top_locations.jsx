@@ -138,7 +138,14 @@ class TopLocations extends React.Component {
 
    }
 render() {
-      return <svg ref={node => this.node = node}></svg>
+  return (
+    <article>
+      <p className="chart-description">
+        Where did the character have the most spoken lines?
+      </p>
+      <svg ref={node => this.node = node}></svg>
+    </article>
+  );
    }
 }
 

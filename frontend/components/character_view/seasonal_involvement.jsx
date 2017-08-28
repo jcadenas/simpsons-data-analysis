@@ -147,7 +147,14 @@ class SeasonalInvolvement extends React.Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node}></svg>
+    return (
+      <article>
+        <p className="chart-description">
+          What percentage of episodes did the character have a spoken line in each season?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
   }
 
 }
