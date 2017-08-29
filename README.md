@@ -5,7 +5,7 @@
 
 thesimpsonsbtn is a web application built using Ruby on Rails, D3, and React/Redux.
 
-[simpsonsbtn]: www.thesimpsonsbtn.com/#/
+[simpsonsbtn]: http://www.thesimpsonsbtn.com/#/
 [kaggle]: https://www.kaggle.com/wcukierski/the-simpsons-by-the-data
 [todd]: http://toddwschneider.com/posts/the-simpsons-by-the-data/
 [dafoe]: http://thomasdafoestudio.blogspot.com/2016/05/the-simpsons-characters-png-pack.html
