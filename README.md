@@ -3,7 +3,7 @@
 
 [thesimpsonsbtn][simpsonsbtn]
 
-Take a look at the data surrounding the Simpsons and explore your favorite characters!
+Take a look through the data of the Simpsons and explore your favorite characters!
 
 thesimpsonsbtn is a web application built using Ruby on Rails, D3, and React/Redux.
 
@@ -25,6 +25,10 @@ There are 4 tables available as a csv from the kaggle post:
 A good amount of cleaning is required to ingest these into active record. I did a few runs to remove unnecessary commas and quotations, as well as remove excess columns.
 
 It's a postgres database - Once the seed data is good to go seeding in total can take around 30 minutes.  The script lines table is a doozy (and very awesome)
+
+### Coming Soon
+
+More interesting views are in the works and MAYBE...volume control :)
 
 ### Shout Outs
 
