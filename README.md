@@ -3,7 +3,7 @@
 
 [thesimpsonsbtn][simpsonsbtn]
 
-Take a look at the data of the Simpsons and explore some of your favorite characters!
+Take a look at the data surrounding the Simpsons and explore your favorite characters!
 
 thesimpsonsbtn is a web application built using Ruby on Rails, D3, and React/Redux.
 
