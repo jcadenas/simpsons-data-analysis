@@ -32,6 +32,6 @@ More interesting views are in the works and MAYBE...volume control :)
 
 ### Shout Outs
 
-The project found inspiration from a post by Todd W. Schneider ([Simpsons by the data][todd]) - Awesome stuff and excited to expand upon the idea!
+The project found inspiration from a post by Todd W. Schneider ([Simpsons by the data][todd]) - Awesome stuff and it's been fun to expand upon the idea!
 
 Additionally, thanks to thomasdafoestudio.blogspot.com ([blog][dafoe]) for the assets.
