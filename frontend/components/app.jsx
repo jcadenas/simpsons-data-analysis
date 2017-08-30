@@ -7,6 +7,7 @@ import Navigation from './landing/navigation';
 
 
 const App = () => {
+  debugger;
   return (
     <header>
       <audio

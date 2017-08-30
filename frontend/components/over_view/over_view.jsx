@@ -49,7 +49,7 @@ class OverView extends React.Component {
             </div>
             <div className="character-image-script-line-overview">
               <div className="image-container-overview">
-                <img src={ window.images.simpsons_characters } className="simpsons-characters-img char-img" />
+                <img src={ window.images.simpsons_characters_cropped } className="simpsons-characters-img char-img" />
               </div>
             </div>
           </section>
