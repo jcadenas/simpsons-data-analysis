@@ -50,7 +50,6 @@
 
 .script-line-container {
   width: 300px;
-  height: 100px;
   overflow: hidden;
 }
 
@@ -60,8 +59,31 @@
   text-overflow: ellipsis;
   overflow-wrap: normal;
   display: block;
+  // margin-top: 5px;
+}
+
+.refresh-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.refresh-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
   cursor: pointer;
-  margin-top: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  border-radius: 50px;
+}
+
+.refresh-icon-container:hover {
+  background-color: rgb(234, 234, 234);
 }
 
 .character-image-script-line {
@@ -83,7 +105,4 @@
 
 .simpsons-characters-img {
   width: 380px;
-  position: absolute;
-  left: -30px;
-  // top: 0px;
 }
