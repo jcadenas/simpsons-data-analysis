@@ -12,7 +12,9 @@ class Header extends React.Component{
     }
   }
 
-  toggleAudioMute() {
+  toggleAudioMute(e) {
+    debugger;
+    e.stopPropagation();
     let audioElement = document.getElementById('theme_song');
     audioElement.muted = !audioElement.muted;
 
@@ -44,14 +46,15 @@ class Header extends React.Component{
   render() {
     return(
       <section className="header">
-        <Link to="/">
-          <div className="simpsons-logo-container">
-            <img src={ window.images.homer_simpsons_logo } className="simpsons-logo" />
-            <span className="header-header-text">by the numbers
-              {this.displayVolume()}
-            </span>
-          </div>
-        </Link>
+        <div className="header-left-side">
+          <Link to="/">
+            <div className="simpsons-logo-container">
+              <img src={ window.images.homer_simpsons_logo } className="simpsons-logo" />
+              <span className="header-header-text">by the numbers</span>
+            </div>
+          </Link>
+          {this.displayVolume()}
+        </div>
         <div className="header-contact">
           <a href="http://www.github.com/jcadenas/simpsons-data-analysis">
             <div className="header-contact-item">GitHub</div>

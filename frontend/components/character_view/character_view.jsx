@@ -99,6 +99,10 @@ class CharacterView extends React.Component {
                 {this.characterImg()}
               </div>
               <div className="script-line-container">
+                <img
+                  src={ window.icons.refresh }
+                  className="refresh-icon"
+                  />
                 <p onClick={this.handleScriptLineFetch} className="script-line">
                   "{this.props.currentCharacter.random_script_line}"
                 </p>

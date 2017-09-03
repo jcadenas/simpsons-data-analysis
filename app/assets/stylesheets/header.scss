@@ -11,6 +11,11 @@ g {
   justify-content: space-between;
   border-bottom: 1px solid #d2d4d8;
 }
+.header-left-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .simpsons-logo-container {
   height: 10vh;
@@ -36,19 +41,12 @@ g {
   position: relative;
 }
 
-.volume-control {
-  position: absolute;
-  width: 20px;
-  left: 2px;
-  top: 20px;
-}
 
 .volume-control {
-  position: absolute;
   padding: 2px;
+  margin-left: 15px;
   width: 20px;
-  left: 2px;
-  top: 20px;
+  cursor: pointer;
 }
 
 .volume-control:hover {
