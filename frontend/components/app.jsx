@@ -11,6 +11,7 @@ const App = () => {
   return (
     <header>
       <audio
+        id="theme_song"
         src={window.audios.simpsons_theme}
         autoPlay>
       </audio>
