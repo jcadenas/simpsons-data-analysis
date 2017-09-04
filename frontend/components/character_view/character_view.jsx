@@ -6,7 +6,7 @@ import AvgEpInvolvementBySeason from './avg_ep_involvement_by_season';
 import SeasonalInvolvement from './seasonal_involvement';
 import TopEpisodes from './top_episodes';
 import ChartTabs from '../chart_tabs';
-import { fetchScriptLine } from '../../actions/navigation_actions';
+import { fetchScriptLine } from '../../util/api_util';
 
 
 class CharacterView extends React.Component {
@@ -15,6 +15,10 @@ class CharacterView extends React.Component {
     super(props);
     this.characterImg = this.characterImg.bind(this);
     this.handleScriptLineFetch = this.handleScriptLineFetch.bind(this);
+    this.displayScriptLine = this.displayScriptLine.bind(this);
+    this.state = {
+      scriptLine: ""
+    }
     this.CHARTS = [
       {
         title: "Most Involved Episodes",
@@ -40,12 +44,13 @@ class CharacterView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchScriptLine(this.props.match.params.characterId);
+    fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
   componentWillReceiveProps (newProps) {
     if (this.props.match.params.characterId !== newProps.match.params.characterId) {
-      this.props.fetchScriptLine(newProps.match.params.characterId);
+      // this.props.fetchScriptLine(newProps.match.params.characterId);
+      this.setState({scriptLine: ""});
       this.CHARTS = [
         {
           title: "Most Involved Episodes",
@@ -68,11 +73,13 @@ class CharacterView extends React.Component {
           chart: <TopEpisodes characterId={newProps.match.params.characterId} />
         }
       ];
+      fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
     }
   }
 
   handleScriptLineFetch() {
-    this.props.fetchScriptLine(this.props.match.params.characterId);
+    this.setState({scriptLine: ""});
+    fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
   characterImg() {
@@ -83,6 +90,15 @@ class CharacterView extends React.Component {
     };
   }
 
+  displayScriptLine() {
+    if (this.state.scriptLine.length > 0) {
+      return this.state.scriptLine
+    } else {
+      return (
+        <span>loading...</span>
+      )
+    }
+  }
 
   render() {
     if (this.props.currentCharacter){
@@ -107,7 +123,7 @@ class CharacterView extends React.Component {
                     />
                 </div>
                 <p className="script-line">
-                  "{this.props.currentCharacter.random_script_line}"
+                  {this.displayScriptLine()}
                 </p>
               </div>
             </div>
@@ -139,13 +155,13 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return ({
-    fetchScriptLine: (character_id) => dispatch(fetchScriptLine(character_id))
-  })
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return ({
+//     fetchScriptLine: (character_id) => dispatch(fetchScriptLine(character_id))
+//   })
+// }
 
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CharacterView);
+export default connect(mapStateToProps, null)(CharacterView);
