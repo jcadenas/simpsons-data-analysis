@@ -28,7 +28,7 @@ It's a postgres database - Once the seed data is good to go seeding in total can
 
 ### Coming Soon
 
-More interesting views are in the works and MAYBE...volume control :)
+More interesting views are in the works :)
 
 ### Shout Outs
 
