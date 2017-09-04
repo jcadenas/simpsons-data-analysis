@@ -73,7 +73,7 @@ class CharacterView extends React.Component {
           chart: <TopEpisodes characterId={newProps.match.params.characterId} />
         }
       ];
-      fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
+      fetchScriptLine(newProps.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
     }
   }
 
@@ -95,7 +95,7 @@ class CharacterView extends React.Component {
       return this.state.scriptLine
     } else {
       return (
-        <span>loading...</span>
+        <span>...</span>
       )
     }
   }
