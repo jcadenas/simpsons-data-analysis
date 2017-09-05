@@ -27,15 +27,37 @@
   display: flex;
   align-items: center;
   width: 45vw;
+  height: 55px;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   border-left: 1px solid #d2d4d8;
   border-right: 1px solid #d2d4d8;
+}
+
+.character-nav-list:last-child {
+  padding: 0;
+  margin: 0;
 }
 
 .character-nav-item {
   text-transform: capitalize;
   text-align: center;
   margin: 0 20px;
+  padding: 2px 5px;
+  border-bottom: 3px solid transparent;
+}
+
+.angle-container {
+  height: 55px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.angle-container:hover {
+  background: rgb(247, 247, 247);
 }
 
 .fa-angle {
@@ -45,5 +67,13 @@
 }
 
 .character-nav-active {
-  background: rgba(103, 150, 207, 0.73);
+  border-color: rgb(76, 105, 175);
+}
+
+.last-nav-padding {
+  display: block;
+  height: 55px;
+  width: 1px;
+  color: transparent;
+  font-size: 1px;
 }

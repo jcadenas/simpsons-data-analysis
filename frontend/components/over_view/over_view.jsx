@@ -23,16 +23,16 @@ class OverView extends React.Component {
         chart: <TopEpisodes />
       },
       {
-        title: "Top Seasons",
-        chart: <TopSeasons />
+        title: "Seasons By IMDB Rating",
+        chart: <SeasonsByIMDBRating />
       },
       {
         title: "Top Locations",
         chart: <TopLocations />
       },
       {
-        title: "Seasons by IMDB Rating",
-        chart: <SeasonsByIMDBRating />
+        title: "Top Seasons",
+        chart: <TopSeasons />
       }
     ];
   }

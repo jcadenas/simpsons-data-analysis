@@ -10,19 +10,31 @@ class CharacterNavigation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.navElements = {};
+    // this.currentLocation = 10;
+    // this.navElements = {};
+    this.handleNavShift = this.handleNavShift.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchNavCharacters();
   }
 
+  handleNavShift(direction) {
+    return () => {
+      const sLeft = this.navListElement.scrollLeft;
+      const magnitude = 110;
+      const delta = direction == "left" ? -1 * magnitude : magnitude;
+      this.navListElement.scrollLeft = sLeft + delta;
+    }
+  }
+
+  // <div ref={el => this.navElements[idx] = el} ></div>
   // <h2 className="character-nav-header">characters</h2>
   render(){
+    let characters;
     if (this.props.characters.length) {
-      const characters = this.props.characters.map((character, idx) => {
+      characters = this.props.characters.map((character, idx) => {
         return (
-          <div>
             <NavLink
               to={`/characters/${character.character_id}`}
               key={idx}
@@ -30,32 +42,27 @@ class CharacterNavigation extends React.Component {
               className="character-nav-item">
               <CharacterNavigationItem character={character} />
             </NavLink>
-            <div ref={el => this.navElements[idx] = el></div>
-          </div>
         );
       });
-      return(
-        <section className="character-nav-container">
-          <nav className="character-nav">
-            <div className="angle-container">
-              <i className="fa fa-angle-left fa-angle" aria-hidden="true"></i>
-            </div>
-            <ul className="character-nav-list">
-              {characters}
-            </ul>
-            <div className="angleContainer">
-              <i className="fa fa-angle-right fa-angle" aria-hidden="true"></i>
-            </div>
-          </nav>
-        </section>
-      );
     } else {
-      return (
-        <nav className="character-nav">
-          <span>Loading...</span>
-        </nav>
-      )
+      characters = <span className="character-nav-item" >Loading...</span>
     }
+    return(
+      <section className="character-nav-container">
+        <nav className="character-nav">
+          <div className="angle-container" onClick={this.handleNavShift("left")}>
+            <i className="fa fa-angle-left fa-angle" aria-hidden="true"></i>
+          </div>
+          <ul className="character-nav-list" ref={el => this.navListElement = el} >
+            {characters}
+            <div key="last" className="last-nav-padding">i</div>
+          </ul>
+          <div className="angle-container" onClick={this.handleNavShift("right")}>
+            <i className="fa fa-angle-right fa-angle" aria-hidden="true"></i>
+          </div>
+        </nav>
+      </section>
+    );
   }
 };
 
