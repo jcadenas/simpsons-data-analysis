@@ -72,6 +72,16 @@ A good amount of cleaning is required to ingest these into active record. I did 
 
 It's a postgres database - Once the seed data is good to go seeding in total can take around 35 minutes.  The script lines table is a doozy (and very awesome)
 
+### Data Visualization Components
+
+Currently, each type of chart is it's own React component.  The charts are broken out by Overview charts & Character charts.
+
+The character charts adhere to D3's enter, update, exit cycle when navigating between characters in order to have DRY reusable components.
+
+### Routes
+
+Currently, each chart has a custom route where SQL is executed on the backend.  In the future, I would like to make more generic routes and potentially handling the building of the charts within each component. We shall see...
+
 ## Coming Soon
 
 * Additional interesting views are in the works focusing around character correlations with IMDB rating
