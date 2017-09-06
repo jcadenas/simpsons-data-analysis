@@ -44,7 +44,19 @@ This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulatio
 2. Setup database
     1.  Uses a postgres database
     2.  Setup the database by running `bundle exec rake db:setup`
-        The seed data is available in csv files. Seeding the database can take upwards of 35 minutes due to the large script lines csv.
+        The seed data is available in csv files. Seeding the database can take upwards of 35 minutes due to the large script lines csv (turns out, a lot has been said over 26 seasons and 6,722 characters)
+3. Start server
+    1. Start server by running `bundle exec rails server`
+
+## Implementation
+### Tech Stack
+* Postgres database
+* Ruby on Rails
+* D3
+* React
+* Redux
+* HTML / CSS
+
 
 ### Schema & Database Seeding
 
@@ -60,17 +72,17 @@ A good amount of cleaning is required to ingest these into active record. I did 
 
 It's a postgres database - Once the seed data is good to go seeding in total can take around 30 minutes.  The script lines table is a doozy (and very awesome)
 
-### Coming Soon
+## Coming Soon
 
 * Additional interesting views are in the works focusing around character correlations with IMDB rating
 
-### Shout Outs
+## Shout Outs
 
 The project found inspiration from a post by Todd W. Schneider ([Simpsons by the data][todd]) - Awesome stuff and it's been fun to expand upon the idea!
 
 Additionally, thanks to thomasdafoestudio.blogspot.com ([blog][dafoe]) for the assets.
 
-#### Disclaimer
+## Disclaimer
 
 I don't know how to write disclaimers, but here it goes.  Just a heads up, I do not own The Simpsons or these assets nor am I affiliated with 20th Century Fox in any capacity.  This is just for fun :)  The ideas and stuff are my own.
 
