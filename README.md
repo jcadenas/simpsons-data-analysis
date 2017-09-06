@@ -38,7 +38,7 @@ Under each character image, you will find a character script line. This is a ran
 
 This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulation for the visualizations
 
-Markup : 1.  Install Dependencies
+1. Install Dependencies
   1. Install gem Dependencies
 
 ### Schema & Database Seeding
