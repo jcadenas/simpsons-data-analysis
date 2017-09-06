@@ -80,7 +80,7 @@ The character charts adhere to D3's enter, update, exit cycle when navigating be
 
 ### Routes
 
-Currently, each chart has a custom route where SQL is executed on the backend.  In the future, I would like to make more generic routes and potentially handling the building of the charts within each component. We shall see...
+Currently, each chart has a custom route where SQL is executed on the backend.  In the future, I would like to make more generic routes and potentially handle the building of the charts within each component. We shall see...
 
 ## Coming Soon
 
