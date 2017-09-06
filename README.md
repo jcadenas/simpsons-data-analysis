@@ -70,7 +70,7 @@ There are 4 tables available as a csv from the kaggle post:
 
 A good amount of cleaning is required to ingest these into active record. I did a few runs to remove unnecessary commas and quotations, as well as remove excess columns.
 
-It's a postgres database - Once the seed data is good to go seeding in total can take around 30 minutes.  The script lines table is a doozy (and very awesome)
+It's a postgres database - Once the seed data is good to go seeding in total can take around 35 minutes.  The script lines table is a doozy (and very awesome)
 
 ## Coming Soon
 
