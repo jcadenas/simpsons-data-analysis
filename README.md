@@ -32,7 +32,17 @@ Each Character Overview is complete with a character image, a random script line
 
 Under each character image, you will find a character script line. This is a random script line of the character from every script line from the first 26 seasons. Select the refresh icon to generate a new random script line.
 
-### Schema
+## How to run
+
+### Steps
+
+This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulation for the visualizations
+
+1.  Install Dependencies
+  1. Install gem Dependencies
+    > bundle install
+
+### Schema & Database Seeding
 
 The data source comes from a kaggle post by user @wcukierski ([kaggle][kaggle])
 
@@ -48,7 +58,7 @@ It's a postgres database - Once the seed data is good to go seeding in total can
 
 ### Coming Soon
 
-More interesting views are in the works :)
+* Additional interesting views are in the works focusing around character correlations with IMDB rating
 
 ### Shout Outs
 
