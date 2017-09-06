@@ -5,12 +5,23 @@
 
 Take a look through the data of the Simpsons and explore your favorite characters!
 
-thesimpsonsbtn is a web application built using Ruby on Rails, D3, and React/Redux.
+thesimpsonsbtn is a data visualization web application built using D3, React/Redux, and Ruby on Rails.
 
 [simpsonsbtn]: http://www.thesimpsonsbtn.com/#/
 [kaggle]: https://www.kaggle.com/wcukierski/the-simpsons-by-the-data
 [todd]: http://toddwschneider.com/posts/the-simpsons-by-the-data/
 [dafoe]: http://thomasdafoestudio.blogspot.com/2016/05/the-simpsons-characters-png-pack.html
+
+## Instructions
+
+thesimpsonsbtn is an interactive data visualization that allows you to explore data from the first 26 Seasons of The Simpsons.  The data includes characters, locations, episodes (complete with IMDB rating), and (here's the kicker) every script line ever spoken.  Enjoy exploring the series as a whole and your favorite characters!
+
+### Series Overview
+
+![SeriesOverview](https://giphy.com/embed/3ohhwC9NtyV7JaTEwo)
+Format: ![Alt Text](url)
+
+On entering the site, you will land on the Series Overview.  Here, you can check out different data views that aggregate metrics from the first 26 seasons.
 
 ### Schema
 
