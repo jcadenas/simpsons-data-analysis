@@ -22,6 +22,16 @@ thesimpsonsbtn is an interactive data visualization that allows you to explore d
 
 On entering the site, you will land on the Series Overview.  Here, you can check out different data views that aggregate metrics from the first 26 seasons.
 
+### Character Overview
+
+![Alt Text](https://media.giphy.com/media/3ov9jTiY0t5RCdXxTO/giphy.gif)
+
+Across the top, you'll find the character navigation carousel. Scroll through or use the navigation arrows on the sides to find your favorite character. Selecting a character will display the Character Overview.
+
+Each Character Overview is complete with a character image, a random script line from the character, as well as a series of data views that rerender for each character.
+
+Under each character image, you will find a character script line. This is a random script line of the character from every script line from the first 26 seasons. Select the refresh icon to generate a new random script line.
+
 ### Schema
 
 The data source comes from a kaggle post by user @wcukierski ([kaggle][kaggle])
