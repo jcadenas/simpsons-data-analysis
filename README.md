@@ -34,7 +34,7 @@ Under each character image, you will find a character script line. This is a ran
 
 ## How to run
 
-### Steps
+### Steps to Setup
 
 This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulation for the visualizations
 
