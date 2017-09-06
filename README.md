@@ -39,15 +39,12 @@ Under each character image, you will find a character script line. This is a ran
 This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulation for the visualizations
 
 1. Install Dependencies
-    1. Install gem Dependencies
-            bundle install
-    2. Install npm dependencies -- npm will webpack post installing.
-            npm install
+    1. Install gem dependencies by running `bundle install`
+    2. Install npm dependencies by running `npm install` -- npm will webpack post installing.
 2. Setup database
     1.  Uses a postgres database
-    2.  Setup the database
-            bundle exec rake db:setup
-        Seeding the database can take upwards of 35 minutes due to the large script lines csv.
+    2.  Setup the database by running `bundle exec rake db:setup`
+        The seed data is available in csv files. Seeding the database can take upwards of 35 minutes due to the large script lines csv.
 
 ### Schema & Database Seeding
 
