@@ -40,7 +40,6 @@ This is a Ruby on Rails app with React / Redux, using D3 for the DOM manipulatio
 
 1.  Install Dependencies
   1. Install gem Dependencies
-    > bundle install
 
 ### Schema & Database Seeding
 
