@@ -1,4 +1,4 @@
-# Julian Cadenas
+# created by: Julian Cadenas
 ## The Simpsons | by the numbers
 
 [thesimpsonsbtn][simpsonsbtn]
