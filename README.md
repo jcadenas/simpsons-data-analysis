@@ -97,3 +97,5 @@ Additionally, thanks to thomasdafoestudio.blogspot.com ([blog][dafoe]) for the a
 I don't know how to write disclaimers, but here it goes.  Just a heads up, I do not own The Simpsons or these assets nor am I affiliated with 20th Century Fox in any capacity.  This is just for fun :)  The ideas and stuff are my own.
 
 Did I disclaim? I hope that disclaimed.
+
+Enjoy!
