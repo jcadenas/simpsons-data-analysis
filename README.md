@@ -18,8 +18,7 @@ thesimpsonsbtn is an interactive data visualization that allows you to explore d
 
 ### Series Overview
 
-![SeriesOverview](https://giphy.com/embed/3ohhwC9NtyV7JaTEwo.gif)
-Format: ![Alt Text](https://giphy.com/media/3ohhwC9NtyV7JaTEwo/giphy.gif)
+![Alt Text](https://giphy.com/media/3ohhwC9NtyV7JaTEwo/giphy.gif)
 
 On entering the site, you will land on the Series Overview.  Here, you can check out different data views that aggregate metrics from the first 26 seasons.
 
