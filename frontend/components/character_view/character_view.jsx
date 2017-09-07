@@ -155,11 +155,6 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return ({
-//     fetchScriptLine: (character_id) => dispatch(fetchScriptLine(character_id))
-//   })
-// }
 
 
 

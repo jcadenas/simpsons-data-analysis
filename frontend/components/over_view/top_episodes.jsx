@@ -26,17 +26,6 @@ class TopEpisodes extends React.Component {
 
     this.updateBarChart()
 
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
    }
 
   createBarChart() {
@@ -66,7 +55,7 @@ class TopEpisodes extends React.Component {
     const xColumn = 'imdb_rating';
 
     const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
-    // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+
     const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][xColumn]));
     const yScale = scaleBand()
       .domain(this.props.chartData.map( (d) => d[yColumn] ))
@@ -112,20 +101,6 @@ class TopEpisodes extends React.Component {
     .attr('y', d => yScale(d[yColumn]))
     .attr('width', d => xScale(getIMDBRatingFloat(d)))
     .attr('height', yScale.bandwidth());
-
-  // Adding Labels to the Bars
-  // group
-  //   .selectAll(".text")
-  //   .data(this.props.chartData, (d) => {
-  //     return getIMDBRatingFloat(d);
-  //   })
-  //   .enter()
-  //   .append("text")
-  //   .attr("class","label")
-  //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
-  //   .attr("y", d => yScale(d[yColumn]))
-  //   .attr("dy", "1em")
-  //   .text(d => getIMDBRatingFloat(d));
   }
 
 

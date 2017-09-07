@@ -26,18 +26,6 @@ class SeasonsByIMDBRating extends React.Component {
   componentDidUpdate() {
     this.updateLineChart();
 
-
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
   }
 
 
@@ -67,8 +55,7 @@ class SeasonsByIMDBRating extends React.Component {
      const yColumn = 'avg_ep_imdb_rating';
      const xColumn = 'season';
      const getIMDBRatingFloat = (obj) => parseFloat(obj.avg_ep_imdb_rating);
-     // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][yColumn]));
-     // const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][yColumn]));
+
      const xScale = scalePoint()
        .domain(this.props.chartData.map( (d) => d[xColumn]))
        .range([0, this.innerWidth]);
@@ -79,7 +66,6 @@ class SeasonsByIMDBRating extends React.Component {
 
      const xAxis = axisBottom(xScale);
      const yAxis = axisLeft(yScale);
-       //  .tickSizeOuter(0);
 
      this.xAxisG.transition().duration(300).call(xAxis);
      this.yAxisG.transition().duration(300).call(yAxis);
@@ -109,37 +95,7 @@ class SeasonsByIMDBRating extends React.Component {
        .attr('cy', d => yScale(d[yColumn]))
        .style("stroke", 'black')
        .style("fill", 'steelblue');
-
-
-     // Line Chart Below
-     // const line = D3Shape.line()
-     //   .x(d => xScale(d[xColumn]))
-     //   .y(d => yScale(getIMDBRatingFloat(d)));
-     //
-     // group
-     //   .append("path")
-     //   .datum(this.props.chartData)
-     //   .attr("fill", "none")
-     //   .attr("stroke", "steelblue")
-     //   .attr("stroke-linejoin", "round")
-     //   .attr("stroke-linecap", "round")
-     //   .attr("stroke-width", 1.5)
-     //   .attr("d", line);
-
-
-   // Adding Labels to the Bars
-   // group
-   //   .selectAll(".text")
-   //   .data(this.props.chartData, (d) => {
-   //     return getIMDBRatingFloat(d);
-   //   })
-   //   .enter()
-   //   .append("text")
-   //   .attr("class","label")
-   //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
-   //   .attr("y", d => yScale(d[yColumn]))
-   //   .attr("dy", "1em")
-   //   .text(d => getIMDBRatingFloat(d));
+       
   }
 
   render() {

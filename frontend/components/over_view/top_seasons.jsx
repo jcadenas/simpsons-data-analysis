@@ -27,17 +27,6 @@ class TopSeasons extends React.Component {
     this.updateBarChart();
 
 
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
   }
 
   createBarChart() {
@@ -60,20 +49,6 @@ class TopSeasons extends React.Component {
       .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
     this.xAxisG = this.group.append("g");
     this.yAxisG = this.group.append("g");
-
-    // Adding Labels to the Bars
-    // group
-    //   .selectAll(".text")
-    //   .data(this.props.chartData, (d) => {
-    //     return getIMDBRatingFloat(d);
-    //   })
-    //   .enter()
-    //   .append("text")
-    //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
-    //   .attr("y", d => yScale(d[yColumn]))
-    //   .attr("dy", "1em")
-    //   .text(d => getIMDBRatingFloat(d));
 
   }
 

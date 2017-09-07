@@ -26,18 +26,6 @@ class TopCharacters extends React.Component {
 
     this.updateBarChart();
 
-
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
   }
 
   createBarChart() {
@@ -119,19 +107,6 @@ class TopCharacters extends React.Component {
       .attr('width', d => xScale(getLineCountInt(d)))
       .attr('height', yScale.bandwidth());
 
-    // Adding Labels to the Bars
-    // group
-    //   .selectAll(".text")
-    //   .data(this.props.chartData, (d) => {
-    //     return getLineCountInt(d);
-    //   })
-    //   .enter()
-    //   .append("text")
-    //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
-    //   .attr("y", d => yScale(d[yColumn]))
-    //   .attr("dy", "1em")
-    //   .text(d => getLineCountInt(d));
   }
 
   render() {

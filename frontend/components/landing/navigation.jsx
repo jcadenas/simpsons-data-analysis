@@ -10,8 +10,6 @@ class CharacterNavigation extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.currentLocation = 10;
-    // this.navElements = {};
     this.handleNavShift = this.handleNavShift.bind(this);
   }
 
@@ -28,8 +26,6 @@ class CharacterNavigation extends React.Component {
     }
   }
 
-  // <div ref={el => this.navElements[idx] = el} ></div>
-  // <h2 className="character-nav-header">characters</h2>
   render(){
     let characters;
     if (this.props.characters.length) {

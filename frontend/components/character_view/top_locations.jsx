@@ -32,74 +32,62 @@ class TopLocations extends React.Component {
 
      this.updateBarChart();
 
-
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
   }
 
 
-   updateBarChart() {
-     const yColumn = 'name';
-     const xColumn = 'line_count';
+ updateBarChart() {
+   const yColumn = 'name';
+   const xColumn = 'line_count';
 
-     const getLineCountInt = (obj) => parseInt(obj.line_count);
-     const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
-     const yScale = scaleBand()
-       .domain(this.props.chartData.map( (d) => d[yColumn] ))
-       .range([0, this.innerHeight])
-       .paddingInner(this.innerPadding)
-       .paddingOuter(this.outerPadding)
+   const getLineCountInt = (obj) => parseInt(obj.line_count);
+   const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+   const yScale = scaleBand()
+     .domain(this.props.chartData.map( (d) => d[yColumn] ))
+     .range([0, this.innerHeight])
+     .paddingInner(this.innerPadding)
+     .paddingOuter(this.outerPadding)
 
-     const xScale = scaleLinear()
-        .domain([0, dataMax])
-        .range([0, this.innerWidth]);
+   const xScale = scaleLinear()
+      .domain([0, dataMax])
+      .range([0, this.innerWidth]);
 
-     const xAxis = axisTop(xScale)
-        .ticks(5)
-        .tickFormat(format(".2s"))
-        .tickSizeOuter(0);
-     const yAxis = axisLeft(yScale)
-        .tickSizeOuter(0);
+   const xAxis = axisTop(xScale)
+      .ticks(5)
+      .tickFormat(format(".2s"))
+      .tickSizeOuter(0);
+   const yAxis = axisLeft(yScale)
+      .tickSizeOuter(0);
 
-     this.xAxisG.transition().duration(300).call(xAxis);
-     this.yAxisG.transition().duration(300).call(yAxis);
+   this.xAxisG.transition().duration(300).call(xAxis);
+   this.yAxisG.transition().duration(300).call(yAxis);
 
 
 
-     // Enter & Bind
-     this.group
-       .selectAll('rect')
-       .data(this.props.chartData)
-       .enter()
-       .append('rect');
+   // Enter & Bind
+   this.group
+     .selectAll('rect')
+     .data(this.props.chartData)
+     .enter()
+     .append('rect');
 
-     // Exit
-     this.group
-       .selectAll('rect')
-       .data(this.props.chartData)
-       .exit()
-       .remove();
+   // Exit
+   this.group
+     .selectAll('rect')
+     .data(this.props.chartData)
+     .exit()
+     .remove();
 
-     // Update
-     this.group
-       .selectAll('rect')
-         .transition()
-         .duration(300)
-       .style('fill', '#3F7FBF')
-       .attr('x', 1)
-       .attr('y', d => yScale(d[yColumn]))
-       .attr('width', d => xScale(getLineCountInt(d)))
-       .attr('height', yScale.bandwidth());
-   }
+   // Update
+   this.group
+     .selectAll('rect')
+       .transition()
+       .duration(300)
+     .style('fill', '#3F7FBF')
+     .attr('x', 1)
+     .attr('y', d => yScale(d[yColumn]))
+     .attr('width', d => xScale(getLineCountInt(d)))
+     .attr('height', yScale.bandwidth());
+  }
 
    createBarChart() {
 
@@ -122,31 +110,17 @@ class TopLocations extends React.Component {
       this.xAxisG = this.group.append("g");
       this.yAxisG = this.group.append("g");
 
-    // Adding Labels to the Bars
-    // group
-    //   .selectAll(".text")
-    //   .data(this.props.chartData, (d) => {
-    //     return getLineCountInt(d);
-    //   })
-    //   .enter()
-    //   .append("text")
-    //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
-    //   .attr("y", d => yScale(d[yColumn]))
-    //   .attr("dy", "1em")
-    //   .text(d => getLineCountInt(d));
-
-   }
-render() {
-  return (
-    <article>
-      <p className="chart-description">
-        Where did the character have the most spoken lines?
-      </p>
-      <svg ref={node => this.node = node}></svg>
-    </article>
-  );
-   }
+  }
+  render() {
+    return (
+      <article>
+        <p className="chart-description">
+          Where did the character have the most spoken lines?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+    );
+  }
 }
 
 //  Connect Store & Export Component

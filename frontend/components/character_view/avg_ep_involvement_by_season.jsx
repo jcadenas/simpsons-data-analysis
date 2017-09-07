@@ -31,19 +31,6 @@ class AvgEpInvolvementBySeason extends React.Component {
 
   componentDidUpdate() {
     this.updateLineChart();
-
-
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
   }
 
 
@@ -73,8 +60,7 @@ class AvgEpInvolvementBySeason extends React.Component {
      const yColumn = 'avg_episode_involvement';
      const xColumn = 'season';
      const getAvgInvolvement = (obj) => parseFloat(obj.avg_episode_involvement);
-     // const dataMax = Math.ceil(parseFloat(this.props.chartData[0][yColumn]));
-     // const dataMin = Math.floor(parseFloat(this.props.chartData[this.props.chartData.length - 1][yColumn]));
+
      const xScale = scalePoint()
        .domain(this.props.chartData.map( (d) => d[xColumn]))
        .range([0, this.innerWidth]);
@@ -117,36 +103,6 @@ class AvgEpInvolvementBySeason extends React.Component {
        .style("stroke", 'black')
        .style("fill", 'steelblue');
 
-
-     // Line Chart Below
-     // const line = D3Shape.line()
-     //   .x(d => xScale(d[xColumn]))
-     //   .y(d => yScale(getIMDBRatingFloat(d)));
-     //
-     // group
-     //   .append("path")
-     //   .datum(this.props.chartData)
-     //   .attr("fill", "none")
-     //   .attr("stroke", "steelblue")
-     //   .attr("stroke-linejoin", "round")
-     //   .attr("stroke-linecap", "round")
-     //   .attr("stroke-width", 1.5)
-     //   .attr("d", line);
-
-
-   // Adding Labels to the Bars
-   // group
-   //   .selectAll(".text")
-   //   .data(this.props.chartData, (d) => {
-   //     return getIMDBRatingFloat(d);
-   //   })
-   //   .enter()
-   //   .append("text")
-   //   .attr("class","label")
-   //   .attr("x", d =>  1 + xScale(getIMDBRatingFloat(d)))
-   //   .attr("y", d => yScale(d[yColumn]))
-   //   .attr("dy", "1em")
-   //   .text(d => getIMDBRatingFloat(d));
   }
 
   render() {

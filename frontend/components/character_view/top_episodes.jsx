@@ -30,123 +30,98 @@ class TopEpisodes extends React.Component {
 
   componentDidUpdate() {
 
-     this.updateBarChart();
+    this.updateBarChart();
 
-
-    // Cool animation code. Not yet complete.
-    // const slices = [];
-    // for (let i = 0; i < this.props.chartData.length; i++) {
-    //   slices.push(this.props.chartData.slice(0, i+1));
-    // }
-    //
-    // slices.forEach( (slice, index) => {
-    //   setTimeout( () => {
-    //     this.draw(slice);
-    //   }, index * 300);
-    // });
   }
 
 
-   updateBarChart() {
-     const yColumn = 'title';
-     const xColumn = 'imdb_rating';
+  updateBarChart() {
+    const yColumn = 'title';
+    const xColumn = 'imdb_rating';
 
-     const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
-     const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
-     const yScale = scaleBand()
-       .domain(this.props.chartData.map( (d) => d[yColumn] ))
-       .range([0, this.innerHeight])
-       .paddingInner(this.innerPadding)
-       .paddingOuter(this.outerPadding)
+    const getIMDBRatingFloat = (obj) => parseFloat(obj.imdb_rating);
+    const dataMax = Math.ceil(parseFloat(this.props.chartData[0][xColumn]));
+    const yScale = scaleBand()
+      .domain(this.props.chartData.map( (d) => d[yColumn] ))
+      .range([0, this.innerHeight])
+      .paddingInner(this.innerPadding)
+      .paddingOuter(this.outerPadding);
 
-     const xScale = scaleLinear()
-        .domain([0, dataMax])
-        .range([0, this.innerWidth]);
+    const xScale = scaleLinear()
+      .domain([0, dataMax])
+      .range([0, this.innerWidth]);
 
-     const xAxis = axisTop(xScale)
-        .ticks(5)
-        .tickFormat(format(".2s"))
-        .tickSizeOuter(0);
-     const yAxis = axisLeft(yScale)
-        .tickSizeOuter(0);
+    const xAxis = axisTop(xScale)
+      .ticks(5)
+      .tickFormat(format(".2s"))
+      .tickSizeOuter(0);
 
-     this.xAxisG.transition().duration(300).call(xAxis);
-     this.yAxisG.transition().duration(300).call(yAxis);
+    const yAxis = axisLeft(yScale)
+      .tickSizeOuter(0);
+
+    this.xAxisG.transition().duration(300).call(xAxis);
+    this.yAxisG.transition().duration(300).call(yAxis);
 
 
 
-     // Enter & Bind
-     this.group
-       .selectAll('rect')
-       .data(this.props.chartData)
-       .enter()
-       .append('rect');
+   // Enter & Bind
+   this.group
+     .selectAll('rect')
+     .data(this.props.chartData)
+     .enter()
+     .append('rect');
 
-     // Exit
-     this.group
-       .selectAll('rect')
-       .data(this.props.chartData)
-       .exit()
-       .remove();
+   // Exit
+   this.group
+     .selectAll('rect')
+     .data(this.props.chartData)
+     .exit()
+     .remove();
 
-     // Update
-     this.group
-       .selectAll('rect')
-         .transition()
-         .duration(300)
-       .style('fill', '#3F7FBF')
-       .attr('x', 1)
-       .attr('y', d => yScale(d[yColumn]))
-       .attr('width', d => xScale(getIMDBRatingFloat(d)))
-       .attr('height', yScale.bandwidth());
+   // Update
+   this.group
+     .selectAll('rect')
+       .transition()
+       .duration(300)
+     .style('fill', '#3F7FBF')
+     .attr('x', 1)
+     .attr('y', d => yScale(d[yColumn]))
+     .attr('width', d => xScale(getIMDBRatingFloat(d)))
+     .attr('height', yScale.bandwidth());
    }
 
-   createBarChart() {
+  createBarChart() {
 
-     // Size of Data Visualization
-     this.margin = { top: 50, right: 50, bottom: 50, left: 200 };
-     this.outerWidth = 700;
-     this.outerHeight = 500;
-     this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
-     this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
-     this.innerPadding = 0.2;
-     this.outerPadding = 0.4;
+   // Size of Data Visualization
+   this.margin = { top: 50, right: 50, bottom: 50, left: 200 };
+   this.outerWidth = 700;
+   this.outerHeight = 500;
+   this.innerWidth = this.outerWidth - this.margin.left - this.margin.right;
+   this.innerHeight = this.outerHeight - this.margin.top - this.margin.bottom;
+   this.innerPadding = 0.2;
+   this.outerPadding = 0.4;
 
-      // Update node's size
-      select(this.node)
-        .attr('width', this.outerWidth)
-        .attr('height', this.outerHeight);
+    // Update node's size
+    select(this.node)
+      .attr('width', this.outerWidth)
+      .attr('height', this.outerHeight);
 
-      this.group = select(this.node).append("g")
-        .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
-      this.xAxisG = this.group.append("g");
-      this.yAxisG = this.group.append("g");
+    this.group = select(this.node).append("g")
+      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+    this.xAxisG = this.group.append("g");
+    this.yAxisG = this.group.append("g");
 
-    // Adding Labels to the Bars
-    // group
-    //   .selectAll(".text")
-    //   .data(this.props.chartData, (d) => {
-    //     return getIMDBRatingFloat(d);
-    //   })
-    //   .enter()
-    //   .append("text")
-    //   .attr("class","label")
-    //   .attr("x", d =>  1 + xScale(getLineCountInt(d)))
-    //   .attr("y", d => yScale(d[yColumn]))
-    //   .attr("dy", "1em")
-    //   .text(d => getLineCountInt(d));
-
-   }
-render() {
-  return (
-    <article>
-      <p className="chart-description">
-        Of the episodes the character had a spoken line in, which had the best IMDB rating?
-      </p>
-      <svg ref={node => this.node = node}></svg>
-    </article>
-  );
-   }
+  }
+  render() {
+    return (
+      <article>
+        <p className="chart-description">
+          Of the episodes the character had a spoken line in, which had the best IMDB rating?
+        </p>
+        <svg ref={node => this.node = node}></svg>
+      </article>
+      );
+  }
 }
 
 //  Connect Store & Export Component
