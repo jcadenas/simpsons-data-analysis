@@ -16,12 +16,14 @@ thesimpsonsbtn is a data visualization web application built using D3, React/Red
 
 thesimpsonsbtn is an interactive data visualization that allows you to explore data from the first 26 Seasons of The Simpsons.  The data includes characters, locations, episodes (complete with IMDB rating), and (here's the kicker) every script line ever spoken.  Enjoy exploring the series as a whole and your favorite characters!
 
+___
 ### Series Overview
 
 ![Alt Text](https://media.giphy.com/media/l378jVfwhXhDjZIWs/giphy.gif)
 
 On entering the site, you will land on the Series Overview.  Here, you can check out different data views that aggregate metrics from the first 26 seasons.
 
+___
 ### Character Overview
 
 ![Alt Text](https://media.giphy.com/media/3ov9jTiY0t5RCdXxTO/giphy.gif)
