@@ -30,7 +30,7 @@ ___
 
 Across the top, you'll find the character navigation carousel. Scroll through or use the navigation arrows on the sides to find your favorite character. Selecting a character will display the Character Overview.
 
-Each Character Overview is complete with a character image, a random script line from the character, as well as a series of data views that rerender for each character.
+Each Character Overview is complete with a character image, a random script line from the character, as well as a series of data views that re-render for each character.
 
 Under each character image, you will find a character script line. This is a random script line of the character from every script line from the first 26 seasons. Select the refresh icon to generate a new random script line _( I find I spend a lot of time playing with this feature "Homer Simpson: I have three kids and no money! Why can't I have no kids and three money?!"_ :stuck_out_tongue: _)_
 
