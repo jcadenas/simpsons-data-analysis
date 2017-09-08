@@ -53,13 +53,18 @@ class Header extends React.Component{
           </Link>
           {this.displayVolume()}
         </div>
-        <div className="header-contact">
-          <a href="http://www.github.com/jcadenas/simpsons-data-analysis">
-            <div className="header-contact-item">GitHub</div>
-          </a>
-          <a href="http://www.linkedin.com/in/juliancadenas">
-            <div className="header-contact-item">LinkedIn</div>
-          </a>
+        <div className="header-right-side">
+          <div className="header-right-side-container">
+            <span className="created-by">created by:</span><span className="creator">Julian Cadenas</span>
+            <div className="header-contact">
+              <a href="http://www.github.com/jcadenas/simpsons-data-analysis">
+                <div className="header-contact-item">GitHub</div>
+              </a>
+              <a href="http://www.linkedin.com/in/juliancadenas">
+                <div className="header-contact-item">LinkedIn</div>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     )

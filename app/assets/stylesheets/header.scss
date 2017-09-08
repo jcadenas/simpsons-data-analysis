@@ -5,6 +5,9 @@ g {
   font-size: 10px;
   font-weight: thin;
   text-transform: capitalize;
+  text-overflow: ellipsis;
+  width: 120px;
+  color: red;
 }
 .header {
   display: flex;
@@ -28,13 +31,43 @@ g {
 }
 
 .header-contact {
+  position: absolute;
+  // top: 5px;
+  right: 0px;
+  font-size: 10px;
   display: flex;
   align-items: center;
 }
 
+.created-by {
+  font-size: 10px;
+  // font-weight: 600;
+}
+
+.creator {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.header-right-side-container {
+  position: relative;
+}
+
+.header-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .header-contact-item {
   display: flex;
+  padding: 2px;
   margin-right: 20px;
+}
+
+.header-contact-item:hover {
+  background: rgb(247, 247, 247);
 }
 
 .header-header-text {
