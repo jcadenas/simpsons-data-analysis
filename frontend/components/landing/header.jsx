@@ -13,7 +13,6 @@ class Header extends React.Component{
   }
 
   toggleAudioMute(e) {
-    debugger;
     e.stopPropagation();
     let audioElement = document.getElementById('theme_song');
     audioElement.muted = !audioElement.muted;
@@ -25,7 +24,6 @@ class Header extends React.Component{
   }
 
   displayVolume() {
-    debugger
     if (this.state.muted) {
       return (
         <img

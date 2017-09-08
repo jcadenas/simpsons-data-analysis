@@ -12,6 +12,7 @@ import { fetchScriptLine } from '../../util/api_util';
 class CharacterView extends React.Component {
 
   constructor (props) {
+    debugger;
     super(props);
     this.characterImg = this.characterImg.bind(this);
     this.handleScriptLineFetch = this.handleScriptLineFetch.bind(this);
@@ -44,12 +45,15 @@ class CharacterView extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
   componentWillReceiveProps (newProps) {
+    debugger;
     if (this.props.match.params.characterId !== newProps.match.params.characterId) {
       // this.props.fetchScriptLine(newProps.match.params.characterId);
+      debugger;
       this.setState({scriptLine: ""});
       this.CHARTS = [
         {
@@ -78,22 +82,29 @@ class CharacterView extends React.Component {
   }
 
   handleScriptLineFetch() {
+    debugger;
     this.setState({scriptLine: ""});
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
   characterImg() {
+    debugger;
     if (window.images['char_'+this.props.match.params.characterId]){
+      debugger;
       return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image char-img" />
     } else {
+      debugger;
       return <img src={ window.images.unknown } className="character-unknown char-img" />
     };
   }
 
   displayScriptLine() {
+    debugger;
     if (this.state.scriptLine.length > 0) {
+      debugger;
       return this.state.scriptLine
     } else {
+      debugger;
       return (
         <span>...</span>
       )
@@ -101,7 +112,9 @@ class CharacterView extends React.Component {
   }
 
   render() {
+    debugger;
     if (this.props.currentCharacter){
+      debugger;
       return(
         <section className="content-container" >
           <section className="character-detail" >
@@ -132,6 +145,7 @@ class CharacterView extends React.Component {
         </section>
       )
     } else {
+      debugger;
       return (
         <section className="content-container" >
           <section className="character-detail" >
@@ -149,6 +163,7 @@ class CharacterView extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   return ({
     characters: state.characters,
     currentCharacter: state.characters.entities[ownProps.match.params.characterId]

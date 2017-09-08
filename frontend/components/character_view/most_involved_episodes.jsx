@@ -12,6 +12,7 @@ import { fetchMostInvolvedEpisodes } from '../../actions/character_chart_actions
 class MostInvolvedEpisodes extends React.Component {
 
   constructor(props) {
+    debugger;
     super(props)
     this.createBarChart = this.createBarChart.bind(this);
     this.updateBarChart = this.updateBarChart.bind(this);
