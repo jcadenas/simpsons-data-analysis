@@ -5,10 +5,14 @@ g {
   font-size: 10px;
   font-weight: thin;
   text-transform: capitalize;
-  text-overflow: ellipsis;
-  width: 120px;
-  color: red;
 }
+
+.tick text {
+  max-width: 115px;
+  display: block;
+  text-overflow: ellipsis;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
