@@ -1,18 +1,24 @@
 // loading circle for character image
 
+.loader-circle-container {
+  position: relative;
+}
+
 .loader-circle,
 .loader-circle:before,
 .loader-circle:after {
   border-radius: 50%;
 }
 .loader-circle {
-  color: #b0b0b0;
+  color: rgb(220, 220, 220);
   font-size: 11px;
   text-indent: -99999em;
-  margin: 55px auto;
-  position: relative;
+  margin: 0 auto;
   width: 10em;
   height: 10em;
+  position: absolute;
+  top: 196px;
+  left: 93px;
   box-shadow: inset 0 0 0 1em;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -70,22 +76,31 @@
 
 // loading elipsis for script line generation
 
+.loader-elipsis-container {
+  display: block;
+  position: relative;
+  height: 20px;
+}
+
 .loader-elipsis,
 .loader-elipsis:before,
 .loader-elipsis:after {
+  position: absolute;
+  z-index: 10;
+  top: -30px;
+  left: 144px;
   border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
+  width: 10px;
+  height: 10px;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out;
 }
 .loader-elipsis {
-  color: #b0b0b0;
+  color: rgb(220, 220, 220);
   font-size: 10px;
-  margin: 80px auto;
-  position: relative;
+  margin: 10px auto;
   text-indent: -9999em;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -100,12 +115,12 @@
   top: 0;
 }
 .loader-elipsis:before {
-  left: -3.5em;
+  left: -12px;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 .loader-elipsis:after {
-  left: 3.5em;
+  left: 12px;
 }
 @-webkit-keyframes load7 {
   0%,

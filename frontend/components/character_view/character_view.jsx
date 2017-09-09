@@ -89,6 +89,13 @@ class CharacterView extends React.Component {
 
   characterImg() {
     debugger;
+    if (this.props.match.params.characterId === "2") {
+      return (
+        <div className="loader-circle-container">
+          <div className="loader-circle">Loading...</div>
+        </div>
+      );
+    }
     if (window.images['char_'+this.props.match.params.characterId]){
       debugger;
       return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image char-img" />
@@ -100,13 +107,26 @@ class CharacterView extends React.Component {
 
   displayScriptLine() {
     debugger;
+    if (this.props.match.params.characterId === "2") {
+      return (
+        <div className="loader-elipsis-container">
+          <div className="loader-elipsis">Loading...</div>
+        </div>
+      )
+    }
     if (this.state.scriptLine.length > 0) {
       debugger;
-      return this.state.scriptLine
+      return (
+        <p className="script-line">
+          {this.state.scriptLine}
+        </p>
+      );
     } else {
       debugger;
       return (
-        <span>...</span>
+        <div className="loader-elipsis-container">
+          <div className="loader-elipsis">Loading...</div>
+        </div>
       )
     }
   }
@@ -135,9 +155,7 @@ class CharacterView extends React.Component {
                     className="refresh-icon"
                     />
                 </div>
-                <p className="script-line">
-                  {this.displayScriptLine()}
-                </p>
+                {this.displayScriptLine()}
               </div>
             </div>
           </section>
