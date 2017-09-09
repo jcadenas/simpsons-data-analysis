@@ -147,9 +147,9 @@ class CharacterView extends React.Component {
               <div className="image-container">
                 {this.characterImg()}
               </div>
-              <div className="script-line-container">
-                <div className="refresh-icon-container"
-                  onClick={this.handleScriptLineFetch}>
+              <div className="script-line-container"
+                onClick={this.handleScriptLineFetch}>
+                <div className="refresh-icon-container">
                   <img
                     src={ window.icons.refresh }
                     className="refresh-icon"

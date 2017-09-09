@@ -57,10 +57,14 @@ class Header extends React.Component{
           <div className="header-right-side-container">
             <span className="created-by">created by:</span><span className="creator">Julian Cadenas</span>
             <div className="header-contact">
-              <a href="http://www.github.com/jcadenas/simpsons-data-analysis">
+              <a href="http://www.github.com/jcadenas/simpsons-data-analysis"
+                className="contact-item-container">
+                <div className="icon fa-github"></div>
                 <div className="header-contact-item">GitHub</div>
               </a>
-              <a href="http://www.linkedin.com/in/juliancadenas">
+              <a href="http://www.linkedin.com/in/juliancadenas"
+                className="contact-item-container">
+                <div className="icon fa-linkedin"></div>
                 <div className="header-contact-item">LinkedIn</div>
               </a>
             </div>

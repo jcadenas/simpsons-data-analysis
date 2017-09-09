@@ -50,8 +50,19 @@
 
 .script-line-container {
   width: 300px;
+  cursor: pointer;
+  box-sizing: border-box;
   overflow: hidden;
-  padding-bottom: 15px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+.script-line-container:hover {
+  background: rgb(247, 247, 247);
+}
+
+.script-line-container:active {
+  background: rgb(242, 242, 242);
 }
 
 .script-line {
