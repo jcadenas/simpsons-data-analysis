@@ -52,6 +52,8 @@ class Header extends React.Component{
             </div>
           </Link>
           {this.displayVolume()}
+          <div className="loader-circle">Loading...</div>
+          <div className="loader-elipsis">Loading...</div>
         </div>
         <div className="header-right-side">
           <div className="header-right-side-container">
