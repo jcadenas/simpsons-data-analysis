@@ -17,8 +17,10 @@ class CharacterView extends React.Component {
     this.characterImg = this.characterImg.bind(this);
     this.handleScriptLineFetch = this.handleScriptLineFetch.bind(this);
     this.displayScriptLine = this.displayScriptLine.bind(this);
+    this.removeCharacterLoader = this.removeCharacterLoader.bind(this);
     this.state = {
-      scriptLine: ""
+      scriptLine: "",
+      characterLoading: true
     }
     this.CHARTS = [
       {
@@ -87,6 +89,10 @@ class CharacterView extends React.Component {
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
+  removeCharacterLoader() {
+    this.setState({character_loading: false});
+  }
+
   characterImg() {
     debugger;
     if (this.props.match.params.characterId === "2") {
@@ -96,13 +102,29 @@ class CharacterView extends React.Component {
         </div>
       );
     }
+
     if (window.images['char_'+this.props.match.params.characterId]){
       debugger;
-      return <img src={ window.images['char_'+this.props.match.params.characterId] } className="character-image char-img" />
+      return <img
+        src={ window.images['char_'+this.props.match.params.characterId] }
+        className="character-image char-img"
+        onLoad={this.removeCharacterLoader}/>
     } else {
       debugger;
       return <img src={ window.images.unknown } className="character-unknown char-img" />
     };
+  }
+
+  displayCharacterLoader() {
+    if (this.state.characterLoading === true) {
+      return (
+        <div className="loader-circle-container">
+          <div className="loader-circle">Loading...</div>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 
   displayScriptLine() {
@@ -145,6 +167,7 @@ class CharacterView extends React.Component {
             </div>
             <div className="character-image-script-line">
               <div className="image-container">
+                {this.displayCharacterLoader()}
                 {this.characterImg()}
               </div>
               <div className="script-line-container"
