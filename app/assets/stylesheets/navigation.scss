@@ -47,6 +47,10 @@
   border-bottom: 3px solid transparent;
 }
 
+.character-nav-item:hover {
+  border-bottom: 3px solid #d2d4d8;
+}
+
 .angle-container {
   height: 55px;
   width: 30px;
@@ -71,7 +75,7 @@
 }
 
 .character-nav-active {
-  border-color: rgb(76, 105, 175);
+  border-color: rgb(76, 105, 175) !important;
 }
 
 .last-nav-padding {
