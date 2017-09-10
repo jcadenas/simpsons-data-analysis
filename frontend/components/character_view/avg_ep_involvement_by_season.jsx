@@ -13,7 +13,6 @@ import { fetchAvgEpInvolvementBySeason } from '../../actions/character_chart_act
 class AvgEpInvolvementBySeason extends React.Component {
 
   constructor(props) {
-    debugger;
     super(props);
     this.createLineChart = this.createLineChart.bind(this);
     this.updateLineChart = this.updateLineChart.bind(this);

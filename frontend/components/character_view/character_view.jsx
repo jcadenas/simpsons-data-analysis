@@ -44,19 +44,23 @@ class CharacterView extends React.Component {
         chart: <TopEpisodes characterId={this.props.match.params.characterId} />
       }
     ];
+    debugger;
   }
 
   componentDidMount() {
-    debugger;
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
   componentWillReceiveProps (newProps) {
-    debugger;
     if (this.props.match.params.characterId !== newProps.match.params.characterId) {
       // this.props.fetchScriptLine(newProps.match.params.characterId);
       debugger;
-      this.setState({scriptLine: ""});
+      $('.character-image').addClass('hidden');
+      this.setState({
+        scriptLine: "",
+        characterLoading: true
+      });
+      debugger;
       this.CHARTS = [
         {
           title: "Most Involved Episodes",
@@ -84,67 +88,53 @@ class CharacterView extends React.Component {
   }
 
   handleScriptLineFetch() {
-    debugger;
     this.setState({scriptLine: ""});
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
   removeCharacterLoader() {
-    this.setState({character_loading: false});
+    debugger;
+    this.setState({characterLoading: false});
+    $('.character-image').removeClass('hidden');
+
   }
 
   characterImg() {
-    debugger;
-    if (this.props.match.params.characterId === "2") {
-      return (
-        <div className="loader-circle-container">
-          <div className="loader-circle">Loading...</div>
-        </div>
-      );
-    }
-
     if (window.images['char_'+this.props.match.params.characterId]){
-      debugger;
-      return <img
+      return (
+        <img
         src={ window.images['char_'+this.props.match.params.characterId] }
         className="character-image char-img"
         onLoad={this.removeCharacterLoader}/>
+    )
     } else {
-      debugger;
       return <img src={ window.images.unknown } className="character-unknown char-img" />
     };
   }
 
   displayCharacterLoader() {
+    debugger;
     if (this.state.characterLoading === true) {
+      debugger;
       return (
         <div className="loader-circle-container">
           <div className="loader-circle">Loading...</div>
         </div>
       );
     } else {
+      debugger;
       return null;
     }
   }
 
   displayScriptLine() {
-    debugger;
-    if (this.props.match.params.characterId === "2") {
-      return (
-        <div className="loader-elipsis-container">
-          <div className="loader-elipsis">Loading...</div>
-        </div>
-      )
-    }
     if (this.state.scriptLine.length > 0) {
-      debugger;
       return (
         <p className="script-line">
           {this.state.scriptLine}
         </p>
       );
     } else {
-      debugger;
       return (
         <div className="loader-elipsis-container">
           <div className="loader-elipsis">Loading...</div>
@@ -154,9 +144,7 @@ class CharacterView extends React.Component {
   }
 
   render() {
-    debugger;
     if (this.props.currentCharacter){
-      debugger;
       return(
         <section className="content-container" >
           <section className="character-detail" >
@@ -186,7 +174,6 @@ class CharacterView extends React.Component {
         </section>
       )
     } else {
-      debugger;
       return (
         <section className="content-container" >
           <section className="character-detail" >
@@ -204,7 +191,6 @@ class CharacterView extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return ({
     characters: state.characters,
     currentCharacter: state.characters.entities[ownProps.match.params.characterId]
