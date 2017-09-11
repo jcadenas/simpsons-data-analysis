@@ -12,7 +12,6 @@ import { fetchScriptLine } from '../../util/api_util';
 class CharacterView extends React.Component {
 
   constructor (props) {
-    debugger;
     super(props);
     this.characterImg = this.characterImg.bind(this);
     this.handleScriptLineFetch = this.handleScriptLineFetch.bind(this);
@@ -44,7 +43,6 @@ class CharacterView extends React.Component {
         chart: <TopEpisodes characterId={this.props.match.params.characterId} />
       }
     ];
-    debugger;
   }
 
   componentDidMount() {
@@ -54,13 +52,11 @@ class CharacterView extends React.Component {
   componentWillReceiveProps (newProps) {
     if (this.props.match.params.characterId !== newProps.match.params.characterId) {
       // this.props.fetchScriptLine(newProps.match.params.characterId);
-      debugger;
       $('.character-image').addClass('hidden');
       this.setState({
         scriptLine: "",
         characterLoading: true
       });
-      debugger;
       this.CHARTS = [
         {
           title: "Most Involved Episodes",
@@ -93,7 +89,6 @@ class CharacterView extends React.Component {
   }
 
   removeCharacterLoader() {
-    debugger;
     this.setState({characterLoading: false});
     $('.character-image').removeClass('hidden');
 
@@ -113,16 +108,13 @@ class CharacterView extends React.Component {
   }
 
   displayCharacterLoader() {
-    debugger;
     if (this.state.characterLoading === true) {
-      debugger;
       return (
         <div className="loader-circle-container">
           <div className="loader-circle">Loading...</div>
         </div>
       );
     } else {
-      debugger;
       return null;
     }
   }
