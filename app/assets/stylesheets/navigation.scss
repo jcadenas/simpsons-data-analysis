@@ -1,6 +1,7 @@
 .character-nav {
   // padding-top: 20px;
   width: 50vw;
+  position: relative;
   display: flex;
   height: 60px;
   margin: 0 auto;
@@ -39,12 +40,20 @@
   margin: 0;
 }
 
+
 .character-nav-item {
   text-transform: capitalize;
   text-align: center;
   margin: 0 20px;
   padding: 2px 5px;
   border-bottom: 3px solid transparent;
+}
+
+.series-nav-item {
+  z-index: 1000;
+  position: absolute;
+  left: -100px;
+  text-transform: uppercase;
 }
 
 .character-nav-item:hover {

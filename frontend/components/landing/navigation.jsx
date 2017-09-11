@@ -46,6 +46,14 @@ class CharacterNavigation extends React.Component {
     return(
       <section className="character-nav-container">
         <nav className="character-nav">
+          <NavLink
+            to={`/`}
+            exact
+            key={'series'}
+            activeClassName="character-nav-active"
+            className="series-nav-item character-nav-item">
+            <div>series</div>
+          </NavLink>
           <div className="angle-container" onClick={this.handleNavShift("left")}>
             <i className="fa fa-angle-left fa-angle" aria-hidden="true"></i>
           </div>

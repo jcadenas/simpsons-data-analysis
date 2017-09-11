@@ -22,3 +22,12 @@ svg {
   display: block;
   margin: 0 auto;
 }
+
+.tick {
+  display: block;
+  text-align: left;
+  max-width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -5,7 +5,7 @@ export const characterNavToOrderedArray = (characters) => {
   characterKeys.forEach( (character_id) => {
     characterNavArray.push(characters[character_id])
   });
-  debugger;
+  
   const compareFunc = (a, b) => {
     return parseInt(b.line_count) - parseInt(a.line_count)
   };
