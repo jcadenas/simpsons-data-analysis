@@ -59,13 +59,11 @@ class Header extends React.Component{
             <div className="header-contact">
               <a href="http://www.github.com/jcadenas/simpsons-data-analysis"
                 className="contact-item-container">
-                <div className="icon fa-github"></div>
-                <div className="header-contact-item">GitHub</div>
+                <i className="fa fa-github header-contact-item" aria-hidden="true"></i>
               </a>
               <a href="http://www.linkedin.com/in/juliancadenas"
                 className="contact-item-container">
-                <div className="icon fa-linkedin"></div>
-                <div className="header-contact-item">LinkedIn</div>
+                <i className="fa fa-linkedin header-contact-item last-header-contact-item" aria-hidden="true"></i>
               </a>
             </div>
           </div>
