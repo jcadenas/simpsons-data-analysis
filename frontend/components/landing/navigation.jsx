@@ -27,7 +27,7 @@ class CharacterNavigation extends React.Component {
   }
 
   navGaEvent(character_name){
-    ga('send', 'event', 'navigation', 'characterSelected', character_name);
+    ga('send', 'event', 'characterNavigation', 'characterSelected', character_name);
   }
 
   render(){

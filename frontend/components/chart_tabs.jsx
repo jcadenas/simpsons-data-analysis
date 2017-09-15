@@ -39,6 +39,7 @@ class ChartTabs extends React.Component {
   }
 
   selectTab(num) {
+    ga('send', 'event', 'chartNavigation', 'chartSelected', this.props.charts[num].title);
     this.setState({selectedPane: num});
   }
 
