@@ -47,6 +47,7 @@ class CharacterView extends React.Component {
 
   componentDidMount() {
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
+    $('.character-image').addClass('hidden');
   }
 
   componentWillReceiveProps (newProps) {
