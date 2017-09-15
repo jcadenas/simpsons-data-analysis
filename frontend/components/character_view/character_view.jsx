@@ -85,6 +85,7 @@ class CharacterView extends React.Component {
 
   handleScriptLineFetch() {
     this.setState({scriptLine: ""});
+    ga('send', 'event', 'scriptLineGenerator', 'scriptLineRefresh', this.props.currentCharacter.normalized_name);
     fetchScriptLine(this.props.match.params.characterId).then((resp) => this.setState({scriptLine: `"${resp['random_script_line']}"`}));
   }
 
