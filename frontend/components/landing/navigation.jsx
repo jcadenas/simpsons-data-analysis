@@ -58,7 +58,7 @@ class CharacterNavigation extends React.Component {
             key={'series'}
             activeClassName="character-nav-active"
             className="series-nav-item character-nav-item"
-            onClick={this.navGaEvent.bind(null, 'series')}>>
+            onClick={this.navGaEvent.bind(null, 'series')}>
             <div>series</div>
           </NavLink>
           <div className="angle-container" onClick={this.handleNavShift("left")}>
