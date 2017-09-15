@@ -27,7 +27,15 @@ class CharacterNavigation extends React.Component {
   }
 
   navGaEvent(character_name){
-    ga('send', 'event', 'characterNavigation', 'characterSelected', character_name);
+    debugger;
+    if (character_name !== 'series') {
+      let character_name_nospace = character_name.replace(/\s/g, '');
+      ga('send', 'event', 'characterNavigation', 'characterSelected', character_name);
+      ga('send', 'pageview', document.location.pathname + 'characters/' + character_name_nospace );
+    } else {
+      ga('send', 'event', 'characterNavigation', 'characterSelected', character_name);
+      ga('send', 'pageview', document.location.pathname + character_name );
+    }
   }
 
   render(){
