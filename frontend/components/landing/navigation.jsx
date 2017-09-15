@@ -26,7 +26,12 @@ class CharacterNavigation extends React.Component {
     }
   }
 
+  navGaEvent(character_name){
+    ga('send', 'event', 'navigation', 'characterSelected', character_name);
+  }
+
   render(){
+    debugger;
     let characters;
     if (this.props.characters.length) {
       characters = this.props.characters.map((character, idx) => {
@@ -35,7 +40,8 @@ class CharacterNavigation extends React.Component {
               to={`/characters/${character.character_id}`}
               key={idx}
               activeClassName="character-nav-active"
-              className="character-nav-item">
+              className="character-nav-item"
+              onClick={this.navGaEvent.bind(null, character.normalized_name)}>
               <CharacterNavigationItem character={character} />
             </NavLink>
         );
