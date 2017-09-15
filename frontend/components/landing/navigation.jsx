@@ -27,7 +27,6 @@ class CharacterNavigation extends React.Component {
   }
 
   navGaEvent(character_name){
-    debugger;
     if (character_name !== 'series') {
       let character_name_nospace = character_name.replace(/\s/g, '');
       ga('send', 'event', 'characterNavigation', 'characterSelected', character_name);
@@ -39,7 +38,6 @@ class CharacterNavigation extends React.Component {
   }
 
   render(){
-    debugger;
     let characters;
     if (this.props.characters.length) {
       characters = this.props.characters.map((character, idx) => {
