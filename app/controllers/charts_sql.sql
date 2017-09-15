@@ -254,7 +254,23 @@ LIMIT 30;
 
 
 
-
+-- Homer saying d'oh
+SELECT
+  characters.character_id, COUNT(script_lines.id) AS doh_line_count
+FROM
+  characters
+JOIN
+  script_lines ON characters.character_id = script_lines.character_id
+WHERE
+  script_lines.character_id = 2
+  AND
+  (script_lines.normalized_text ILIKE '%d''oh%'
+    OR script_lines.normalized_text ILIKE '%doh%'
+    OR script_lines.normalized_text ILIKE '%d oh%'
+  )
+GROUP BY
+  characters.character_id
+LIMIT 10;
 
 
 
