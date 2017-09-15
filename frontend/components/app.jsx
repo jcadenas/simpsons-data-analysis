@@ -12,7 +12,8 @@ const App = () => {
       <audio
         id="theme_song"
         src={window.audios.simpsons_theme}
-        autoPlay>
+        autoPlay
+        muted='true'>
       </audio>
       <Header />
       <Navigation />

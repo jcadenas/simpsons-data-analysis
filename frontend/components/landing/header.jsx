@@ -8,7 +8,7 @@ class Header extends React.Component{
     this.toggleAudioMute = this.toggleAudioMute.bind(this);
     this.displayVolume = this.displayVolume.bind(this);
     this.state = {
-      muted: false
+      muted: true
     }
   }
 
