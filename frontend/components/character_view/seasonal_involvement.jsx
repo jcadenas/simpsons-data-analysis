@@ -54,7 +54,6 @@ class SeasonalInvolvement extends React.Component {
     this.xAxisG = this.group.append("g")
       .attr("transform", "translate(0," + this.innerHeight + ")");
     this.yAxisG = this.group.append("g");
-
   }
 
   updateLineChart() {

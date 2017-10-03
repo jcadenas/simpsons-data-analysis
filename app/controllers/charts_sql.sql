@@ -3,7 +3,7 @@ SELECT
   script_lines.character_id, characters.normalized_name, COUNT(script_lines.id) as line_count
 FROM
   script_lines
-JOIN
+RIGHT JOIN
   characters ON script_lines.character_id = characters.character_id
 WHERE
   characters.normalized_name LIKE '%itchy%'
