@@ -104,7 +104,8 @@
   z-index: 2;
   color: rgb(151, 153, 154);
   font-style: italic;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
+  line-height: 1em;
 }
 
 .character-image-script-line-overview {
@@ -112,7 +113,6 @@
   z-index: -2;
   color: rgb(151, 153, 154);
   font-style: italic;
-  letter-spacing: 1px;
 }
 
 .simpsons-characters-img {
