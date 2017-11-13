@@ -21,9 +21,9 @@
 }
 
 .tab-header {
-  width: 280px;
+  width: 285px;
+  font-size: 16px;
   font-weight: 800;
-  font-size: 15px;
   padding: 10px;
   border-bottom: 1px solid black;
   cursor: pointer;
@@ -39,7 +39,6 @@
 
 .active-tab {
   color: rgb(76, 105, 175);
-  font-weight: 800;
   text-transform: uppercase;
 }
 
